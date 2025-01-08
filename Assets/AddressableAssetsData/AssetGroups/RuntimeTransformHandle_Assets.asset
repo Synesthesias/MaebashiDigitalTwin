@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: RuntimeTransformHandle_Assets
+  m_EditorClassIdentifier: 
+  m_GroupName: RuntimeTransformHandle_Assets
+  m_Data:
+    m_SerializedData: []
+  m_GUID: ef25f1beef32f4946a4f4b8429ce7610
+  m_SerializeEntries:
+  - m_GUID: ef758c8f8210ce0499e16cc2d390f85a
+    m_Address: RuntimeTransformHandle
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - RuntimeTransformHandle_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 917cb777ddfc5524ab90ba4e46938c20, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: aa6e2cc31cb7d094a8c0d0a9c8e5d59e, type: 2}
+    - {fileID: 11400000, guid: bb0ecb858a2c60e49b234dff99bc788f, type: 2}

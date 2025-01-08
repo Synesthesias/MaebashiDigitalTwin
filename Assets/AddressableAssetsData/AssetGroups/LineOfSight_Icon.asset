@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: LineOfSight_Icon
+  m_EditorClassIdentifier: 
+  m_GroupName: LineOfSight_Icon
+  m_Data:
+    m_SerializedData: []
+  m_GUID: fb7680b1f0d4191488f5190c6c8e451e
+  m_SerializeEntries:
+  - m_GUID: 4a0afde632321e8409fa1af8ecda34c1
+    m_Address: Pin_Walkview
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ViewPointIcon
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 000700107e7aa5746a94a0d4c92b27e6
+    m_Address: Pin_Landmark
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - LandmarkIcon
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 917cb777ddfc5524ab90ba4e46938c20, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: f0741e1656edad040bc8d64bcd92ee82, type: 2}
+    - {fileID: 11400000, guid: bbe044b5d92f250448be9e0c33618587, type: 2}

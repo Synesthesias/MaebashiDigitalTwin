@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Advertisements_Assets
+  m_EditorClassIdentifier: 
+  m_GroupName: Advertisements_Assets
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 440b5ec0004944beab8d847cfb383785
+  m_SerializeEntries:
+  - m_GUID: 404c0b58a183b420ba3dfcd665f79221
+    m_Address: Advertisement_AdBoard_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Advertisements_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e05799569ebcf4550a28b3d86534fe8d
+    m_Address: Advertisement_AdTower_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Advertisements_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d41da77dc7e0c4790b8cd698dafa80dd
+    m_Address: Advertisement_AFrameSign_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Advertisements_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dc37f1114de684d43a31ef49b44e32eb
+    m_Address: Advertisement_DigitalSignage_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Advertisements_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ea669a8f5cc524dc18ae2b8e200ddf25
+    m_Address: Advertisement_RooftopAdBoard_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Advertisements_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 055595f88debb40918b37466291bc96e
+    m_Address: Advertisement_RooftopAdTower_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Advertisements_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 39984dd2036d4415e9ea36a7c6b8fb44
+    m_Address: Advertisement_SidewalkSign_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Advertisements_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 53b5fe0f9212943eeb9bcb5393867eb2
+    m_Address: Advertisement_Vertical_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Advertisements_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e165c05199aa74d919482580f1949b18
+    m_Address: Advertisement_Vertical_02
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Advertisements_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7503c7f194de84063917f6426257d112
+    m_Address: Advertisement_Vertical_03
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Advertisements_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8f40cd75e39fa4a78a144fbfaf41d8d0
+    m_Address: Advertisement_Vertical_04
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Advertisements_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 423b7360cd08a4dedabbcd2bf3531dbe
+    m_Address: Advertisement_Vertical_05
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Advertisements_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 080361ac732a94261aaef42a5197783a
+    m_Address: Advertisement_WallAdPanel_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Advertisements_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 917cb777ddfc5524ab90ba4e46938c20, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 2e00bcaef822c4b3fbb3db9dbc906b61, type: 2}
+    - {fileID: 11400000, guid: 5c72f1116dad840dd874057b46421c94, type: 2}

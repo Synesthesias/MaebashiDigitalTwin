@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Buildings_Assets
+  m_EditorClassIdentifier: 
+  m_GroupName: Buildings_Assets
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 8271a3213e81b43bb8378dddfe35c140
+  m_SerializeEntries:
+  - m_GUID: f20d8f99516fd48f498d08dea0595739
+    m_Address: Apartment_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Buildings_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1ef046b9cc32f4ab8a5ec6c476d91cd1
+    m_Address: CommercialBuilding_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Buildings_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4daa92bb33af643d899ef1cf13a0fff2
+    m_Address: ConvenienceStore_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Buildings_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f0e085555450b4764817ca598ac3d753
+    m_Address: House_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Buildings_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8acaccaa3bb8a4ec1b0f2ab318c4bee8
+    m_Address: OfficeBuilding_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Buildings_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 917cb777ddfc5524ab90ba4e46938c20, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 2c897a425cd724f92af432347b3e9697, type: 2}
+    - {fileID: 11400000, guid: 3c9411caec3294474b5e0a9e0ee4662e, type: 2}
