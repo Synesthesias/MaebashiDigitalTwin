@@ -28,6 +28,12 @@
         "com.unity.cinemachine": "2.9.7"
       }
     },
+    "com.synesthesias.plateau-trafficsimulationtool": {
+      "version": "file:PLATEAU-TrafficSimulationTool",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.synesthesias.plateau-unity-sdk": {
       "version": "file:PLATEAU-SDK-for-Unity",
       "depth": 0,
@@ -235,6 +241,17 @@
         "com.synesthesias.plateau-unity-sdk": "1.0.0"
       }
     },
+    "com.unity.probuilder": {
+      "version": "5.2.3",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.imgui": "1.0.0",
+        "com.unity.modules.physics": "1.0.0",
+        "com.unity.settings-manager": "1.0.3"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.render-pipelines.core": {
       "version": "14.0.10",
       "depth": 1,
@@ -287,7 +304,7 @@
     },
     "com.unity.settings-manager": {
       "version": "2.0.1",
-      "depth": 2,
+      "depth": 1,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
