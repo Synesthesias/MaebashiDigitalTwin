@@ -1,0 +1,184 @@
+@import url(../UICommon.uss);
+
+#MainContainer {
+    width: 100%;
+    min-width: 1000px;
+    height: 86px;
+    background-image: url('./Resources/Images/GNavi_Base.png');
+    flex-shrink: 0;
+}
+
+#GlobalNavi_Container {
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#GlobalNavi_CenterGroup {
+    flex-grow: 1;
+    height: auto;
+    align-items: center;
+    margin-right: 20px;
+}
+
+/* Menu */
+#Menu {
+    margin: 0;
+    padding: 0;
+    height: 84px;
+}
+
+.MenuRadioButton {
+    margin: 0;
+    margin-right: 8px;
+    padding: 0;
+    border-radius: 25px;
+    border-width: 0;
+}
+
+.MenuRadioButton.IconDashboard {
+    width: 180px;
+}
+
+.MenuRadioButton .unity-radio-button__text {
+    font-size: 18px;
+}
+
+.MenuRadioButton.unity-radio-button:checked {
+    border-width: 1px;
+}
+
+.MenuRadioButton .unity-radio-button__checkmark-background {
+    margin-right: 8px;
+}
+
+.MenuInDropdown #DropdownArrow {
+    position: absolute;
+    right: 20px;
+    top: 8px;
+}
+
+/* SubMenuContainer */
+.GlobalNavi_SubMenuContainer {
+    position: absolute;
+    top: 84px;
+    right: 0;
+}
+
+.GlobalNavi_SubMenuContainer #PanelArrow {
+    position: absolute;
+    top: -16px;
+    right: 89px;
+    width: 22px;
+    height: 16px;
+}
+
+.GlobalNavi_SubMenuContainer .SubMenuItem {
+    width: 200px;
+    padding: 16px;
+    margin: 0;
+    background-color: var(--Color-Green-Trasparent);
+}
+
+.GlobalNavi_SubMenuContainer .SubMenuItem:hover {
+    background-color: var(--Color-Green-Hover-Trasparent);
+}
+
+#SelectProject_Name {
+    flex-shrink: 1;
+    width: 100%;
+    -unity-text-align: middle-left;
+}
+
+#DropdownArrow {
+    flex-grow: 1;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+#GlobalNavi_Right {
+    flex-grow: 0;
+    width: 400px;
+    height: 84px;
+    flex-direction: row;
+    align-items: center;
+}
+
+#GlobalNavi_Right #Button_Setting {
+    width: 50px;
+    height: 50px;
+}
+
+#SettingContainer {
+    flex-grow: 1;
+    margin-right: 16px;
+    margin-top: 0;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#SettingContainer > ui {
+    flex-grow: 1;
+    width: 100%;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 8px;
+}
+
+.SettingProject {
+    flex-grow: 1;
+    width: 100%;
+}
+
+.SettingProject > Label {
+    align-self: center;
+}
+
+#Btn_SelectProject {
+    flex-shrink: 1;
+    flex-grow: 0;
+    width: 100%;
+    margin: 0;
+    padding: 8px 12px;
+    flex-direction: row;
+    align-items: center;
+    border-color: var(--Border-Color);
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-radius: 23px;
+    background-color: var(--Color-Black-Trasparent);
+    height: 40px;
+}
+
+#Btn_AddProject {
+    flex-shrink: 1;
+    flex-grow: 0;
+    width: 100px;
+    margin: 0;
+    margin-left: 8px;
+    padding: 0;
+    background-color: var(--Button-Primary-Color);
+    border-radius: 23px;
+    height: 40px;
+}
+
+#Project_List {
+    flex-grow: 1;
+    position: absolute;
+    padding: 16px;
+    top: 80px;
+    right: 0;
+    width: 420px;
+    background-color: var(--Color-Green-Trasparent);
+}
+
+#Project_List_EditMode {
+    flex-grow: 1;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 12px 12px 6px;
+}

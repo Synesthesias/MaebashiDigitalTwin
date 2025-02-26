@@ -1,0 +1,12 @@
+
+.IconAsset .unity-radio-button__checkmark-background {
+    background-image: url('./Resources/Images/Icon_Asset.png');
+}
+
+.IconDashboard .unity-radio-button__checkmark-background {
+    background-image: url('./Resources/Images/Icon_Dashboard.png');
+}
+
+.IconGis .unity-radio-button__checkmark-background {
+    background-image: url('./Resources/Images/Icon_Gis.png');
+}
