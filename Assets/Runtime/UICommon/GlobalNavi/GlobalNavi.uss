@@ -1,9 +1,9 @@
-@import url(../UICommon.uss);
+@import url(../../UICommon/Resources/UICommon.uss);
 
 #MainContainer {
     width: 100%;
     min-width: 1000px;
-    height: 86px;
+    height: 128px;
     background-image: url('./Resources/Images/GNavi_Base.png');
     flex-shrink: 0;
 }
@@ -59,13 +59,13 @@
 }
 
 /* SubMenuContainer */
-.GlobalNavi_SubMenuContainer {
+#GlobalNavi_SubMenuContainer {
     position: absolute;
     top: 84px;
     right: 0;
 }
 
-.GlobalNavi_SubMenuContainer #PanelArrow {
+#GlobalNavi_SubMenuContainer #PanelArrow {
     position: absolute;
     top: -16px;
     right: 89px;
@@ -73,14 +73,14 @@
     height: 16px;
 }
 
-.GlobalNavi_SubMenuContainer .SubMenuItem {
+#GlobalNavi_SubMenuContainer .SubMenuItem {
     width: 200px;
     padding: 16px;
     margin: 0;
     background-color: var(--Color-Green-Trasparent);
 }
 
-.GlobalNavi_SubMenuContainer .SubMenuItem:hover {
+#GlobalNavi_SubMenuContainer .SubMenuItem:hover {
     background-color: var(--Color-Green-Hover-Trasparent);
 }
 
@@ -116,6 +116,7 @@
     margin-top: 0;
     justify-content: space-between;
     align-items: flex-end;
+    align-self: flex-start;
 }
 
 #SettingContainer > ui {
@@ -150,7 +151,7 @@
     border-bottom-width: 1px;
     border-left-width: 1px;
     border-radius: 23px;
-    background-color: var(--Color-Black-Trasparent);
+    background-color: var(--Color-Black-light-Trasparent);
     height: 40px;
 }
 
@@ -169,11 +170,17 @@
 #Project_List {
     flex-grow: 1;
     position: absolute;
-    padding: 16px;
     top: 80px;
     right: 0;
     width: 420px;
     background-color: var(--Color-Green-Trasparent);
+}
+
+#Project_List #Btn_Project {
+    width: auto;
+    height: auto;
+    padding: 10px 12px;
+    margin: 0;
 }
 
 #Project_List_EditMode {
@@ -181,4 +188,30 @@
     flex-direction: row;
     justify-content: flex-end;
     padding: 12px 12px 6px;
+}
+
+.GlobalNavi__SettingPanel {
+    position: absolute;
+    top: 70px;
+    right: -10px;
+}
+
+.GlobalNavi__SettingPanel > #PanelArrow {
+    position: absolute;
+    right: 10px;
+    top: -15px;
+    width: 22px;
+    height: 16px;
+    margin: 0;
+}
+
+.GlobalNavi__SettingPanel > Button {
+    width: auto;
+    border-radius: 0;
+    margin: 0;
+    background-color: var(--Color-Green-Trasparent);
+}
+
+.GlobalNavi__SettingPanel > Button:hover {
+    background-color: var(--Color-Green-Hover-Trasparent);
 }

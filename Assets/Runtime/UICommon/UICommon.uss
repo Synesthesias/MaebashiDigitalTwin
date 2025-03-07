@@ -1,8 +1,0 @@
-/* Components */
-@import url(./Components/Icon/Icon.uss);
-
-/* Constants */
-@import url(./Constants/ColorConstants.uss);
-
-/* Util */
-@import url(./Utils/CommonUtil.uss);

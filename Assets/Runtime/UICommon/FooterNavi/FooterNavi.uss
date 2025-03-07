@@ -1,0 +1,65 @@
+@import url(../../UICommon/Resources/UICommon.uss);
+
+.FooterNavi__Wrapper {
+    position: absolute;
+    bottom: 50px;
+    align-self: center;
+}
+
+.FooterNavi__Container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 30px;
+    border-radius: 40px;
+    background-color: var(--Color-Black-Trasparent);
+}
+
+.FooterNavi__Time {
+    font-size: 32px;
+}
+
+.FooterNavi__Weather {
+    margin-left: 50px;
+    width: 150px;
+    flex-grow: 1;
+    flex-basis: auto;
+    flex-direction: column;
+}
+
+.FooterNavi__Weather #Weather {
+    align-self: center;
+    align-items: center;
+}
+
+.FooterNavi__Weather .FooterNavi__TimeSlider {
+    margin-top: 10px;
+}
+
+.FooterNavi__Function {
+    flex-grow: 1;
+    margin-left: 50px;
+}
+
+.FooterNavi__Function .Icon__HeightDisplay {
+    width: 50px;
+    height: 50px;
+}
+
+.FooterNavi__HeightSlider {
+    flex-grow: 0;
+    width: 350px;
+    position: absolute;
+    top: -80px;
+    align-self: flex-end;
+}
+
+.FooterNavi__HeightSlider SliderInt {
+    flex-direction: row-reverse;
+}
+
+.FooterNavi__HeightSlider Label {
+    -unity-text-outline-width: 0.5px;
+    -unity-text-outline-color: black;
+    text-shadow: var(--Text-Shadow);
+}

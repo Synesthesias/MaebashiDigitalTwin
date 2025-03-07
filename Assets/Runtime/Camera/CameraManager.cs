@@ -8,6 +8,11 @@ namespace Landscape2.Maebashi.Runtime
 {
     public class CameraManager
     {
+        public LandscapeCamera LandscapeCamera { get; private set; }
+        public WalkerMoveByUserInput WalkerMoveByUserInput { get; private set; }
+        public CameraPositionMemory CameraPositionMemory { get; private set; }
+        public CameraMoveByUserInput CameraMoveByUserInput { get; private set; }
+        
         const int CAMERA_FARCLIP_VALUE = 4000;
         
         public CameraManager()
@@ -47,11 +52,11 @@ namespace Landscape2.Maebashi.Runtime
             walkerCamVC.AddCinemachineComponent<CinemachineTransposer>();
             CinemachineInputProvider walkerCamInput = walkerCam.AddComponent<CinemachineInputProvider>();
 
+            var cameraMoveSpeedData = Resources.Load<CameraMoveData>("CameraMoveSpeedData");
+            
             // 歩行者視点時カメラ回転の移動量補正
             var ia = new DefaultInputActions();
             {
-                var cameraMoveSpeedData = Resources.Load<CameraMoveData>("CameraMoveSpeedData");
-
                 float val = cameraMoveSpeedData.walkerCameraRotateSpeed;
                 string overrideProcessor = $"ClampVector2Processor(minX={-val}, minY={-val}, maxX={val}, maxY={val})";
 
@@ -67,9 +72,19 @@ namespace Landscape2.Maebashi.Runtime
             walkerCam.SetActive(true);
             walkerCamVC.Follow = walker.transform;
 
-            var landscapeCamera = new LandscapeCamera(mainCamVC, walkerCamVC, walker);
-            var walkerMoveByUserInput = new WalkerMoveByUserInput(walkerCamVC, walker);
-            var cameraPositionMemory = new CameraPositionMemory(mainCamVC, walkerCamVC, landscapeCamera);
+            LandscapeCamera = new LandscapeCamera(mainCamVC, walkerCamVC, walker);
+            WalkerMoveByUserInput = new WalkerMoveByUserInput(walkerCamVC, walker);
+            CameraPositionMemory = new CameraPositionMemory(mainCamVC, walkerCamVC, LandscapeCamera);
+            CameraMoveByUserInput = new CameraMoveByUserInput(mainCamVC);
+            
+            // CameraMoveByUserInputのStart完了イベントを購読
+            CameraMoveByUserInput.OnStartCompleted.AddListener(() =>
+            {
+                if (cameraMoveSpeedData != null)
+                {
+                    CameraMoveByUserInput.UpdateCameraMoveSpeedData(cameraMoveSpeedData);
+                }
+            });
         }
     }
 }

@@ -1,0 +1,50 @@
+@import url(../../UICommon/Resources/UICommon.uss);
+
+.DashboardPanel__Container {
+    position: absolute;
+    top: 145px;
+    right: 20px;
+}
+
+.DashboardPanel__Title {
+    margin-bottom: 16px;
+}
+
+.DashboardPanel {
+    width: 380px;
+    padding: 16px;
+    border-radius: 12px;
+    background-color: var(--Color-Green-Trasparent);
+    align-self: flex-end;
+}
+
+.DashboardPanel__SimulationGroup {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    width: 100%;
+}
+
+.DashboardPanel__Button {
+    flex-direction: row;
+    margin-bottom: 12px;
+}
+
+.DashboardPanel__Label {
+    font-size: 16px;
+    width: 270px;
+}
+
+.DashboardPanel__Icon {
+    width: 52px;
+    height: 32px;
+    background-image: resource('Icon_EditMode_Off');
+}
+
+.DashboardPanel__Icon:checked {
+    background-image: resource('Icon_EditMode_On');
+}
+
+.DashboardPanel__Icon .unity-toggle__checkmark {
+    display: none;
+}

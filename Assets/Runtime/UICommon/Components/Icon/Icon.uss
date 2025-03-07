@@ -10,3 +10,7 @@
 .IconGis .unity-radio-button__checkmark-background {
     background-image: url('./Resources/Images/Icon_Gis.png');
 }
+
+.Icon__HeightDisplay {
+    background-image: resource("Icon_HeightDisplay");
+}

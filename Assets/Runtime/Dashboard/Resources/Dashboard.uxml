@@ -1,0 +1,25 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Packages/com.synesthesias.landscape-design-tool-2/Runtime/UICommon/UIStyleCommon.uss?fileID=7433441132597879392&amp;guid=5003ef441f4ce7e4881f663b95f4df1d&amp;type=3#UIStyleCommon" />
+    <Style src="project://database/Assets/Runtime/Dashboard/Resources/Dashboard.uss?fileID=7433441132597879392&amp;guid=d1692197ce8bd4ab284a826703243b0c&amp;type=3#Dashboard" />
+    <ui:VisualElement class="DashboardPanel__Container">
+        <ui:VisualElement class="Title_Right DashboardPanel__Title">
+            <ui:Label text="ダッシュボード" />
+        </ui:VisualElement>
+        <ui:VisualElement name="DashboardPanel" class="DashboardPanel gis-background-window">
+            <ui:VisualElement name="SimulationGroup" class="DashboardPanel__SimulationGroup">
+                <ui:VisualElement name="HeatmapToggle" class="DashboardPanel__Button">
+                    <ui:Label text="ヒートマップ" class="DashboardPanel__Label" />
+                    <ui:Toggle name="HeatmapIcon" value="false" class="DashboardPanel__Icon" />
+                </ui:VisualElement>
+                <ui:VisualElement name="CarSimulationToggle" class="DashboardPanel__Button">
+                    <ui:Label text="自動車シュミレーション" class="DashboardPanel__Label" />
+                    <ui:Toggle name="CarSimulationIcon" value="false" class="DashboardPanel__Icon" />
+                </ui:VisualElement>
+                <ui:VisualElement name="PeopleSimulationToggle" class="DashboardPanel__Button">
+                    <ui:Label text="人流シュミレーション" class="DashboardPanel__Label" />
+                    <ui:Toggle name="PeopleSimulationIcon" value="false" class="DashboardPanel__Icon" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

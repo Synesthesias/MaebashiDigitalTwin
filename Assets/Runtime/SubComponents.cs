@@ -1,7 +1,10 @@
 using Landscape2.Runtime;
-using Landscape2.Runtime.UiCommon;
+using Landscape2.Runtime.BuildingEditor;
+using Landscape2.Runtime.CameraPositionMemory;
+using Landscape2.Runtime.GisDataLoader;
+using Landscape2.Runtime.WalkerMode;
+using Landscape2.Runtime.WeatherTimeEditor;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 namespace Landscape2.Maebashi.Runtime
@@ -11,6 +14,21 @@ namespace Landscape2.Maebashi.Runtime
     /// </summary>
     public class SubComponents : MonoBehaviour
     {
+        public enum SubMenuUxmlType
+        {
+            Menu = -1,
+            EditBuilding,
+            Asset,
+            Bim,
+            Gis,
+            Planning,
+            Analytics,
+            CameraList,
+            CameraEdit,
+            WalkMode,
+            DashBoard,
+        }
+
         private List<ISubComponent> subComponents = new();
         
         /// <summary>
@@ -18,8 +36,88 @@ namespace Landscape2.Maebashi.Runtime
         /// </summary>
         private void Awake()
         {
-            var uiRoot = new UIDocumentFactory().CreateWithUxmlName("GlobalNavi");
+            // 各コンポーネント初期化
             var cameraManager = new CameraManager();
+
+            var uxmlHandler = new UxmlHandler();
+            var globalNaviUI = new GlobalNaviUI(uxmlHandler, cameraManager.LandscapeCamera);
+            var footerNaviUI = new FooterNaviUI(uxmlHandler, globalNaviUI, cameraManager.LandscapeCamera);
+            
+            var cameraAutoRotate = new CameraAutoRotate();
+            var saveSystem = new SaveSystem(globalNaviUI.UiRoot);
+            var projectChangerUI = new ProjectSettingUI(globalNaviUI.UiRoot, saveSystem);
+            var cityModelHandler = new CityModelHandler();
+            var editBuilding = new EditBuilding(uxmlHandler.GetUxml(SubMenuUxmlType.EditBuilding));
+            var gisDataLoaderUI = new GisDataLoaderUI(
+                uxmlHandler.GetUxml(SubMenuUxmlType.Gis),
+                saveSystem);
+            var buildingSaveLoadSystem = new BuildingSaveLoadSystem();
+            buildingSaveLoadSystem.SetEvent(saveSystem);
+
+            var dashboardPanelUI = new DashboardPanelUI(uxmlHandler.GetUxml(SubMenuUxmlType.DashBoard));
+            
+            // モジュールをサブコンポーネントに追加
+            subComponents = new List<ISubComponent>()
+            {
+                saveSystem,
+                
+                // アセット配置
+                new ArrangementAsset(
+                    uxmlHandler.GetUxml(SubMenuUxmlType.Asset),
+                    saveSystem,
+                    cameraManager.LandscapeCamera),
+                
+                // カメラ
+                new LandscapeCameraUI(cameraManager.LandscapeCamera,
+                    footerNaviUI.UiRoot,
+                    uxmlHandler.Uxmls.ToArray()),
+                new CameraPositionMemoryUI(
+                    cameraManager.CameraPositionMemory,
+                    uxmlHandler.Uxmls.ToArray(),
+                    cameraManager.WalkerMoveByUserInput,
+                    saveSystem,
+                    globalNaviUI.UiRoot),
+                cameraManager.CameraMoveByUserInput,
+                cameraManager.WalkerMoveByUserInput,
+                
+                cameraAutoRotate,
+                
+                new CameraAutoRotateUI(
+                    cameraAutoRotate,
+                    footerNaviUI.UiRoot),
+                
+                // 建物制御
+                editBuilding,
+                
+                // 建物色制御
+                new BuildingColorEditorUI(
+                    new BuildingColorEditor(),
+                    editBuilding,
+                    uxmlHandler.GetUxml(SubMenuUxmlType.EditBuilding)),
+                
+                // 建物編集
+                new BuildingTRSEditor(editBuilding,
+                    uxmlHandler.GetUxml(SubMenuUxmlType.EditBuilding),
+                    cameraManager.LandscapeCamera),
+                
+                // 天候制御
+                new WeatherTimeEditorUI(new WeatherTimeEditor(), footerNaviUI.UiRoot),
+                
+                // 高さ表示
+                new VisualizeHeightUI(
+                    new VisualizeHeight(),
+                    footerNaviUI.UiRoot,
+                    cameraManager.LandscapeCamera),
+                
+                // テクスチャ切り替え
+                // new TextureSwitch(footerNaviUI.UiRoot),
+                //
+                // 歩行モード
+                new WalkerModeUI(
+                    uxmlHandler.GetUxml(SubMenuUxmlType.WalkMode),
+                    cameraManager.LandscapeCamera,
+                    cameraManager.WalkerMoveByUserInput),
+            };
         }
         
         private void Start()

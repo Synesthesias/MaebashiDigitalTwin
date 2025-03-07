@@ -1,7 +1,11 @@
 :root {
     --Button-Primary-Color: rgb(109, 251, 251);
     --Border-Color: rgb(136, 147, 146);
-    --Color-Black-Trasparent: rgba(0, 0, 0, 0.46);
+
+    --Color-Black-light-Trasparent: rgba(0, 0, 0, 0.46);
+    --Color-Black-Trasparent: rgba(0, 0, 0, 0.7);
     --Color-Green-Trasparent: rgba(14, 21, 20, 0.75);
     --Color-Green-Hover-Trasparent: rgba(14, 21, 20, 0.6);
+    
+    --Text-Shadow: 0 0 2px rgb(0, 0, 0);
 }

@@ -1,0 +1,34 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Packages/com.synesthesias.landscape-design-tool-2/Runtime/UICommon/UIStyleCommon.uss?fileID=7433441132597879392&amp;guid=5003ef441f4ce7e4881f663b95f4df1d&amp;type=3#UIStyleCommon" />
+    <Style src="project://database/Assets/Runtime/FooterNavi/FooterNavi.uss?fileID=7433441132597879392&amp;guid=693be8c035404742a85f08667cf1801e&amp;type=3#FooterNavi" />
+    <ui:VisualElement picking-mode="Ignore" class="FooterNavi__Wrapper">
+        <ui:VisualElement picking-mode="Ignore" class="FooterNavi__Container">
+            <ui:Label text="09:00" name="TimeText" class="FooterNavi__Time" picking-mode="Ignore" />
+            <ui:VisualElement name="FooterNavi__Weather" class="FooterNavi__Weather">
+                <ui:GroupBox name="Weather">
+                    <ui:RadioButton label="Radio Button" name="Sun" value="true" />
+                    <ui:RadioButton label="Radio Button" name="Cloud" tabindex="1" />
+                    <ui:RadioButton label="Radio Button" name="Rain" tabindex="2" />
+                    <ui:RadioButton label="Radio Button" name="Snow" tabindex="3" />
+                </ui:GroupBox>
+                <ui:Slider high-value="100" name="TimeSlider" class="FooterNavi__TimeSlider" />
+            </ui:VisualElement>
+            <ui:VisualElement name="FunctionContainer" class="FooterNavi__Function">
+                <ui:Toggle label="Toggle" name="Toggle_AutoRotate" tooltip="カメラ自動回転" usage-hints="-1" />
+                <ui:Toggle label="Toggle" name="Toggle_WalkMode" tooltip="歩行者視点モード" value="false" />
+                <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button_Capture" class="gnavi_fuction_button" />
+                
+                <ui:VisualElement class="FooterNavi__HeightDisplay--Wrapper">
+                    <ui:Toggle label="Toggle" name="Toggle_HeightDisplay" tooltip="建物高さ可視化" usage-hints="-1" />
+                    <ui:VisualElement name="HeightSliderPanel" class="FooterNavi__HeightSlider" picking-mode="Ignore">
+                        <ui:SliderInt label="高さ表示設定" high-value="100" show-input-field="true" name="HeightSlider">
+                            <ui:Label tabindex="-1" text="高さ表示設定" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                        </ui:SliderInt>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:RadioButton name="MenuCamera" class="Is-Hide" />
+            <ui:RadioButton name="SubMenuCameraList" class="Is-Hide" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
