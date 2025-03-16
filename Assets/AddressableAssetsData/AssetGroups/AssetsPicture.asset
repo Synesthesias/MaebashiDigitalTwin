@@ -1529,6 +1529,96 @@ MonoBehaviour:
     m_SerializedLabels:
     - AssetsPicture
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 31e9c914143ec7f43a8dadd933082bee
+    m_Address: ComplexBuilding_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3e3a3d6ca0c632848ba104acbbd27dcc
+    m_Address: Factory_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4dc7541c4592af841acc6b4b945187f3
+    m_Address: Hotel_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ae2456782ec6ee944a4a09111fffcf1f
+    m_Address: House_01 1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: af85340e8f4b4c148a1a9138ca6691d4
+    m_Address: KotoHouse_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dbcd8c5be61ee0d4e95f4d7fa3cfe73d
+    m_Address: KotoHouse_02
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 025898e5fef2f554e8c26a6a6a11bfe6
+    m_Address: KotoHouse_03
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 90ad34563c2768e45af92d20ed42e100
+    m_Address: KotoHouse_04
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1909bda73b1834842908a9a511133877
+    m_Address: KotoHouse_05
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e4accb00b0be32a4fbcfca63368b95d3
+    m_Address: KotoHouse_06
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 38136e58d99d27541bda094124d1ae43
+    m_Address: KotoHouse_07
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 921d606567039544baafdc320a435827
+    m_Address: KotoHouse_08
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ffac3364ac7e6f6428bd0f046a1ac7e3
+    m_Address: KotoHouse_09
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fa91c6d66df9e5940ba04a6b62c472a1
+    m_Address: KotoHouse_10
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 18aee2592ede8d04d9e43b706df3a512
+    m_Address: OfficeBuilding_01 1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 917cb777ddfc5524ab90ba4e46938c20, type: 2}
   m_SchemaSet:

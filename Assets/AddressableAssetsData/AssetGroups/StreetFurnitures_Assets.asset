@@ -17,414 +17,414 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 4505646d6711e459faf8122350be9297
   m_SerializeEntries:
-  - m_GUID: e398eb2804d644d50a4b11219f83c8cf
-    m_Address: StreetFurniture_Bench_01
+  - m_GUID: f686d87aa8e8f144ebc2a510ee4e4b06
+    m_Address: StreetFurniture_WoodenFence_01
     m_ReadOnly: 0
     m_SerializedLabels:
     - StreetFurnitures_Assets
     - Plateau_Assets
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: a35fba79fa4ae43e38c3511a2327d176
-    m_Address: StreetFurniture_Bench_02
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 7ccb6405d17784b79818f0d518439456
-    m_Address: StreetFurniture_Bench_03
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 06a3c74961d5d4974982aea1080260e3
-    m_Address: StreetFurniture_Bench_04
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 49b73f3dfae494324a2d74a033ff31a4
-    m_Address: StreetFurniture_Bench_05
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e1e32fb0aea734feda9899461fd1c34f
-    m_Address: StreetFurniture_BollardArched_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c19a9bf17a4fd43e89b36f485b610b66
-    m_Address: StreetFurniture_BollardArched_02
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 70f2615b1ec364d2785b67ca683ce159
-    m_Address: StreetFurniture_BollardPole_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 8fd763f3cc6be4b4fa6907a7c7f61d7b
-    m_Address: StreetFurniture_BusStop_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 39eb32c683bb3455b9fd95c39a41fd04
-    m_Address: StreetFurniture_CondenserUnit_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 5456c6dbe865c4b12b3e573fe83f5e73
-    m_Address: StreetFurniture_Cone_01_Blue
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 7e73b7c0c25cf4869a527c6dae9965cf
-    m_Address: StreetFurniture_Cone_01_Green
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: fd0e1d01f00e14ac38f5b5cf7b8a6943
-    m_Address: StreetFurniture_Cone_01_Orange
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 2ce2159e9ebd04bb09f34b89f7ec5a91
-    m_Address: StreetFurniture_Cone_02_Blue
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: fef441cc003c940dfafb59e5277ab76f
-    m_Address: StreetFurniture_Cone_02_Green
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 4f007a80c105f443081ec349a5fe0e96
-    m_Address: StreetFurniture_Cone_02_Orange
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 523657b164e744641a6b254266f190f8
-    m_Address: StreetFurniture_Cone_03
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 7efb2691ff907457cbb2502b7b768595
-    m_Address: StreetFurniture_Drone_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 49e31887f24cb4b6992eb3eaf0588008
-    m_Address: StreetFurniture_EarthenWall_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 43e0c677553c549af9ab5fa1be391968
-    m_Address: StreetFurniture_EarthenWall_02
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 9b07f6e0e3ad348c39960e7920d22f62
-    m_Address: StreetFurniture_Eaves_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 867f05dbff93f424faa150ec47b588e7
-    m_Address: StreetFurniture_ElectricPole_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 8570dbc4ade2143d89856b658a871e16
-    m_Address: StreetFurniture_ElectricPost_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: f49e34cce1d25427aac68c7845fddb7d
-    m_Address: StreetFurniture_ElectricPost_02
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d5e5d4e22ca174237901f13dce3e2ec8
-    m_Address: StreetFurniture_ElectricPost_03
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 7d6aaf60bea8244b6b10870c8278255a
-    m_Address: StreetFurniture_Fence_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 7a3c36b90162643758dbcfed86fe0f2f
-    m_Address: StreetFurniture_Fence_02
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c73d6fb8a6ab946b5b4bc26107161a8c
-    m_Address: StreetFurniture_Fence_03
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 41276aab7ffcb438e828a2fcdbc6c7f1
-    m_Address: StreetFurniture_Fence_04
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 27f7410f899b14f18b7642eee13299b2
-    m_Address: StreetFurniture_Fence_05
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: a761feb7f309b48ec99ec2146d2f6979
-    m_Address: StreetFurniture_GardenChair_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: da4efd5b8e16244d89f46607d420e4fd
-    m_Address: StreetFurniture_GardenTable_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e0529ea76629541f89743b2013a8de70
-    m_Address: StreetFurniture_GardenUmbrella_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: f7868a3a5c46049769f32447f55523c5
-    m_Address: StreetFurniture_IceCreamStatue_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d2f9a6f2be3684b0ebef5c4a186f115c
-    m_Address: StreetFurniture_Louver_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 3930d10c71e6f42f3be52a532c488cb2
-    m_Address: StreetFurniture_Manhole_01_Black
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 8b4d7dda350604c0c88d5788981f888a
-    m_Address: StreetFurniture_Manhole_01_Blue
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c94a9343388d24c96ba366695d5843f6
-    m_Address: StreetFurniture_Manhole_01_Yellow
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 989615de1efe84808b44b9324d374ede
-    m_Address: StreetFurniture_PassageShelter_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 46d9d0aacdd564907bc5b2e2fde4a43c
-    m_Address: StreetFurniture_PostBox_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: b3d9cb808aaac43beb15a11b6f99e0dc
-    m_Address: StreetFurniture_StreetLight_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 53e346c69e63f4e1ba8b26904abc0033
-    m_Address: StreetFurniture_StreetLight_02
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: af54a3e28439a43cf8b3d2eb3e3d43f6
-    m_Address: StreetFurniture_StreetLight_03
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: f3a72fe39db844284801e65e2c629045
-    m_Address: StreetFurniture_StreetLight_04
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: a40578beb68ac44f181349e228c10049
-    m_Address: StreetFurniture_StreetLight_05
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 8188bc773177c4538a0116bfbf404e47
-    m_Address: StreetFurniture_StreetLight_06
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 426bcfeb6ad324f01915bf5004255707
-    m_Address: StreetFurniture_SubwayExit_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: f30eea19276044c078c6c8cfab436697
-    m_Address: StreetFurniture_TactilePavingGuidance_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 3389f3759181a4a31be3aa1c6cf4423b
-    m_Address: StreetFurniture_TactilePavingWarning_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 9d2f305f41d5b48578ffb0eedf4b5df8
-    m_Address: StreetFurniture_Tile_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: dd6bc629d3e5b4e11bef82eb4ab276e5
-    m_Address: StreetFurniture_TrafficCrossLight_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 5810db58db23d4cb5982bf2bd54c9544
-    m_Address: StreetFurniture_TrafficCrossLight_02
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: b10c27ac6eebb46b69a68a86eaf64046
-    m_Address: StreetFurniture_TrafficLight_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 50c8319a884424e1395ffcd10c1c7bef
-    m_Address: StreetFurniture_TrafficLight_02
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 14b1bb4fb6ee44af5ae27612b699c7eb
-    m_Address: StreetFurniture_TSControlBox_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 747dc0fbbd4844ff7bccde843e9da4de
-    m_Address: StreetFurniture_VendingMachine_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e7d8836a0e3384acd8c15edae1ad5703
-    m_Address: StreetFurniture_VendingMachine_01_Brown
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - StreetFurnitures_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 5d1c5c9ab27d64af5a0303a71e09ce96
+  - m_GUID: e2816146d097872499b7faa8a1addb8d
     m_Address: StreetFurniture_WoodenDeck_01
     m_ReadOnly: 0
     m_SerializedLabels:
     - StreetFurnitures_Assets
     - Plateau_Assets
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d5677ccfa92804f44bb7e8f3d509521f
-    m_Address: StreetFurniture_WoodenFence_01
+  - m_GUID: b6470b7bdff79ba4580d2b674a1f2104
+    m_Address: StreetFurniture_VendingMachine_01_Brown
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 54d7c3217c6bfcf4292160446b9b6372
+    m_Address: StreetFurniture_VendingMachine_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 11c474ec925585c4b8d6f4a811d7ba83
+    m_Address: StreetFurniture_TSControlBox_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d1ff23e21698d76499a0eba91a49f903
+    m_Address: StreetFurniture_TrafficLight_02
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f2fac58976ad3c841bae218d80be4225
+    m_Address: StreetFurniture_TrafficLight_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4cde4352f5a57eb49a4eadef8d586b42
+    m_Address: StreetFurniture_TrafficCrossLight_02
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3d4631d91f23a0b41bda040ed6c46317
+    m_Address: StreetFurniture_TrafficCrossLight_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2e31d82023e8d3a46acb20f9a60b9570
+    m_Address: StreetFurniture_Tile_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5f56e6ad103874745b9f70e75edd34d2
+    m_Address: StreetFurniture_TactilePavingWarning_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 85005cf3379f53c40b0d0b0683d3d2a3
+    m_Address: StreetFurniture_TactilePavingGuidance_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b5041b5a68ce0fc4da7f2bbc7fef5a61
+    m_Address: StreetFurniture_SubwayExit_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c278fd76ae54a9e48adf40ddd29a105f
+    m_Address: StreetFurniture_StreetLight_06
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 08dd281796a6bbe4f92f373876aad359
+    m_Address: StreetFurniture_StreetLight_05
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 88ca9db29901c5a479dc37aa89375eb4
+    m_Address: StreetFurniture_StreetLight_04
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4ed57a28b21db144e8b107d40cf82642
+    m_Address: StreetFurniture_StreetLight_03
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d245a65e9ddf2d44eb4ab4c7fd1d54c0
+    m_Address: StreetFurniture_StreetLight_02
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b97796b0217493546b81d5dd3c0d3611
+    m_Address: StreetFurniture_StreetLight_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 810d4f106332c354dbd9390753d239a1
+    m_Address: StreetFurniture_PostBox_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f932e5e1b1139bd4cb9452cb6e5a2f26
+    m_Address: StreetFurniture_PassageShelter_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 237b1dfef75298045ae3c18db499b17b
+    m_Address: StreetFurniture_Manhole_01_Yellow
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e1f5b9b4802f23c43983d779b05ebdb8
+    m_Address: StreetFurniture_Manhole_01_Blue
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4d0dee452d9220d46896e8150665cebe
+    m_Address: StreetFurniture_Manhole_01_Black
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: abe6986a0111eb044bfb0596ff18fefb
+    m_Address: StreetFurniture_Louver_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cc66a89cf4167994384f5c9fa22de894
+    m_Address: StreetFurniture_IceCreamStatue_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 449492699ab13224cb5c2fa6022dfd8d
+    m_Address: StreetFurniture_GardenUmbrella_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1d89c85311a80f44c9977d2544195be1
+    m_Address: StreetFurniture_GardenTable_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 05dbec6675b5a08418d446a88b3b4a01
+    m_Address: StreetFurniture_GardenChair_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b0d125c1e3d5f5c43a7e9aaafc96131a
+    m_Address: StreetFurniture_Fence_05
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c949dea258e0ea44881257930671a77e
+    m_Address: StreetFurniture_Fence_04
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ac6e07cbde247c8478a050a0ed42d2d4
+    m_Address: StreetFurniture_Fence_03
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 499719db695dbad4084617d3e5b3892d
+    m_Address: StreetFurniture_Fence_02
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e8a7d43f8f064e84588ac3150a373013
+    m_Address: StreetFurniture_Fence_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 54a2ed3016ff9be499ba33f00d9d8b8e
+    m_Address: StreetFurniture_ElectricPost_03
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0cefea6d616f10a4a8c206d9aab8c7c1
+    m_Address: StreetFurniture_ElectricPost_02
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a9df4964cfbd86b4cb74b5823128c3f1
+    m_Address: StreetFurniture_ElectricPost_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a614e7eca30d659408a48cfe3247bbb9
+    m_Address: StreetFurniture_ElectricPole_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3d7090eb17fba0e4b854b4c91f141016
+    m_Address: StreetFurniture_Eaves_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3f2dc511b5f2af744a22d4ee51ebb096
+    m_Address: StreetFurniture_EarthenWall_02
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ce0af56376515d54aa5f4c2e80f1c419
+    m_Address: StreetFurniture_EarthenWall_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 09b32e2d0a468254b96fc935ee935e73
+    m_Address: StreetFurniture_Drone_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e0769537aad199a47be532b6be9562d9
+    m_Address: StreetFurniture_Cone_03
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fcb929ba697763444a5815cbc29a016c
+    m_Address: StreetFurniture_Cone_02_Orange
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b57634c24ded0554ca736b6111111862
+    m_Address: StreetFurniture_Cone_02_Green
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 20e071bd670cbf44e80b9a5183d8f1eb
+    m_Address: StreetFurniture_Cone_02_Blue
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8c71004ef2c96124bb214d432d33396d
+    m_Address: StreetFurniture_Cone_01_Orange
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 915b0668f804754489842ce7d3fd50e0
+    m_Address: StreetFurniture_Cone_01_Green
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 884b1470252c5dd4b97581009f41a3aa
+    m_Address: StreetFurniture_Cone_01_Blue
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7b0fab786c1007f4798ddeb5211dfb12
+    m_Address: StreetFurniture_CondenserUnit_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b268252b3c07e1746b66e17055398761
+    m_Address: StreetFurniture_BusStop_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 04ffe8032f5473c4098cb83c0e1cb7fc
+    m_Address: StreetFurniture_BollardPole_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c8d3e278949209a448863b8f167e85dd
+    m_Address: StreetFurniture_BollardArched_02
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b262e0c6767481141916194a2fe8c262
+    m_Address: StreetFurniture_BollardArched_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7fccdb0a518844f4aa082461553edb0a
+    m_Address: StreetFurniture_Bench_05
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 610f24f66c4435d41add4807f305fc3e
+    m_Address: StreetFurniture_Bench_04
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a836d3f8223c3b7478f86364afe5506e
+    m_Address: StreetFurniture_Bench_03
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f5d9acbc086fbce4fb733dbbf9cdead4
+    m_Address: StreetFurniture_Bench_02
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - StreetFurnitures_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ff5bb168093249e458e378ce60e22b86
+    m_Address: StreetFurniture_Bench_01
     m_ReadOnly: 0
     m_SerializedLabels:
     - StreetFurnitures_Assets
