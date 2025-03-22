@@ -10,6 +10,6 @@
 [submodule "Packages/Maps-Toolkit-for-Unity-Landscape"]
 	path = Packages/Maps-Toolkit-for-Unity-Landscape
 	url = git@github.com:Synesthesias/Maps-Toolkit-for-Unity-Landscape.git
-[submodule "Packages/PLATEAU-TrafficSimulationTool"]
-	path = Packages/PLATEAU-TrafficSimulationTool
-	url = git@github.com:Synesthesias/PLATEAU-TrafficSimulationTool.git
+[submodule "Packages/Data-Preparation-Tool-for-TrafficSim"]
+	path = Packages/Data-Preparation-Tool-for-TrafficSim
+	url = git@github.com:Synesthesias/Data-Preparation-Tool-for-TrafficSim.git
