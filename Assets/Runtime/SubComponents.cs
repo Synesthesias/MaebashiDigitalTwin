@@ -1,11 +1,16 @@
+using Landscape2.Maebashi.Runtime.Dashboard;
 using Landscape2.Runtime;
 using Landscape2.Runtime.BuildingEditor;
 using Landscape2.Runtime.CameraPositionMemory;
 using Landscape2.Runtime.GisDataLoader;
 using Landscape2.Runtime.WalkerMode;
 using Landscape2.Runtime.WeatherTimeEditor;
+using PLATEAU.CityInfo;
 using System.Collections.Generic;
+using TrafficSimulationTool.Runtime;
+
 using UnityEngine;
+using ISubComponent = Landscape2.Runtime.ISubComponent;
 
 namespace Landscape2.Maebashi.Runtime
 {
@@ -30,11 +35,35 @@ namespace Landscape2.Maebashi.Runtime
         }
 
         private List<ISubComponent> subComponents = new();
+        private SimRoadNetworkManager roadNetworkManager;
+        private PLATEAUInstancedCityModel cityModel;
         
         /// <summary>
         /// 初期化処理
         /// </summary>
         private void Awake()
+        {
+            cityModel = GameObject.FindObjectOfType<PLATEAUInstancedCityModel>();
+            if (cityModel == null)
+            {
+                Debug.LogError("cityModelInstance is Null!");
+                return;
+            }
+            
+            roadNetworkManager = GameObject.FindObjectOfType<SimRoadNetworkManager>();
+            if (roadNetworkManager == null)
+            {
+                Debug.LogError("SimRoadNetworkManager is Null!");
+                return;
+            }
+
+            InitializeUIComponents();
+        }
+
+        /// <summary>
+        /// UI関連コンポーネントの初期化
+        /// </summary>
+        private void InitializeUIComponents()
         {
             // 各コンポーネント初期化
             var cameraManager = new CameraManager();
@@ -54,7 +83,14 @@ namespace Landscape2.Maebashi.Runtime
             var buildingSaveLoadSystem = new BuildingSaveLoadSystem();
             buildingSaveLoadSystem.SetEvent(saveSystem);
 
-            var dashboardPanelUI = new DashboardPanelUI(uxmlHandler.GetUxml(SubMenuUxmlType.DashBoard));
+            var trafficSimulationManager = new TrafficSimulationManager(
+                gameObject,
+                roadNetworkManager,
+                cityModel);
+            var dashboardPanelUI = new DashboardPanelUI(
+                uxmlHandler.GetUxml(SubMenuUxmlType.DashBoard),
+                footerNaviUI,
+                trafficSimulationManager);
             
             // モジュールをサブコンポーネントに追加
             subComponents = new List<ISubComponent>()
