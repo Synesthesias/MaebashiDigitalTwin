@@ -7,14 +7,6 @@ using PLATEAU.CityInfo;
 
 namespace Landscape2.Maebashi.Runtime
 {
-    public enum SimulationType
-    {
-        None = -1,
-        Heatmap = 0,
-        CarSimulation = 1,
-        PeopleSimulation = 2
-    }
-    
     public class DashboardPanelUI
     {
         private RadioButtonGroup simulationGroup;
@@ -51,31 +43,16 @@ namespace Landscape2.Maebashi.Runtime
             heatmapToggle.RegisterValueChangedCallback(evt =>
             {
                 OnHeatmapToggleChanged(evt.newValue);
-                if (evt.newValue)
-                {
-                    carSimulationToggle.value = false;
-                    peopleSimulationToggle.value = false;
-                }
             });
 
             carSimulationToggle.RegisterValueChangedCallback(evt =>
             {
                 OnCarSimulationToggleChanged(evt.newValue);
-                if (evt.newValue)
-                {
-                    heatmapToggle.value = false;
-                    peopleSimulationToggle.value = false;
-                }
             });
 
             peopleSimulationToggle.RegisterValueChangedCallback(evt =>
             {
                 OnPeopleSimulationToggleChanged(evt.newValue);
-                if (evt.newValue)
-                {
-                    heatmapToggle.value = false;
-                    carSimulationToggle.value = false;
-                }
             });
         }
 
@@ -97,19 +74,13 @@ namespace Landscape2.Maebashi.Runtime
 
         private void OnCarSimulationToggleChanged(bool isOn)
         {
-            if (!isOn) return;
-            Debug.Log("Car simulation is enabled");
+            trafficSimulationManager.CarSimulationManager?.SetCarSimulationEnabled(isOn);
         }
 
         private void OnPeopleSimulationToggleChanged(bool isOn)
         {
             if (!isOn) return;
             Debug.Log("People simulation is enabled");
-        }
-
-        public void SetSimulationType(SimulationType type)
-        {
-            simulationGroup.value = (int)type;
         }
     }
 } 

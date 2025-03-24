@@ -29,7 +29,7 @@
       }
     },
     "com.synesthesias.plateau-trafficsimulationtool": {
-      "version": "file:PLATEAU-TrafficSimulationTool",
+      "version": "file:Data-Preparation-Tool-for-TrafficSim",
       "depth": 0,
       "source": "embedded",
       "dependencies": {}

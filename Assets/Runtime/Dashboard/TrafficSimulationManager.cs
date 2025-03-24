@@ -28,10 +28,13 @@ namespace Landscape2.Maebashi.Runtime
 
         private VehicleSimulator vehicleSimulator;
         private TrafficSimulator trafficSimulator;
-        private TrafficHeatmapManager heatmapManager;
 
+        private TrafficHeatmapManager heatmapManager;
         public TrafficHeatmapManager HeatmapManager => heatmapManager;
 
+        private TrafficCarSimulationManager carSimulationManager;
+        public TrafficCarSimulationManager CarSimulationManager => carSimulationManager;
+        
         public TrafficSimulationManager(GameObject gameObject, SimRoadNetworkManager roadNetworkManager, PLATEAUInstancedCityModel cityModel)
         {
             this.gameObject = gameObject ?? throw new ArgumentNullException(nameof(gameObject));
@@ -59,6 +62,7 @@ namespace Landscape2.Maebashi.Runtime
             
             // 交通量ヒートマップの管理クラスの作成
             heatmapManager = new TrafficHeatmapManager();
+            carSimulationManager = new TrafficCarSimulationManager();
 
             // 道路ネットワークの初期化
             roadNetworkManager.Initialize();
