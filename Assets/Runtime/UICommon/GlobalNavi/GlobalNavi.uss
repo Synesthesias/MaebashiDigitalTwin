@@ -128,6 +128,35 @@
     padding-bottom: 8px;
 }
 
+#SettingContainer .ActionButton {
+    height: 40px;
+    border-radius: 20px;
+    border-color: rgb(128, 213, 212);
+    background-color: rgb(128, 213, 212);
+    color: rgb(0, 55, 55);
+    width: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    visibility: visible; 
+}
+
+#SettingContainer .ActionButton > Label {
+    color: rgb(0, 55, 55);
+}
+
+#SettingContainer .ActionButton:hover {
+    background-color: rgb(107, 186, 193);
+}
+
+#SettingContainer .ActionButton:active {
+    background-color: rgb(85, 163, 173);
+}
+
+#SettingContainer .ActionButton:disabled {
+    background-color: rgb(221, 228, 227);
+}
+
 .SettingProject {
     flex-grow: 1;
     width: 100%;
@@ -155,63 +184,20 @@
     height: 40px;
 }
 
-#Btn_AddProject {
-    flex-shrink: 1;
-    flex-grow: 0;
-    width: 100px;
-    margin: 0;
-    margin-left: 8px;
-    padding: 0;
-    background-color: var(--Button-Primary-Color);
-    border-radius: 23px;
-    height: 40px;
+#Project_List_Container {
+    padding: 12px;
+    background-color: rgba(14, 21, 20, 0.75);
+    border-radius: 8px;
 }
 
 #Project_List {
-    flex-grow: 1;
-    position: absolute;
-    top: 80px;
-    right: 0;
-    width: 420px;
-    background-color: var(--Color-Green-Trasparent);
+    border-color: rgb(255, 255, 255);
+    border-width: 1px;
+    min-height: 200px;
+    border-radius: 4px;
+    padding: 12px;
 }
 
-#Project_List #Btn_Project {
-    width: auto;
-    height: auto;
-    padding: 10px 12px;
-    margin: 0;
-}
-
-#Project_List_EditMode {
-    flex-grow: 1;
-    flex-direction: row;
-    justify-content: flex-end;
-    padding: 12px 12px 6px;
-}
-
-.GlobalNavi__SettingPanel {
-    position: absolute;
-    top: 70px;
-    right: -10px;
-}
-
-.GlobalNavi__SettingPanel > #PanelArrow {
-    position: absolute;
-    right: 10px;
-    top: -15px;
-    width: 22px;
-    height: 16px;
-    margin: 0;
-}
-
-.GlobalNavi__SettingPanel > Button {
-    width: auto;
-    border-radius: 0;
-    margin: 0;
-    background-color: var(--Color-Green-Trasparent);
-}
-
-.GlobalNavi__SettingPanel > Button:hover {
-    background-color: var(--Color-Green-Hover-Trasparent);
+#Btn_Project {
+    width: 100%;
 }

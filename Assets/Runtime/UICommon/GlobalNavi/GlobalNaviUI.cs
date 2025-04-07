@@ -14,7 +14,6 @@ namespace Landscape2.Maebashi.Runtime
         private UxmlHandler uxmlHandler;
         private VisualElement cameraListUI;
         private VisualElement projectListUI;
-        private VisualElement projectSettingUI;
         private LandscapeCamera landscapeCamera;
         
         public UnityEvent<SubComponents.SubMenuUxmlType> onChangeView = new();
@@ -32,10 +31,7 @@ namespace Landscape2.Maebashi.Runtime
             cameraListUI = UiRoot.Q<VisualElement>("GlobalNavi_SubMenuContainer");
             
             // プロジェクト管理リスト
-            projectListUI = UiRoot.Q<VisualElement>("Project_List");
-            
-            // プロジェクトのセッティング
-            projectSettingUI = UiRoot.Q<VisualElement>("GlobalNavi__SettingPanel");
+            projectListUI = UiRoot.Q<VisualElement>("Project_List_Container");
             
             RegisterEvents();
         }
@@ -139,30 +135,17 @@ namespace Landscape2.Maebashi.Runtime
                 uxmlHandler.Show(SubComponents.SubMenuUxmlType.Gis);
                 onChangeView.Invoke(SubComponents.SubMenuUxmlType.Gis);
             });
-
-            // プロジェクトリスト
-            UiRoot.Q<Button>("Btn_SelectProject").clicked += () =>
-            {
-                HideAll();
-                projectListUI.ToggleShow();
-            };
-            
-            // 設定
-            UiRoot.Q<Button>("Button_Setting").clicked += () => 
-            {
-                HideAll();
-                projectSettingUI.ToggleShow();
-            };
         }
 
         private void HideAll()
         {
             uxmlHandler.HideAll();
-            
+
             // 表示されているリスト等を消す
             cameraListUI.Hide();
-            projectListUI.Hide();
-            projectSettingUI.Hide();
+
+            // 景観ツールにてstyleで表示非表示にしており、classのだし分けでは制御できないため、styleで直接非表示にする
+            projectListUI.style.display = DisplayStyle.None;
         }
     }
 }

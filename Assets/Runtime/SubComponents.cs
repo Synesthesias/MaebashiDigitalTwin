@@ -137,7 +137,12 @@ namespace Landscape2.Maebashi.Runtime
                     cameraManager.LandscapeCamera),
                 
                 // 天候制御
-                new WeatherTimeEditorUI(new WeatherTimeEditor(), footerNaviUI.UiRoot),
+                new WeatherTimeEditorUI(
+                    new WeatherTimeEditor(),
+                    footerNaviUI.UiRoot,
+                    TimeConstants.START_TIME,
+                    TimeConstants.END_TIME
+                ),
                 
                 // 高さ表示
                 new VisualizeHeightUI(
@@ -194,6 +199,12 @@ namespace Landscape2.Maebashi.Runtime
             {
                 c.OnDisable();
             }
+        }
+
+        public static class TimeConstants
+        {
+            public const float START_TIME = 0.2917f;  // 7時
+            public const float END_TIME = 0.834f;     // 20時
         }
     }
 }

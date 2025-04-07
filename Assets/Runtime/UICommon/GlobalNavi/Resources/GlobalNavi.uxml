@@ -30,28 +30,15 @@
                             <ui:Label name="SelectProject_Name" tabindex="-1" text="" parse-escape-sequences="true" display-tooltip-when-elided="true" />
                             <ui:VisualElement name="DropdownArrow" />
                         </ui:Button>
-                        <ui:ScrollView name="Project_List" class="Is-Hide">
-                            <ui:VisualElement name="Project_List_EditMode">
-                                <ui:Label text="編集モード" parse-escape-sequences="true" display-tooltip-when-elided="true" />
-                                <ui:Toggle label="Toggle" name="Toggle_EditMode" tooltip="編集モード" usage-hints="-1" value="true" />
+                        <ui:VisualElement name="Project_List_Container">
+                            <ui:Label tabindex="-1" text="プロジェクト一覧" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                            <ui:ScrollView name="Project_List" />
+                            <ui:Label tabindex="-1" text="プロジェクト管理" parse-escape-sequences="true" display-tooltip-when-elided="true" style="padding-top: 12px;" />
+                            <ui:VisualElement style="flex-grow: 1; flex-direction: row;">
+                                <ui:Button text="新規作成" parse-escape-sequences="true" display-tooltip-when-elided="true" name="New_project_button" class="ActionButton" />
+                                <ui:Button text="統合して保存" parse-escape-sequences="true" display-tooltip-when-elided="true" name="merge_project_button" class="ActionButton" />
+                                <ui:Button text="読み込み" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Import_button" class="ActionButton" />
                             </ui:VisualElement>
-                        </ui:ScrollView>
-                    </ui:VisualElement>
-                    <ui:Button text="追加" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Btn_AddProject" class="ActionButton" />
-                    
-                    <ui:VisualElement class="GlobalNavi__SettingPanelWrapper" picking-mode="Ignore">
-                        <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button_Setting" />
-
-                        <ui:VisualElement name="GlobalNavi__SettingPanel" class="GlobalNavi__SettingPanel Is-Hide" picking-mode="Ignore">
-                            <ui:VisualElement name="PanelArrow"  picking-mode="Ignore" />
-                            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="ProjectSaveButton">
-                                <ui:VisualElement name="IconSave"/>
-                                <ui:Label tabindex="-1" text="プロジェクトを保存" parse-escape-sequences="true" display-tooltip-when-elided="true" />
-                            </ui:Button>
-                            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="ProjectLoadButton">
-                                <ui:VisualElement name="IconReplace"/>
-                                <ui:Label tabindex="-1" text="プロジェクトを切り替え" parse-escape-sequences="true" display-tooltip-when-elided="true" />
-                            </ui:Button>
                         </ui:VisualElement>
                     </ui:VisualElement>
                 </ui:VisualElement>
