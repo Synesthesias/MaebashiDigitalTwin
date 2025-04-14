@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using TrafficSimulationTool.Runtime.SimData;
 using TrafficSimulationTool.Runtime.Util;
+using Landscape2.Maebashi.Runtime.Util;
 
 namespace Landscape2.Maebashi.Runtime.Dashboard
 {
@@ -10,22 +11,25 @@ namespace Landscape2.Maebashi.Runtime.Dashboard
     {
         private const string CSV_RESOURCE_PATH = "traffic_data";
         
-        public async Task<List<RoadIndicator>> LoadTrafficData()
+        public List<RoadIndicator> LoadTrafficData()
         {
-            return await CsvDataLoader.LoadCsvData<RoadIndicator>(
+            return CsvDataLoader.LoadCsvData<RoadIndicator>(
                 CSV_RESOURCE_PATH, // .csvは不要
                 true, // ヘッダーをスキップ
                 values =>
                 {
                     if (values.Length < 5) return null;
 
+                    float trafficVolume = float.Parse(values[3]);
+                    float trafficSpeed = TrafficVolumeUtil.CalculateTrafficSpeed(trafficVolume);
+
                     return new RoadIndicator
                     {
                         StartTime = values[0],
                         EndTime = values[1],
                         LinkID = values[2],
-                        TrafficVolume = float.Parse(values[3]),
-                        TrafficSpeed = float.Parse(values[4])
+                        TrafficVolume = trafficVolume,
+                        TrafficSpeed = trafficSpeed
                     };
                 });
         }

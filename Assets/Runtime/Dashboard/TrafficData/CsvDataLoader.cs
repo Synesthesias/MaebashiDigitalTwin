@@ -15,7 +15,7 @@ namespace Landscape2.Maebashi.Runtime.Dashboard
         /// <param name="processLine">各行のデータを処理するデリゲート（nullの場合は文字列配列のまま返す）</param>
         /// <typeparam name="T">変換後のデータ型</typeparam>
         /// <returns>変換されたデータのリスト、またはprocessLineがnullの場合は文字列配列</returns>
-        public static async Task<List<T>> LoadCsvData<T>(string filePath, bool skipHeader = false, Func<string[], T> processLine = null)
+        public static List<T> LoadCsvData<T>(string filePath, bool skipHeader = false, Func<string[], T> processLine = null)
         {
             try
             {

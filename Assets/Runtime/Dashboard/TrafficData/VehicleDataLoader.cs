@@ -9,9 +9,9 @@ namespace Landscape2.Maebashi.Runtime.Dashboard
     {
         private const string CSV_RESOURCE_PATH = "vehicle_data";
         
-        public async Task<List<VehicleTimeline>> LoadVehicleData()
+        public List<VehicleTimeline> LoadVehicleData()
         {
-            return await CsvDataLoader.LoadCsvData<VehicleTimeline>(
+            return CsvDataLoader.LoadCsvData<VehicleTimeline>(
                 CSV_RESOURCE_PATH, // .csvは不要
                 true, // ヘッダーをスキップ
                 values =>

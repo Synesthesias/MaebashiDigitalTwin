@@ -87,7 +87,7 @@ namespace Landscape2.Maebashi.Runtime
             try
             {
                 // CSVデータのロード
-                var (trafficData, vehicleData) = await LoadCsvData();
+                var (trafficData, vehicleData) = LoadCsvData();
                 if (trafficData == null || vehicleData == null)
                 {
                     return;
@@ -105,11 +105,11 @@ namespace Landscape2.Maebashi.Runtime
             DebugLogger.Log(10, $"InitializeData Finish {sw.GetTimeSeconds()}", "green");
         }
 
-        private async Task<(List<RoadIndicator> trafficData, List<VehicleTimeline> vehicleData)> LoadCsvData()
+        private (List<RoadIndicator> trafficData, List<VehicleTimeline> vehicleData) LoadCsvData()
         {
             // 交通データの読み込み
             var trafficDataLoader = new TrafficDataLoader();
-            var trafficData = await trafficDataLoader.LoadTrafficData();
+            var trafficData = trafficDataLoader.LoadTrafficData();
             if (trafficData == null || !trafficData.Any())
             {
                 Debug.LogError("交通データの読み込みに失敗しました。");
@@ -118,7 +118,7 @@ namespace Landscape2.Maebashi.Runtime
 
             // 車両データの読み込み
             var vehicleDataLoader = new VehicleDataLoader();
-            var vehicleData = await vehicleDataLoader.LoadVehicleData();
+            var vehicleData = vehicleDataLoader.LoadVehicleData();
             if (vehicleData == null || !vehicleData.Any())
             {
                 Debug.LogError("車両データの読み込みに失敗しました。");
@@ -141,6 +141,9 @@ namespace Landscape2.Maebashi.Runtime
                 var vehicleTimelineDataSet = new VehicleTimelineDataSet();
                 vehicleTimelineDataSet.Initialize("VehicleTimeline", new List<object>(vehicleData));
                 dataManager.AddDataSet(vehicleTimelineDataSet);
+
+                // 車両シミュレーションにデータを設定
+                carSimulationManager.SetTrafficData(trafficData);
 
                 // GeoReferenceを使用してデータセットを初期化
                 var success = await dataManager.CurrentDataSets?.Initialize(FPS, cityModel.GeoReference);
@@ -172,16 +175,16 @@ namespace Landscape2.Maebashi.Runtime
             timelineManager.SetDurationData(dataManager.CurrentDataSets?.duration);
             timelineManager.SetSpeed(PLAYBACK_SPEED);
             timelineManager.AddSequence(trafficSimulator);
-            // timelineManager.AddSequence(vehicleSimulator);
         }
 
         public void UpdateBasedOnTime(float newValue)
         {
-            if (!heatmapManager.IsHeatmapEnabled)
+            if (heatmapManager.IsHeatmapEnabled)
             {
-                return;
+                timelineManager?.Move(newValue);
             }
-            timelineManager?.Move(newValue);
+
+            carSimulationManager.UpdateTrafficDataForCurrentTime(newValue);
         }
     }
 } 
