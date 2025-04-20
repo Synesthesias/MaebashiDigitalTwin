@@ -1,4 +1,4 @@
-using Landscape2.Maebashi.Runtime.Dashboard;
+﻿using Landscape2.Maebashi.Runtime.Dashboard;
 using Landscape2.Runtime;
 using Landscape2.Runtime.BuildingEditor;
 using Landscape2.Runtime.CameraPositionMemory;
@@ -37,6 +37,8 @@ namespace Landscape2.Maebashi.Runtime
         private List<ISubComponent> subComponents = new();
         private SimRoadNetworkManager roadNetworkManager;
         private PLATEAUInstancedCityModel cityModel;
+
+        private TrafficSystemMediatorForHumanFlow humanFlowSystemBridge;
         
         /// <summary>
         /// 初期化処理
@@ -56,6 +58,8 @@ namespace Landscape2.Maebashi.Runtime
                 Debug.LogError("SimRoadNetworkManager is Null!");
                 return;
             }
+
+            humanFlowSystemBridge = GameObject.FindObjectOfType<TrafficSystemMediatorForHumanFlow>();
 
             InitializeUIComponents();
         }
@@ -86,7 +90,8 @@ namespace Landscape2.Maebashi.Runtime
             var trafficSimulationManager = new TrafficSimulationManager(
                 gameObject,
                 roadNetworkManager,
-                cityModel);
+                cityModel,
+                humanFlowSystemBridge);
             var dashboardPanelUI = new DashboardPanelUI(
                 uxmlHandler.GetUxml(SubMenuUxmlType.DashBoard),
                 footerNaviUI,

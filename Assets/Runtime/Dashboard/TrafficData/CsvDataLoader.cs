@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Threading.Tasks;
@@ -24,6 +24,25 @@ namespace Landscape2.Maebashi.Runtime.Dashboard
                 if (csvFile == null)
                 {
                     Debug.LogError($"Failed to load CSV file: {filePath}");
+                    return new List<T>();
+                }
+
+                return LoadCsvData<T>(csvFile, skipHeader, processLine);
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"Error loading CSV file: {ex.Message}");
+                return new List<T>();
+            }
+        }
+
+        public static List<T> LoadCsvData<T>(TextAsset csvFile, bool skipHeader = false, Func<string[], T> processLine = null)
+        {
+            try
+            {
+                if (csvFile == null)
+                {
+                    Debug.LogError($"Failed to load CSV file: Parameter is null");
                     return new List<T>();
                 }
 

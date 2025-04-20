@@ -1,4 +1,4 @@
-using Landscape2.Maebashi.Runtime.Dashboard;
+﻿using Landscape2.Maebashi.Runtime.Dashboard;
 using UnityEngine;
 using UnityEngine.UIElements;
 using TrafficSimulationTool.Runtime;
@@ -79,8 +79,7 @@ namespace Landscape2.Maebashi.Runtime
 
         private void OnPeopleSimulationToggleChanged(bool isOn)
         {
-            if (!isOn) return;
-            Debug.Log("People simulation is enabled");
+            trafficSimulationManager.HumanFlowSystemBridge.Activate(isOn);
         }
     }
 } 

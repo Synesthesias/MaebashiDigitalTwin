@@ -1,4 +1,4 @@
-using Landscape2.Maebashi.Runtime.Dashboard;
+﻿using Landscape2.Maebashi.Runtime.Dashboard;
 using System;
 using System.Linq;
 using System.Collections.Generic;
@@ -29,18 +29,21 @@ namespace Landscape2.Maebashi.Runtime
         private VehicleSimulator vehicleSimulator;
         private TrafficSimulator trafficSimulator;
 
+        private TrafficSystemMediatorForHumanFlow humanFlowSystemBridge;
+        public TrafficSystemMediatorForHumanFlow HumanFlowSystemBridge => humanFlowSystemBridge;
+
         private TrafficHeatmapManager heatmapManager;
         public TrafficHeatmapManager HeatmapManager => heatmapManager;
 
         private TrafficCarSimulationManager carSimulationManager;
         public TrafficCarSimulationManager CarSimulationManager => carSimulationManager;
         
-        public TrafficSimulationManager(GameObject gameObject, SimRoadNetworkManager roadNetworkManager, PLATEAUInstancedCityModel cityModel)
+        public TrafficSimulationManager(GameObject gameObject, SimRoadNetworkManager roadNetworkManager, PLATEAUInstancedCityModel cityModel, TrafficSystemMediatorForHumanFlow humanFlowSystemBridge)
         {
             this.gameObject = gameObject ?? throw new ArgumentNullException(nameof(gameObject));
             this.roadNetworkManager = roadNetworkManager ?? throw new ArgumentNullException(nameof(roadNetworkManager));
             this.cityModel = cityModel ?? throw new ArgumentNullException(nameof(cityModel));
-            
+            this.humanFlowSystemBridge = humanFlowSystemBridge;            
             _ = Initialize();
         }
 
@@ -77,6 +80,7 @@ namespace Landscape2.Maebashi.Runtime
             trafficSimulator.Initialize();
             vehicleSimulator.InitializeReferences(cityModel.GeoReference, roadNetworkManager);
             trafficSimulator.InitializeReferences(cityModel.GeoReference, roadNetworkManager);
+            humanFlowSystemBridge.Initialize();
         }
 
         private async Task InitializeData()
@@ -185,6 +189,8 @@ namespace Landscape2.Maebashi.Runtime
             }
 
             carSimulationManager.UpdateTrafficDataForCurrentTime(newValue);
+
+            humanFlowSystemBridge?.SetTime(newValue);
         }
     }
 } 
