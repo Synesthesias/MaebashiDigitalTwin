@@ -12,9 +12,9 @@ namespace Landscape2.Maebashi.Runtime.Util
         public const float MIN_SPAWN_INTERVAL = 2.0f;  // 最小スポーン間隔（秒）
         public const float MAX_SPAWN_INTERVAL = 30.0f; // 最大スポーン間隔（秒）
 
-        private const float BASE_SPEED = 15f; // 最小速度
+        private const float BASE_SPEED = 5f; // 最小速度
         private const float SPEED_INCREMENT = 5f; // 各範囲の速度増加量
-        private const float MAX_TRAFFIC_SPEED = 45f; // 最大速度
+        private const float MAX_TRAFFIC_SPEED = 60f; // 最大速度
 
         /// <summary>
         /// 速度からスポーン間隔を計算します
@@ -50,6 +50,23 @@ namespace Landscape2.Maebashi.Runtime.Util
 
             // 最大速度を超えないように制限し、m/sに変換して返す
             return Math.Min(speed, MAX_TRAFFIC_SPEED) / 3.6f;
+        }
+
+        /// <summary>
+        /// 1時間あたりの交通量からスポーン間隔を計算
+        /// </summary>
+        /// <param name="trafficVolume">1時間あたりの交通量</param>
+        /// <returns>スポーン間隔（秒）</returns>
+        public static float CalculateSpawnInterval(float trafficVolume)
+        {
+            if (trafficVolume <= 0f) return MAX_SPAWN_INTERVAL;
+
+            // 1時間あたりの交通量から1台あたりのスポーン間隔（秒）を計算
+            // 例: 交通量360台/時 → 10秒間隔でスポーン (3600秒 ÷ 360台 = 10秒/台)
+            float spawnInterval = 3600f / trafficVolume;
+            
+            // 最小2秒から最大30秒の範囲に収める
+            return Mathf.Clamp(spawnInterval, MIN_SPAWN_INTERVAL, MAX_SPAWN_INTERVAL);
         }
     }
 } 

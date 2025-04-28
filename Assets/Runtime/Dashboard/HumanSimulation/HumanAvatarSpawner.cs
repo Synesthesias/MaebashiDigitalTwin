@@ -15,43 +15,67 @@ namespace Landscape2.Maebashi.Runtime.Dashboard
     {
         // 進行方向に対して垂直なオフセット
         [SerializeField]
-        private float verticalOffsetScale = 3.0f;
+        private float verticalOffsetScale = 1.0f;
 
         // オフセット幅に掛けるノイズのシード値
         [SerializeField]
         private float noiseSeed = 0.0f;
+        [SerializeField]
+        private float noiseScale = 0.05f;
+        [SerializeField]
+        private float spawnInteravalRandomScale = 0.05f;
         // オフセット幅に掛けるノイズのシード値 経過時間ベース　時間経過でスポーン位置をずらす用
         [SerializeField]
         private float timeSeed = 0.0f;
 
         // 1時間あたりのスポーン頻度
         [SerializeField]
-        public float spawnFrequencyPerHour = 3600.0f / 10.0f;  // 数値は適当　10秒に一度スポーンする頻度
-
-        // 赤信号の時間比率(簡易実装版 本来はデータから算出するべき)
-        [SerializeField]
-        public float redLightDurationRatio = 0.0f;
+        public int spawnFrequencyPerHour = (int)(3600.0f / 10.0f);  // 数値は適当　10秒に一度スポーンする頻度
 
         // アバターを破棄するまでの時間
         [SerializeField]
-        public float destroyDelay = 10.0f; 
+        public float destroyDelay = 10.0f;
+        // 初期加速分の時間
+        [SerializeField]
+        public float destroyDelayExtra = 0.5f;
 
+        [SerializeField]
         private HumanAvatarPoolingSystem humanAvatarPoolingSystem;
+        [SerializeField]
         private Vector3 spawnPosition;
+        [SerializeField]
+        private Vector3 endPosition;
+        [SerializeField]
         private PlateauSandboxTrack track;
+
+        [SerializeField]
+        private float preFreeSpace = 2.0f;
+        [SerializeField]
+        private float freeSpace = 3.5f;
+
+        [SerializeField]
+        // 歩道のシステム　あまりこの変数を使わないようにする。実装優先で依存関係が双方向。
+        private HumanFlowCrosswalkSystem humanFlowCrosswalkSystem;
 
         private Coroutine spawnCoroutine;
 
-        public void Initialize(Vector3 position, PlateauSandboxTrack track, HumanAvatarPoolingSystem poolingSystem)
+        public void Initialize(Vector3 position, Vector3 endPos, PlateauSandboxTrack track, HumanAvatarPoolingSystem poolingSystem, HumanFlowCrosswalkSystem humanFlowCrosswalkSystem)
         {
             if (poolingSystem == null)
             {
                 Debug.LogError("humanAvatarPoolingSystem is not assigned.");
                 return;
             }
-            humanAvatarPoolingSystem = poolingSystem;
+            this.humanAvatarPoolingSystem = poolingSystem;
             this.spawnPosition = position;
+            this.endPosition = endPos;
             this.track = track;
+
+            float avatorMoveSpd = 1.5f; // アバターの移動速度
+            this.destroyDelay = track.CalcSplineLength() / avatorMoveSpd + destroyDelayExtra;
+            destroyDelay *= 3.0f; // 到着後に消えるようになったのでピッタリである必要は無い。
+
+            this.humanFlowCrosswalkSystem = humanFlowCrosswalkSystem;
         }
 
         public void StartSpawning()
@@ -75,6 +99,19 @@ namespace Landscape2.Maebashi.Runtime.Dashboard
         {
             while (true)
             {
+                // 一時間に0人だった場合スポーンしない。　ただし、spawnFrequencyPerHourの変更を検知するために一定秒数ごとに更新する
+                if (spawnFrequencyPerHour <= 0)
+                {
+                    float updateFrequency = 5.0f;
+                    yield return new WaitForSeconds(updateFrequency);
+                    continue;
+                }
+                
+                // 次のスポーンまで待機
+                var spawnInterval = 1.0f / (spawnFrequencyPerHour / 3600.0f);
+                var eff = spawnInterval * spawnInteravalRandomScale;    // 10per/2 
+                spawnInterval = spawnInterval - Random.Range(-eff, eff);
+
                 // アバターをスポーン
                 var avatarId = Random.Range(0, humanAvatarPoolingSystem.CountAvatarKind() - 1);
                 GameObject avatar = humanAvatarPoolingSystem.GetHumanAvatar(avatarId);
@@ -86,20 +123,32 @@ namespace Landscape2.Maebashi.Runtime.Dashboard
                 {
                     avatar.transform.position = spawnPosition;
                 }
-                AddPlateauSandboxTrackMovement(avatar);
+                var trackMovement = AddPlateauSandboxTrackMovement(avatar, spawnPosition);
+                AddHumanCrosswalkBehavoir(avatar, 
+                    spawnPosition, endPosition,
+                    trackMovement, humanFlowCrosswalkSystem);
 
                 // 数秒後にアバターをプールに戻す　意図しない動作を起こした時用の処理　時間は十分に動作を完了出来る時間にする
                 StartCoroutine(ReturnAvatarAfterDelay(avatar, destroyDelay));
 
-                // 次のスポーンまで待機
-                var spawnInterval = 1.0f / (spawnFrequencyPerHour / 3600.0f);
-                // 赤信号の時間を考慮してスポーン間隔を調整　赤信号の割合50%なら緑の時に倍の量スポーンする必要がある。
-                if (redLightDurationRatio > 0.0f && redLightDurationRatio < 1.0f)
-                {
-                    spawnInterval /= (1.0f - redLightDurationRatio);
-                }
                 yield return new WaitForSeconds(spawnInterval);
             }
+        }
+
+        private void AddHumanCrosswalkBehavoir(
+            GameObject avatar,
+            Vector3 spawnPosition,
+            Vector3 endPosition,
+            PlateauSandboxTrackMovement trackMovement,
+            HumanFlowCrosswalkSystem humanFlowCrosswalkSystem)
+        {
+            // 人アバターに歩道の挙動を追加する
+            var crosswalkBehavior = avatar.AddComponent<HumanCrosswalkBehavior>();
+            crosswalkBehavior.Initiliaze(
+                spawnPosition,
+                endPosition,
+                preFreeSpace, freeSpace,
+                trackMovement, track, humanFlowCrosswalkSystem, humanAvatarPoolingSystem);
         }
 
         /// <summary>
@@ -107,12 +156,12 @@ namespace Landscape2.Maebashi.Runtime.Dashboard
         /// PlateauSandboxPlacementTool.ClickPlacement.cs MouseUp()を参考に
         /// </summary>
         /// <param name="obj"></param>
-        private void AddPlateauSandboxTrackMovement(GameObject obj)
+        private PlateauSandboxTrackMovement AddPlateauSandboxTrackMovement(GameObject obj, Vector3 spawnPosition)
         {
             // If placement mode is along tracks and the placed object is moveable, attach TrackMovement.
             PlateauSandboxTrackMovement trackMovement = obj.AddComponent<PlateauSandboxTrackMovement>();
 
-            var trackOffset = Vector3.right * verticalOffsetScale * Mathf.PerlinNoise1D(noiseSeed);
+            var trackOffset = Vector3.left * (verticalOffsetScale + Random.Range(-noiseSeed, noiseScale));
             SetPrivateField(trackMovement, trackOffset);
 
             // The target track is the track where the object was placed.
@@ -123,6 +172,7 @@ namespace Landscape2.Maebashi.Runtime.Dashboard
             track.GetNearestPoint(spawnPosition, out _, out int splineIndex, out float t);
             trackMovement.TrySetSplineContainerT(splineIndex + t);
 
+            return trackMovement;
         }
 
         /// <summary>
@@ -140,13 +190,13 @@ namespace Landscape2.Maebashi.Runtime.Dashboard
             offsetProp.SetValue(trackMovement, Vector3.zero);
 
             var minCollisionDetectDistProp = trackMovement.GetType().GetField("m_MinCollisionDetectDistance", BindingFlags.NonPublic | BindingFlags.Instance);
-            minCollisionDetectDistProp.SetValue(trackMovement, 0.0f);
+            minCollisionDetectDistProp.SetValue(trackMovement, 0.2f);
 
             var detectRadius = trackMovement.GetType().GetField("m_CollisionDetectRadius", BindingFlags.NonPublic | BindingFlags.Instance);
-            detectRadius.SetValue(trackMovement, 0.0f);
+            detectRadius.SetValue(trackMovement, 0.1f);
 
             var detectHeight = trackMovement.GetType().GetField("m_CollisionDetectHeight", BindingFlags.NonPublic | BindingFlags.Instance);
-            detectHeight.SetValue(trackMovement, 0.0f);
+            detectHeight.SetValue(trackMovement, 1.0f);
         }
 
         /// <summary>

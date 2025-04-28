@@ -8,8 +8,8 @@ using Landscape2.Runtime.WeatherTimeEditor;
 using PLATEAU.CityInfo;
 using System.Collections.Generic;
 using TrafficSimulationTool.Runtime;
-
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using ISubComponent = Landscape2.Runtime.ISubComponent;
 
 namespace Landscape2.Maebashi.Runtime
@@ -39,7 +39,7 @@ namespace Landscape2.Maebashi.Runtime
         private PLATEAUInstancedCityModel cityModel;
 
         private TrafficSystemMediatorForHumanFlow humanFlowSystemBridge;
-        
+
         /// <summary>
         /// 初期化処理
         /// </summary>
@@ -51,7 +51,7 @@ namespace Landscape2.Maebashi.Runtime
                 Debug.LogError("cityModelInstance is Null!");
                 return;
             }
-            
+
             roadNetworkManager = GameObject.FindObjectOfType<SimRoadNetworkManager>();
             if (roadNetworkManager == null)
             {
@@ -61,7 +61,14 @@ namespace Landscape2.Maebashi.Runtime
 
             humanFlowSystemBridge = GameObject.FindObjectOfType<TrafficSystemMediatorForHumanFlow>();
 
+            LoadCityScene();
             InitializeUIComponents();
+        }
+
+        private void LoadCityScene()
+        {
+            // 分割した街用のシーンをロード
+            SceneManager.LoadScene("Maebashi_City", LoadSceneMode.Additive);
         }
 
         /// <summary>
@@ -154,6 +161,8 @@ namespace Landscape2.Maebashi.Runtime
                     new VisualizeHeight(),
                     footerNaviUI.UiRoot,
                     cameraManager.LandscapeCamera),
+                
+                // キャプチャ機能
                 
                 // テクスチャ切り替え
                 // new TextureSwitch(footerNaviUI.UiRoot),

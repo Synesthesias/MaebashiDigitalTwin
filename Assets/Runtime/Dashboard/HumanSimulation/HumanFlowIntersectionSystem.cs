@@ -47,7 +47,7 @@ namespace Landscape2.Maebashi.Runtime.Dashboard
 #if DEBUG
                 crosswalkSystem.isRegistered = true;
 #endif
-                crosswalkSystem.Initialize(poolingSystem, datas[0], crosswalkIdx);
+                crosswalkSystem.Initialize(datas[0], crosswalkIdx);
                 crosswalkIdx++;
             }
         }

@@ -63,7 +63,7 @@ namespace Landscape2.Maebashi.Runtime
                 trafficSimulationManager.HeatmapManager.SetHeatmapEnabled(isOn);
                 if (isOn)
                 {
-                    trafficSimulationManager.UpdateBasedOnTime(timeValue);
+                    trafficSimulationManager.UpdateTimeline(timeValue);
                 }
             }
             else

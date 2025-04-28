@@ -106,7 +106,7 @@ namespace Landscape2.Maebashi.Runtime
                     route = trafficLane.lanes.ToArray(),
                     maximumSpawns = 0, // 無限にスポーン
                     enabled = trafficLane.isEnabled,
-                    spawnIntervalTime = TrafficVolumeUtil.CalcSpawnInterval(trafficLane.trafficSpeed)
+                    spawnIntervalTime = TrafficVolumeUtil.CalculateSpawnInterval(trafficLane.trafficVolume),
                 };
                 spawnSettings.Add(spawnSetting);
             }

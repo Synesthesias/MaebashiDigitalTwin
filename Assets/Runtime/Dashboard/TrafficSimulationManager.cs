@@ -185,12 +185,17 @@ namespace Landscape2.Maebashi.Runtime
         {
             if (heatmapManager.IsHeatmapEnabled)
             {
-                timelineManager?.Move(newValue);
+                UpdateTimeline(newValue);
             }
 
             carSimulationManager.UpdateTrafficDataForCurrentTime(newValue);
 
             humanFlowSystemBridge?.SetTime(newValue);
+        }
+        
+        public void UpdateTimeline(float newValue)
+        {
+            timelineManager?.Move(newValue);
         }
     }
 } 

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Resources/AreaAssets/54394065_veg_6697_1-1.prefab.meta
 guid: 307fcea8bdc7f5543a2978fbe48d0aa2
+========
+guid: bd45ca37a57cb454b93442f02ee136c6
+>>>>>>>> 2b3c47b2e0b4ac775123b068f22e05ae03b3f498:Assets/Resources/54394065_veg_6697_6.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 

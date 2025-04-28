@@ -20,8 +20,8 @@ namespace Landscape2.Maebashi.Runtime
             [Tooltip("CSVデータのLinkID")]
             public string linkID;
 
-            [Tooltip("速度(km/h)")]
-            public float trafficSpeed;
+            [Tooltip("交通量")]
+            public float trafficVolume;
 
             [Tooltip("接続するレーン")]
             public List<TrafficLane> lanes;
@@ -74,7 +74,7 @@ namespace Landscape2.Maebashi.Runtime
                     var lane = trafficLanes.FirstOrDefault(l => l.linkID == indicator.LinkID);
                     if (lane?.lanes.Count > 0)
                     {
-                        lane.trafficSpeed = indicator.TrafficSpeed * 3.6f; // m/s から km/h に変換
+                        lane.trafficVolume = indicator.TrafficVolume;
                     }
                 }
             }

@@ -4,6 +4,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
+using ScreenCapture = Landscape2.Runtime.ScreenCapture;
 
 namespace Landscape2.Maebashi.Runtime
 {
@@ -26,6 +27,16 @@ namespace Landscape2.Maebashi.Runtime
             // 時間スライダーのUI要素を追加
             var timeSliderUI = new TimeSliderUI(UiRoot);
             timeSliderUI.OnTimeChanged.AddListener(OnTimeChanged.Invoke);
+
+            RegisterEvents();
+        }
+
+        private void RegisterEvents()
+        {
+            UiRoot.Q<Button>("Button_Capture").RegisterCallback<ClickEvent>((evt) =>
+            {
+                ScreenCapture.Instance.OnClickCaptureButton();
+            });
         }
     }
 }

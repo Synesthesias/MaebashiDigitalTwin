@@ -6,6 +6,7 @@ using PlateauToolkit.Sandbox;
 using System;
 using UnityEngine.Splines;
 using System.Linq;
+using AWSIM;
 
 namespace Landscape2.Maebashi.Runtime.Dashboard
 {
@@ -19,27 +20,148 @@ namespace Landscape2.Maebashi.Runtime.Dashboard
         public bool isRegistered;
 #endif
 
+        // 歩行者信号の色
+        [Serializable]
+        public enum TrafficLightState
+        {
+            Red,
+            Green
+        }
+        [SerializeField]
+        TrafficLightState trafficLightState = TrafficLightState.Green;
+        public TrafficLightState LightState => trafficLightState;
+
+
+        [ContextMenu("Setup system")]
+        private void SetupSystem()
+        {
+            SplitSpline();
+            GenerateReverseSplines();
+
+            SetupSpawner();
+        }
+
+        private void SplitSpline()
+        {
+            if (trackAGroup.Length == 0)
+                return;
+            GameObject templateObj = trackAGroup[0];
+            List<GameObject> addObjs = new List<GameObject>(trackAGroup.Length);
+            List<GameObject> removeObjs = new List<GameObject>(trackAGroup.Length);
+            List<Spline> splitSplines = new List<Spline>(5);   // cap はテキトウ
+            foreach (var item in trackAGroup)
+            {
+                var splineContaienr = item.GetComponent<SplineContainer>();
+                var splines = splineContaienr.Splines;
+                var nSpline = splines.Count();
+                // SplineContainerに複数設定されている場合　分割して別のオブジェクトにする　後続する処理に対応するため
+                if (nSpline <= 1)
+                {
+                    addObjs.Add(item);
+                    continue;
+                }
+                removeObjs.Add(item);
+                foreach (var spline in splines)
+                {
+                    splitSplines.Add(spline);
+                }
+            }
+
+            var nObj = addObjs.Count + splitSplines.Count;
+            List<GameObject> newList = new List<GameObject>(nObj);
+            newList.AddRange(addObjs);
+            int i = 0;
+            foreach (var item in splitSplines)
+            {
+                var obj = Instantiate(templateObj);
+                obj.name = this.name + "_track" + i++;
+                obj.transform.parent = templateObj.transform.parent;
+
+                newList.Add(obj);
+                var splineContainer = obj.GetComponent<SplineContainer>();
+                splineContainer.Splines = null;
+                splineContainer.AddSpline(item);
+            }
+
+
+            trackAGroup = newList.ToArray();
+
+            // 古いTrackを削除
+            foreach (var item in removeObjs)
+            {
+                DestroyImmediate(item);
+            }
+        }
+
         [ContextMenu("generate reverse spline")]
-        private void GenerateReverseSpline()
+        private void GenerateReverseSplines()
+        {
+            if (trackBGroup.Length != trackAGroup.Length)
+            {
+                trackBGroup = new GameObject[trackAGroup.Length];
+            }
+            for (int i = 0; i < trackAGroup.Length; i++)
+            {
+                trackBGroup[i] = GenerateReverseSpline(i, trackAGroup[i], trackBGroup[i]);
+            }   
+        }
+
+        private GameObject GenerateReverseSpline(int i, GameObject trackA, GameObject trackB)
         {
             // トラックAを元にトラックBを生成する
             if (trackA == null || trackB != null)
             {
                 Debug.LogError("Invalid state: trackA must not be null and trackB must be null");
-                return;
+                return null;
+            }
+
+            if (trackA.GetComponent<SplineContainer>() == null)
+            {
+                Debug.LogError("SplineContainer is not found on this GameObject.");
+                return null;
             }
 
             // ついでにtrackAの名前も変更する
-            trackA.name = this.name + "_track";
+            trackA.name = this.name + "_track" + i;
 
             var obj = Instantiate(trackA);
             var revSplineContainer = obj.GetComponent<SplineContainer>();
             ReverseSpline(revSplineContainer);
             trackB = obj;
             trackB.name = trackA.name + "_rev";
+            trackB.transform.parent = trackA.transform.parent;
+            return trackB;
 
         }
 
+        [ContextMenu("setup spawner")]
+        private void SetupSpawner()
+        {
+            // スポナーの生成
+            // HumanAvatarPoolingSystemを持つゲームオブジェクトを検索する
+            var poolingSystem = FindObjectOfType<HumanAvatarPoolingSystem>();
+            if (poolingSystem == null)
+            {
+                Debug.LogError("No GameObject with HumanAvatarPoolingSystem found in the scene.");
+            }
+
+            if (trackAGroup.Length != trackBGroup.Length)
+            {
+                Debug.LogError("TrackA and TrackB must have the same length.");
+                return;
+            }
+
+            spawnerSetGroup = new SpawnerSet[trackAGroup.Length];
+            SpawnerSet spawnerSet;
+            for(int i = 0; i < trackAGroup.Length; i++)
+            {
+                GenerateSpawner(poolingSystem, trackAGroup[i], trackBGroup[i], out spawnerSet);
+                spawnerSetGroup[i] = spawnerSet;
+            }
+
+        }
+
+        [Serializable]
         public struct SpawnerSet
         {
             public HumanAvatarSpawner spawnerA;    // スプライン始点に生成される
@@ -50,41 +172,61 @@ namespace Landscape2.Maebashi.Runtime.Dashboard
         private int crosswalkIdx;
 
         [SerializeField]
-        private GameObject trackA;
+        private GameObject[] trackAGroup;
         [SerializeField]
-        private GameObject trackB;
-
-        // 歩道橋か　歩道橋の場合は信号の影響を受けない
+        private GameObject[] trackBGroup;
         [SerializeField]
-        private bool isFootbridge = false;
+        private float crosswalkWidth = 3.0f / 2.0f;
 
-        private bool isRed;
+        // 参照先の信号　参照先が無い場合は信号の影響を受けない。歩道橋などは設定しない。
+        [SerializeField]
+        private TrafficLight trafficLight = null;
 
-        private SpawnerSet spawnerSet;
+        [SerializeField]
+        private SpawnerSet[] spawnerSetGroup;
 
         [SerializeField]
         int currentTime = 0; // 時間帯の設定 (7-19 時間)
 
 
-        public void Initialize(HumanAvatarPoolingSystem poolingSystem, HumanFlowData humanFlowData, int crosswalkIdx)
+        public void Initialize(HumanFlowData humanFlowData, int crosswalkIdx)
         {
             this.humanFlowData = humanFlowData;
             this.crosswalkIdx = crosswalkIdx;
 
-            // スポナーの生成
-            GenerateSpawner(poolingSystem, out spawnerSet);
+            if (trafficLight != null)
+            {
+                trafficLight.evOnChangedBulbColor += OnChangedTrafficLightColor;
+            }
 
+        }
+
+        private void OnChangedTrafficLightColor(in Color col)
+        {
+            float th = 0.1f;
+            if (CalcColorDifference(col, Color.red) < th)
+            {
+                trafficLightState = TrafficLightState.Green;
+            }
+            else if (CalcColorDifference(col, Color.green) < th)
+            {
+                trafficLightState = TrafficLightState.Red;
+            }
+            else if (CalcColorDifference(col, Color.yellow) < th)
+            {
+                trafficLightState = TrafficLightState.Red;
+            }
+
+            float CalcColorDifference(Color a, Color b)
+            {
+                return Mathf.Abs(a.r - b.r) + Mathf.Abs(a.g - b.g) + Mathf.Abs(a.b - b.b);
+            }
         }
 
         public void Activate(bool isActivate)
         {
             if (isActivate)
             {
-                if (isRed)
-                {
-                    return;
-                }
-
                 StartSpawning();
             }
             else
@@ -110,23 +252,36 @@ namespace Landscape2.Maebashi.Runtime.Dashboard
         /// </summary>
         public bool SetTime(int time)
         {
+            var nLine = spawnerSetGroup.Length;
+
             time = Mathf.Clamp(time, HumanFlowData.DATA_TIME_START, HumanFlowData.DATA_TIME_END - 1);
             currentTime = time;
+            var amountA = humanFlowData.Read(crosswalkIdx * 2, time) / nLine;
+            var amountB = humanFlowData.Read(crosswalkIdx * 2 + 1, time) / nLine;
+
             // スポナーに時間帯を設定
-            if (spawnerSet.spawnerA != null)
+            foreach (var set in spawnerSetGroup)
             {
-                spawnerSet.spawnerA.spawnFrequencyPerHour = humanFlowData.Read(crosswalkIdx * 2, time);
-            }
-            if (spawnerSet.spawnerB != null)
-            {
-                spawnerSet.spawnerB.spawnFrequencyPerHour = humanFlowData.Read(crosswalkIdx * 2 + 1, time);
+                SetSpawnFrequencyPerHer(set, amountA, amountB);
             }
             return true;
+
+            void SetSpawnFrequencyPerHer(in SpawnerSet set, int amountA, int amountB)
+            {
+                if (set.spawnerA != null)
+                {
+                    set.spawnerA.spawnFrequencyPerHour = amountA;
+                }
+                if (set.spawnerB != null)
+                {
+                    set.spawnerB.spawnFrequencyPerHour = amountB;
+                }
+            }
         }
 
         public void SetSignalState(bool isRed)
         {
-            if (isFootbridge)
+            if (trafficLight == null)
             {
                 return;
             }
@@ -146,28 +301,54 @@ namespace Landscape2.Maebashi.Runtime.Dashboard
         /// </summary>
         private void StartSpawning()
         {
-            spawnerSet.spawnerA?.StartSpawning();
-            spawnerSet.spawnerB?.StartSpawning();
+            foreach (var set in spawnerSetGroup)
+            {
+                StartSpawning(set);
+            }
+
+            void StartSpawning(in SpawnerSet set)
+            {
+                set.spawnerA?.StartSpawning();
+                set.spawnerB?.StartSpawning();
+            }
         }
 
         private void StopSpawning()
         {
-            spawnerSet.spawnerA?.StopSpawning();
-            spawnerSet.spawnerB?.StopSpawning();
+            foreach (var set in spawnerSetGroup)
+            {
+                StopSpawning(set);
+            }
+
+            void StopSpawning(in SpawnerSet set)
+            {
+                set.spawnerA?.StopSpawning();
+                set.spawnerB?.StopSpawning();
+            }
         }
 
-        private void GenerateSpawner(HumanAvatarPoolingSystem poolingSystem, out SpawnerSet res)
+        private void GenerateSpawner(HumanAvatarPoolingSystem poolingSystem, GameObject trackA, GameObject trackB, out SpawnerSet res)
         {
             var spawnerSet = new SpawnerSet();
-            
-            var spawnerA = trackA.AddComponent<HumanAvatarSpawner>();
-            spawnerA.Initialize(CalcSpawnerPosition(trackA), trackA.GetComponent<PlateauSandboxTrack>(), poolingSystem);
-            var spawnerB = trackB.AddComponent<HumanAvatarSpawner>();
-            spawnerB.Initialize(CalcSpawnerPosition(trackB), trackB.GetComponent<PlateauSandboxTrack>(), poolingSystem);
-
+            var spawnerA = InitializeSpawner(poolingSystem, trackA);
+            var spawnerB = InitializeSpawner(poolingSystem, trackB);
             spawnerSet = new SpawnerSet { spawnerA = spawnerA, spawnerB = spawnerB };
 
             res = spawnerSet;
+
+        }
+
+        private HumanAvatarSpawner InitializeSpawner(HumanAvatarPoolingSystem poolingSystem, GameObject track)
+        {
+            var spawner = track.GetComponent<HumanAvatarSpawner>();
+            if (spawner == null)
+            {
+                spawner = track.AddComponent<HumanAvatarSpawner>();
+            }
+            spawner.Initialize(
+                CalcSpawnerPosition(track), CalcEndPosition(track), track.GetComponent<PlateauSandboxTrack>(), poolingSystem, this);
+
+            return spawner;
         }
 
         private Vector3 CalcSpawnerPosition(GameObject track)
@@ -183,6 +364,19 @@ namespace Landscape2.Maebashi.Runtime.Dashboard
 
         }
 
+        private Vector3 CalcEndPosition(GameObject track)
+        {
+            SplineContainer splineContainer = track.GetComponent<SplineContainer>();
+            if (splineContainer == null)
+            {
+                Debug.LogError("SplineContainer is not found on this GameObject.");
+                return Vector3.zero;
+            }
+
+            return splineContainer.Spline.Knots.Last().Position;
+
+        }
+
         private void ReverseSpline(SplineContainer splineContainer)
         {
             if (splineContainer == null)
@@ -194,6 +388,7 @@ namespace Landscape2.Maebashi.Runtime.Dashboard
             Spline spline = splineContainer.Spline;
             splineContainer.ReverseFlow(0);
         }
+
     }
 
 }

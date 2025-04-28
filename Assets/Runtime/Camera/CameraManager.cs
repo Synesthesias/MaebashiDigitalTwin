@@ -52,7 +52,7 @@ namespace Landscape2.Maebashi.Runtime
             walkerCamVC.AddCinemachineComponent<CinemachineTransposer>();
             CinemachineInputProvider walkerCamInput = walkerCam.AddComponent<CinemachineInputProvider>();
 
-            var cameraMoveSpeedData = Resources.Load<CameraMoveData>("CameraMoveSpeedData");
+            var cameraMoveSpeedData = Resources.Load<CameraMoveData>("CameraMoveSpeedData_Slow");
             
             // 歩行者視点時カメラ回転の移動量補正
             var ia = new DefaultInputActions();
@@ -83,6 +83,14 @@ namespace Landscape2.Maebashi.Runtime
                 if (cameraMoveSpeedData != null)
                 {
                     CameraMoveByUserInput.UpdateCameraMoveSpeedData(cameraMoveSpeedData);
+                }
+                
+                // 特定の位置にカメラをセット
+                var cameraParent = GameObject.Find("CameraParent");
+                if (cameraParent != null)
+                {
+                    cameraParent.transform.position = new Vector3(-77.6360397f ,206.438171f, -778.114075f);
+                    cameraParent.transform.rotation = Quaternion.Euler(47.8f, -2.4f, 0f);
                 }
             });
         }
