@@ -200,4 +200,5 @@
 
 #Btn_Project {
     width: 100%;
+    border-radius: 0;
 }
