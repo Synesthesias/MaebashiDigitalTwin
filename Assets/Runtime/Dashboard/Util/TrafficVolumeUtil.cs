@@ -12,9 +12,10 @@ namespace Landscape2.Maebashi.Runtime.Util
         public const float MIN_SPAWN_INTERVAL = 2.0f;  // 最小スポーン間隔（秒）
         public const float MAX_SPAWN_INTERVAL = 30.0f; // 最大スポーン間隔（秒）
 
-        private const float BASE_SPEED = 5f; // 最小速度
-        private const float SPEED_INCREMENT = 5f; // 各範囲の速度増加量
-        private const float MAX_TRAFFIC_SPEED = 60f; // 最大速度
+        private const float MIN_SPEED = 5f;      // 最小速度 (km/h)
+        private const float MAX_SPEED = 40f;     // 最大速度 (km/h)
+        private const float MIN_TRAFFIC = 200f;  // 最小交通量の閾値
+        private const float MAX_TRAFFIC = 1200f; // 最大交通量の閾値
 
         /// <summary>
         /// 速度からスポーン間隔を計算します
@@ -24,7 +25,7 @@ namespace Landscape2.Maebashi.Runtime.Util
         public static float CalcSpawnInterval(float speed)
         {
             // 速度を0-1に正規化
-            float normalizedSpeed = Mathf.Clamp(speed, 0f, MAX_TRAFFIC_SPEED) / MAX_TRAFFIC_SPEED;
+            float normalizedSpeed = Mathf.Clamp(speed, 0f, MAX_SPEED) / MAX_SPEED;
             
             if (normalizedSpeed <= 0f) return 0f; // 速度0の場合はスポーンしない
 
@@ -42,14 +43,17 @@ namespace Landscape2.Maebashi.Runtime.Util
         /// <returns>速度（m/s）</returns>
         public static float CalculateTrafficSpeed(float trafficVolume)
         {
-            // 交通量を200で割り、範囲を決定
-            int rangeIndex = Math.Max(0, Math.Min(5, (int)(trafficVolume / 200)));
-
-            // 基本速度に範囲に応じた増加量を加算
-            float speed = BASE_SPEED + SPEED_INCREMENT * (5 - rangeIndex);
-
-            // 最大速度を超えないように制限し、m/sに変換して返す
-            return Math.Min(speed, MAX_TRAFFIC_SPEED) / 3.6f;
+            // 交通量を正規化（200-1200の範囲を0-1に変換）
+            float normalizedTraffic = Mathf.Clamp01((trafficVolume - MIN_TRAFFIC) / (MAX_TRAFFIC - MIN_TRAFFIC));
+            
+            // 正規化された値を反転（交通量が多いほど速度が遅くなる）
+            float speedFactor = 1f - normalizedTraffic;
+            
+            // 速度を計算（5-40 km/hの範囲）
+            float speed = Mathf.Lerp(MIN_SPEED, MAX_SPEED, speedFactor);
+            
+            // km/hからm/sに変換して返す
+            return speed / 3.6f;
         }
 
         /// <summary>

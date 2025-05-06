@@ -1,4 +1,5 @@
 ﻿using Landscape2.Maebashi.Runtime.Dashboard;
+using Landscape2.Runtime.UiCommon;
 using UnityEngine;
 using UnityEngine.UIElements;
 using TrafficSimulationTool.Runtime;
@@ -11,9 +12,12 @@ namespace Landscape2.Maebashi.Runtime
     {
         private RadioButtonGroup simulationGroup;
         private VisualElement root;
+        private VisualElement heatMapExample;
         private TrafficSimulationManager trafficSimulationManager;
         private FooterNaviUI footerNaviUI;
         private float timeValue;
+        
+        private const string HeatMapExampleViewName = "HeatMapExampleView";
         
         public DashboardPanelUI(VisualElement root, FooterNaviUI footerNaviUI, TrafficSimulationManager trafficSimulationManager)
         {
@@ -24,6 +28,8 @@ namespace Landscape2.Maebashi.Runtime
             var heatmapToggle = root.Q<Toggle>("HeatmapIcon");
             var carSimulationToggle = root.Q<Toggle>("CarSimulationIcon");
             var peopleSimulationToggle = root.Q<Toggle>("PeopleSimulationIcon");
+
+            CreateHeatmapExample();
             
             footerNaviUI.OnTimeChanged.AddListener((value) =>
             {
@@ -32,6 +38,31 @@ namespace Landscape2.Maebashi.Runtime
             });
             
             SetupToggleEvents();
+        }
+
+        private void CreateHeatmapExample()
+        {
+            heatMapExample = new UIDocumentFactory().CreateWithUxmlName(HeatMapExampleViewName);
+            var bar = heatMapExample.Q<VisualElement>("ExampleColorBar");
+            bar.style.backgroundImage = new StyleBackground(ColorManipulator.GenerateGradientTexture());
+            var heatMapGameObject = GameObject.Find(HeatMapExampleViewName);
+            if (heatMapGameObject != null)
+            {
+                var uiDocument = heatMapGameObject.GetComponent<UIDocument>();
+                if (uiDocument != null)
+                {
+                    uiDocument.sortingOrder = -1;
+                }
+                else
+                {
+                    Debug.LogWarning($"UIDocument component not found on GameObject '{HeatMapExampleViewName}'.");
+                }
+            }
+            else
+            {
+                Debug.LogWarning($"GameObject with name '{HeatMapExampleViewName}' not found.");
+            }
+            heatMapExample.Hide();
         }
 
         private void SetupToggleEvents()
@@ -64,6 +95,11 @@ namespace Landscape2.Maebashi.Runtime
                 if (isOn)
                 {
                     trafficSimulationManager.UpdateTimeline(timeValue);
+                    heatMapExample.Show();
+                }
+                else
+                {
+                    heatMapExample.Hide();
                 }
             }
             else
