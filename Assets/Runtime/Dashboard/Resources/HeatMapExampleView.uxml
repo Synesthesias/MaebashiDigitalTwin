@@ -1,5 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Packages/com.synesthesias.plateau-trafficsimulationtool/Runtime/UICommon/UIStyleCommon.uss?fileID=7433441132597879392&amp;guid=f234134ac601fd0499ed47fd31bcb2bb&amp;type=3#UIStyleCommon" />
+    <Style src="project://database/Packages/com.synesthesias.landscape-design-tool-2/Runtime/UICommon/UIStyleCommon.uss?fileID=7433441132597879392&amp;guid=5003ef441f4ce7e4881f663b95f4df1d&amp;type=3#UIStyleCommon" />
     <Style src="project://database/Assets/Runtime/Dashboard/Resources/Dashboard.uss?fileID=7433441132597879392&amp;guid=d1692197ce8bd4ab284a826703243b0c&amp;type=3#Dashboard" />
     <ui:VisualElement style="flex-grow: 1; width: 100%; height: 100%; align-items: flex-start; justify-content: flex-end;">
         <ui:VisualElement name="ExampleContainer" style="flex-grow: 0; height: 450px; width: 400px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-bottom: 16px; margin-left: 16px; justify-content: center; align-items: flex-start;">

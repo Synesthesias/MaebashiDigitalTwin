@@ -1565,56 +1565,200 @@ MonoBehaviour:
     m_SerializedLabels:
     - AssetsPicture
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 025898e5fef2f554e8c26a6a6a11bfe6
+  - m_GUID: 1909bda73b1834842908a9a511133877
     m_Address: KotoHouse_03
     m_ReadOnly: 0
     m_SerializedLabels:
     - AssetsPicture
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 90ad34563c2768e45af92d20ed42e100
+  - m_GUID: e4accb00b0be32a4fbcfca63368b95d3
     m_Address: KotoHouse_04
     m_ReadOnly: 0
     m_SerializedLabels:
     - AssetsPicture
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 1909bda73b1834842908a9a511133877
+  - m_GUID: 38136e58d99d27541bda094124d1ae43
     m_Address: KotoHouse_05
     m_ReadOnly: 0
     m_SerializedLabels:
     - AssetsPicture
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e4accb00b0be32a4fbcfca63368b95d3
+  - m_GUID: ffac3364ac7e6f6428bd0f046a1ac7e3
     m_Address: KotoHouse_06
     m_ReadOnly: 0
     m_SerializedLabels:
     - AssetsPicture
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 38136e58d99d27541bda094124d1ae43
-    m_Address: KotoHouse_07
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - AssetsPicture
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 921d606567039544baafdc320a435827
-    m_Address: KotoHouse_08
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - AssetsPicture
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ffac3364ac7e6f6428bd0f046a1ac7e3
-    m_Address: KotoHouse_09
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - AssetsPicture
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fa91c6d66df9e5940ba04a6b62c472a1
-    m_Address: KotoHouse_10
+    m_Address: KotoHouse_07
     m_ReadOnly: 0
     m_SerializedLabels:
     - AssetsPicture
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 18aee2592ede8d04d9e43b706df3a512
     m_Address: OfficeBuilding_01 1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 36add6b1b0eb54a47acbde855e07acff
+    m_Address: MB_bench_AA
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0bfe47659d39eb543b1a23c420edd571
+    m_Address: MB_bench_BA
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cd8ffe62ea84e8c4295a4c165d157089
+    m_Address: MB_busstop_AA
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d9028e03526f91d49a768ef2a5ba26b6
+    m_Address: MB_busstop_BA
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d49c287a1c9033541aaee09bb2fe407a
+    m_Address: MB_carpole_AA
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 142d2973d680529469070c0d21a65520
+    m_Address: MB_fence_AA
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bcb6e070b2239b94c89114b3ca685465
+    m_Address: MB_flowerbed
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7d621753668c90248931c427cdf2f2d1
+    m_Address: MB_guardrail_AA
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a88f4a1c0a0f9d64d917603173db3c0a
+    m_Address: MB_guardrail_BA
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c23ea86dc91d1d645ac70b3efae7ef5b
+    m_Address: MB_pine_A
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a8313a599d493fd4b82d37a9f4cd746e
+    m_Address: MB_pine_B
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d5b2de9219a40724797fcf5e7252b019
+    m_Address: MB_pine_C
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6fc63092473d7f14b82149e43ddf9119
+    m_Address: MB_roadsidetree_BA
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1223bad5c0a69f2449c1ceaaa2f575a8
+    m_Address: MB_roadsidetree_BB
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 88437ebe37f7dc14babd7a8974ac023f
+    m_Address: MB_roadsidetree_CA
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ed80bc4b9ee2638418aeb717c16fae3e
+    m_Address: MB_roadsidetree_DA
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 43656283e3e904a46a812142b9697dc2
+    m_Address: MB_roadsidetree_DB
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 953eeabf95796e149a7fc5bea64ae273
+    m_Address: MB_roadsidetree_DC
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 70c379b9399bc1146ba827a85a7838b9
+    m_Address: MB_roadsidetree_DD
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0d3705eadb6c31943a1dbc2ed9032358
+    m_Address: MB_roadsidetree_DE
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 87ba3d0a95d7786429d68ddbee06f88a
+    m_Address: MB_roadsidetree_DF
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 56618a0f4f9cd4e408a52cf5d2a3e849
+    m_Address: MB_roadsidetrees_AA
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 67090a5d7b61b714a855c42f64b571fd
+    m_Address: MB_roadsidetrees_AB
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5d7dec1b978f0a045a7ff64b12b5ce38
+    m_Address: MB_streetlight_AA
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f822f23b9d9efb44f8e22f6a6dbabeb0
+    m_Address: MB_streetlight_BA
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9ce1c23ebb124664185c4c749a9563f2
+    m_Address: MB_streetlight_CA
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0b6a0bcccb60e31489128e95580a5dff
+    m_Address: MB_trafficlight_AA
     m_ReadOnly: 0
     m_SerializedLabels:
     - AssetsPicture

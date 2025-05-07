@@ -7,6 +7,14 @@ using UnityEngine.UIElements;
 
 namespace Landscape2.Maebashi.Runtime
 {
+    public struct UxmlStyleMargin
+    {
+        public float top;
+        public float left;
+        public float right;
+        public float bottom;
+    }
+    
     public class UxmlHandler
     {
         private List<VisualElement> uxmls = new();
@@ -73,6 +81,27 @@ namespace Landscape2.Maebashi.Runtime
                 throw new ArgumentException("Invalid type: SubMenuUxmlType.Menu is not allowed.");
             }
             return GetUxml(type).IsVisible();
+        }
+        
+        /// <summary>
+        /// uxmlのマージンを調整
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="targetElementName"></param>
+        /// <param name="margin">上下左右のマージンをpixel単位で指定</param>
+        public void AdjustMargin(SubComponents.SubMenuUxmlType type, string targetElementName, UxmlStyleMargin margin)
+        {
+            var uxml = GetUxml(type);
+            var targetElement = uxml.Q(targetElementName);
+            if (targetElement == null)
+            {
+                Debug.LogError($"Target element '{targetElementName}' not found in UXML of type '{type}'.");
+                return;
+            }
+            targetElement.style.marginTop = margin.top;
+            targetElement.style.marginLeft = margin.left;
+            targetElement.style.marginRight = margin.right;
+            targetElement.style.marginBottom = margin.bottom;
         }
     }
 }

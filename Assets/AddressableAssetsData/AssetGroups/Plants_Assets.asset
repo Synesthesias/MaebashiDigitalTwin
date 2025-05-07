@@ -17,99 +17,197 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: f4c5bce889602457c98f7438149af1bd
   m_SerializeEntries:
-  - m_GUID: d0956e578713ebb449bd2f1ec511857c
-    m_Address: Plant_Yanagi_01
+  - m_GUID: 0abc4851320d15b4c8fb8d7ef2c39d9a
+    m_Address: MB_pine_A
     m_ReadOnly: 0
     m_SerializedLabels:
     - Plants_Assets
     - Plateau_Assets
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 1c84321de26ecad45a9e2a6d6c505950
-    m_Address: Plant_Tutuji_02
+  - m_GUID: 80cdc19d09742ab4ba6467d01949e155
+    m_Address: MB_pine_B
     m_ReadOnly: 0
     m_SerializedLabels:
     - Plants_Assets
     - Plateau_Assets
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 5b0bb0f609aafb64f80a9d1b72c20388
-    m_Address: Plant_Tutuji_01
+  - m_GUID: ef7e73aa7b44cb84ca73f603a0fdb3ee
+    m_Address: MB_roadsidetree_CA
     m_ReadOnly: 0
     m_SerializedLabels:
     - Plants_Assets
     - Plateau_Assets
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 59c27079ceb1da74090b2fd41c60ba95
-    m_Address: Plant_TreeSmall_01
+  - m_GUID: eb2690991d75e324ea465031df433750
+    m_Address: MB_roadsidetree_DD
     m_ReadOnly: 0
     m_SerializedLabels:
     - Plants_Assets
     - Plateau_Assets
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: cbd83346304e8a54c9f53c51fb3c960c
-    m_Address: Plant_TreeMedium_01
+  - m_GUID: 7aebf19b0ea7bb74ead110b18d8afb9d
+    m_Address: MB_roadsidetree_DB
     m_ReadOnly: 0
     m_SerializedLabels:
     - Plants_Assets
     - Plateau_Assets
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 791566c6b1873f04daabeb79d6caab73
-    m_Address: Plant_Sakura_01
+  - m_GUID: 35260c6b3232cfe4a805341147f3326b
+    m_Address: MB_roadsidetree_DC
     m_ReadOnly: 0
     m_SerializedLabels:
     - Plants_Assets
     - Plateau_Assets
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 28e12178cbb0c614b8b051df1a53d58b
-    m_Address: Plant_Planter_03
+  - m_GUID: 7e1b27869e432cc4bb2516b059653adb
+    m_Address: MB_roadsidetrees_AA
     m_ReadOnly: 0
     m_SerializedLabels:
     - Plants_Assets
     - Plateau_Assets
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c67bcd7917a6d6c499f8e5014af48fb7
-    m_Address: Plant_Planter_02
+  - m_GUID: 5f60ea185c02e794e867523f26bf291f
+    m_Address: MB_roadsidetree_BB
     m_ReadOnly: 0
     m_SerializedLabels:
     - Plants_Assets
     - Plateau_Assets
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: da8497383f6d44f4b8a845eb371af03a
-    m_Address: Plant_Planter_01
+  - m_GUID: e99ecf54866e51c4f91033b32b1a11b3
+    m_Address: MB_roadsidetree_DE
     m_ReadOnly: 0
     m_SerializedLabels:
     - Plants_Assets
     - Plateau_Assets
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e72be9c9f2fec774f90a8b20d2c90a07
-    m_Address: Plant_Keyaki_01
+  - m_GUID: b33ec5ca175359d468654d273bf254df
+    m_Address: MB_roadsidetree_DA
     m_ReadOnly: 0
     m_SerializedLabels:
     - Plants_Assets
     - Plateau_Assets
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 8d5f830a25f9f2e428bef99dd6fba7ec
-    m_Address: Plant_Ichou_01
+  - m_GUID: b8f5408c5856e0847898f54e538fde25
+    m_Address: MB_roadsidetrees_AB
     m_ReadOnly: 0
     m_SerializedLabels:
     - Plants_Assets
     - Plateau_Assets
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: b2bac819bcccb3f4397111ca2e195726
-    m_Address: Plant_Hedge_01
+  - m_GUID: 4d82249cfee493c478e6721a55064bed
+    m_Address: MB_roadsidetree_DF
     m_ReadOnly: 0
     m_SerializedLabels:
     - Plants_Assets
     - Plateau_Assets
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 12ffcf2a7b57ea9419b4cb5a07619bc3
+  - m_GUID: d180277e1078f3847b18443cef98a9c0
+    m_Address: MB_pine_C
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5862a2b051de9d5498f0a574aae6a4ae
+    m_Address: MB_roadsidetree_BA
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 786a3b9f8e608064abb386b495b39e65
+    m_Address: Plant_Abelia_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f78b133a50a9ccf46b24b5951b9ca08c
     m_Address: Plant_DeciduousTree_01
     m_ReadOnly: 0
     m_SerializedLabels:
     - Plants_Assets
     - Plateau_Assets
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 0ab9bbb32fbd56347b27f062130c9d69
-    m_Address: Plant_Abelia_01
+  - m_GUID: 88b077fe1c1905e448ac6b90a04f2276
+    m_Address: Plant_Hedge_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 289a6bcc2a1cc3b4c93622d6d6994706
+    m_Address: Plant_Ichou_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 21735e8a621a22041a291fb52a1e52e8
+    m_Address: Plant_Keyaki_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 23d61a30e71e6c642ac0904a2bd0a479
+    m_Address: Plant_Planter_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0e17726d5478638489d15d14f9cffd33
+    m_Address: Plant_Planter_02
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 56b5efa016cc9c344bd45c2f2d93bd60
+    m_Address: Plant_Planter_03
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ece05c0dd11a9694ca636e29f1f62158
+    m_Address: Plant_Sakura_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 17387247602942844b086660e963c00e
+    m_Address: Plant_TreeMedium_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 312b7031f162ba74aa4c61c169a794e8
+    m_Address: Plant_TreeSmall_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 84db97ac3f0ac2f44af6b9b217a80d95
+    m_Address: Plant_Tutuji_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fdcee8457a8c0964d85efc88a8c23e37
+    m_Address: Plant_Tutuji_02
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c4dbdf0d4eb34dd4f90ff14ae16a7ae1
+    m_Address: Plant_Yanagi_01
     m_ReadOnly: 0
     m_SerializedLabels:
     - Plants_Assets

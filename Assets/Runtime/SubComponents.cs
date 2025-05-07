@@ -82,6 +82,15 @@ namespace Landscape2.Maebashi.Runtime
             var uxmlHandler = new UxmlHandler();
             var globalNaviUI = new GlobalNaviUI(uxmlHandler, cameraManager.LandscapeCamera);
             var footerNaviUI = new FooterNaviUI(uxmlHandler, globalNaviUI, cameraManager.LandscapeCamera);
+
+            // 建物表示位置調整
+            uxmlHandler.AdjustMargin(SubMenuUxmlType.Asset, "EditBuildingArea", new UxmlStyleMargin()
+            {
+                top = 0,
+                left = 0,
+                right = 0,
+                bottom = 150, // 視点操作UIとかぶるので、位置を少し上にずらす
+            });
             
             var cameraAutoRotate = new CameraAutoRotate();
             var saveSystem = new SaveSystem(globalNaviUI.UiRoot);
@@ -162,11 +171,6 @@ namespace Landscape2.Maebashi.Runtime
                     footerNaviUI.UiRoot,
                     cameraManager.LandscapeCamera),
                 
-                // キャプチャ機能
-                
-                // テクスチャ切り替え
-                // new TextureSwitch(footerNaviUI.UiRoot),
-                //
                 // 歩行モード
                 new WalkerModeUI(
                     uxmlHandler.GetUxml(SubMenuUxmlType.WalkMode),

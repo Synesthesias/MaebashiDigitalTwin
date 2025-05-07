@@ -66,71 +66,50 @@ MonoBehaviour:
     - Buildings_Assets
     - Plateau_Assets
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 58a3e251af661a24094104301b67a5f1
-    m_Address: KotoHouse_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Buildings_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 0660308a49bed624697add9c4973861d
-    m_Address: KotoHouse_02
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Buildings_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: a17753df011ab664a9a5375fc5752c31
-    m_Address: KotoHouse_03
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Buildings_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 7307fd4be2408a040bb444317e3b2404
-    m_Address: KotoHouse_04
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Buildings_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 746a65e4adf4e8d499892b0a68b7ff0c
-    m_Address: KotoHouse_05
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Buildings_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 77530749449f24943b918b3b6811cabe
-    m_Address: KotoHouse_06
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Buildings_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 117901530790ac446b106c49e8ee4d2a
+  - m_GUID: 1e3f06fc91f7d4749a2ce9c6b5cffbf9
     m_Address: KotoHouse_07
     m_ReadOnly: 0
     m_SerializedLabels:
     - Buildings_Assets
     - Plateau_Assets
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 818157ae4be002140824f3177e8e332c
-    m_Address: KotoHouse_08
+  - m_GUID: 9e2207f3c40f7497e8c46fd55c07542e
+    m_Address: KotoHouse_06
     m_ReadOnly: 0
     m_SerializedLabels:
     - Buildings_Assets
     - Plateau_Assets
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 114f6e043bb3dbb4ea40f420419e5ef5
-    m_Address: KotoHouse_09
+  - m_GUID: 2bef52c309d8047cb93ca32668b41376
+    m_Address: KotoHouse_05
     m_ReadOnly: 0
     m_SerializedLabels:
     - Buildings_Assets
     - Plateau_Assets
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 5a356d9029cd19f4eaa9c75f275306ca
-    m_Address: KotoHouse_10
+  - m_GUID: e0ff7f3a7b35740268a4a1eda361aeb0
+    m_Address: KotoHouse_04
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Buildings_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ec1d4ba11448d476f9e782214b92e90d
+    m_Address: KotoHouse_03
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Buildings_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f2b923403d1ab4e919119e115a133ce4
+    m_Address: KotoHouse_02
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Buildings_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cfe79675a48124875b10f373abec81cf
+    m_Address: KotoHouse_01
     m_ReadOnly: 0
     m_SerializedLabels:
     - Buildings_Assets
