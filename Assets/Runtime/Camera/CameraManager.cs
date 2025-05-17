@@ -13,7 +13,7 @@ namespace Landscape2.Maebashi.Runtime
         public CameraPositionMemory CameraPositionMemory { get; private set; }
         public CameraMoveByUserInput CameraMoveByUserInput { get; private set; }
         
-        const int CAMERA_FARCLIP_VALUE = 4000;
+        const int CAMERA_FARCLIP_VALUE = 20000;
         
         public CameraManager()
         {
