@@ -6,6 +6,10 @@
             <ui:Label text="ダッシュボード" />
         </ui:VisualElement>
         <ui:VisualElement name="DashboardPanel" class="DashboardPanel gis-background-window">
+            <ui:VisualElement name="DateDropdownGroup" class="DashboardPanel__DateDropdownGroup">
+                <ui:Label text="日付" class="DashboardPanel__Label" />
+                <ui:DropdownField name="DateDropdown" choices="2025/01/09,2025/01/16" index="0" class="DashboardPanel__Dropdown" />
+            </ui:VisualElement>
             <ui:VisualElement name="SimulationGroup" class="DashboardPanel__SimulationGroup">
                 <ui:VisualElement name="HeatmapToggle" class="DashboardPanel__Button">
                     <ui:Label text="ヒートマップ" class="DashboardPanel__Label" />

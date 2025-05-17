@@ -37,7 +37,7 @@ namespace Landscape2.Maebashi.Runtime
                 trafficSimulationManager.UpdateBasedOnTime(timeValue);
             });
             
-            SetupToggleEvents();
+            SetupEvents();
         }
 
         private void CreateHeatmapExample()
@@ -65,12 +65,18 @@ namespace Landscape2.Maebashi.Runtime
             heatMapExample.Hide();
         }
 
-        private void SetupToggleEvents()
+        private void SetupEvents()
         {
+            var dateDropdown = root.Q<DropdownField>("DateDropdown");
             var heatmapToggle = root.Q<Toggle>("HeatmapIcon");
             var carSimulationToggle = root.Q<Toggle>("CarSimulationIcon");
             var peopleSimulationToggle = root.Q<Toggle>("PeopleSimulationIcon");
 
+            dateDropdown.RegisterValueChangedCallback(evt =>
+            {
+                // TODO: 日付切り替え
+            });
+            
             heatmapToggle.RegisterValueChangedCallback(evt =>
             {
                 OnHeatmapToggleChanged(evt.newValue);

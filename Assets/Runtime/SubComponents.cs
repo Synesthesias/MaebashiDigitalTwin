@@ -176,6 +176,10 @@ namespace Landscape2.Maebashi.Runtime
                     uxmlHandler.GetUxml(SubMenuUxmlType.WalkMode),
                     cameraManager.LandscapeCamera,
                     cameraManager.WalkerMoveByUserInput),
+                
+                // 見通し解析
+                new LineOfSight(saveSystem,
+                    uxmlHandler.GetUxml(SubMenuUxmlType.Analytics)),
             };
         }
         

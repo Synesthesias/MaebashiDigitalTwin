@@ -48,3 +48,11 @@
 .DashboardPanel__Icon .unity-toggle__checkmark {
     display: none;
 }
+
+.DashboardPanel__DateDropdownGroup {
+    margin-bottom: 16px;
+}
+
+.DashboardPanel__DateLabel {
+    -unity-text-align: upper-right;
+}

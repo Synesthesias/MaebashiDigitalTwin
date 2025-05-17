@@ -135,6 +135,17 @@ namespace Landscape2.Maebashi.Runtime
                 uxmlHandler.Show(SubComponents.SubMenuUxmlType.Gis);
                 onChangeView.Invoke(SubComponents.SubMenuUxmlType.Gis);
             });
+            
+            UiRoot.Q<RadioButton>("MenuLineOfSight").RegisterCallback<ChangeEvent<bool>>((evt) =>
+            {
+                if (!evt.newValue)
+                {
+                    return;
+                }
+                HideAll();
+                uxmlHandler.Show(SubComponents.SubMenuUxmlType.Analytics);
+                onChangeView.Invoke(SubComponents.SubMenuUxmlType.Analytics);
+            });
         }
 
         private void HideAll()
