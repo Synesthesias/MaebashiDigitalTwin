@@ -68,7 +68,8 @@ namespace Landscape2.Maebashi.Runtime
         private void LoadCityScene()
         {
             // 分割した街用のシーンをロード
-            SceneManager.LoadScene("Maebashi_City", LoadSceneMode.Additive);
+            SceneManager.LoadScene("Maebashi_City_Buildings", LoadSceneMode.Additive);
+            SceneManager.LoadScene("Maebashi_City_Road", LoadSceneMode.Additive);
         }
 
         /// <summary>
