@@ -7,9 +7,12 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/Maebashi.unity
-    guid: b37ad349d88e855419a4a91f55b8e1c0
+    guid: 4916a3bd07f787f4dae7b81e978cfc1f
   - enabled: 1
-    path: Assets/Scenes/Maebashi_City.unity
-    guid: a2bc19a4a8ea4944194c4743204a3f9d
+    path: Assets/Scenes/Maebashi_City_Buildings.unity
+    guid: cc5c2cd4c86cf134e99d886e1332586b
+  - enabled: 1
+    path: Assets/Scenes/Maebashi_City_Road.unity
+    guid: cc5e5930cc4cef84481108f280cd8aaa
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 7e0538278070a484994f5518e56e3480, type: 2}
