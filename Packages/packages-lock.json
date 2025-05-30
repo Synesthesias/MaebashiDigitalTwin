@@ -8,7 +8,7 @@
       "url": "https://packages.unity.com"
     },
     "com.cesium.unity": {
-      "version": "file:com.cesium.unity-1.6.3.tgz",
+      "version": "file:com.cesium.unity-1.7.1.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {
