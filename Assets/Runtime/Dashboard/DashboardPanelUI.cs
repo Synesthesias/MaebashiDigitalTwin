@@ -74,9 +74,10 @@ namespace Landscape2.Maebashi.Runtime
 
             dateDropdown.RegisterValueChangedCallback(evt =>
             {
-                // TODO: 日付切り替え
+                var index = dateDropdown.choices.IndexOf(evt.newValue);
+                OnChangeDate(index);
             });
-            
+
             heatmapToggle.RegisterValueChangedCallback(evt =>
             {
                 OnHeatmapToggleChanged(evt.newValue);
@@ -122,6 +123,11 @@ namespace Landscape2.Maebashi.Runtime
         private void OnPeopleSimulationToggleChanged(bool isOn)
         {
             trafficSimulationManager.HumanFlowSystemBridge.Activate(isOn);
+        }
+
+        private void OnChangeDate(int newDateIndex)
+        {
+            trafficSimulationManager.UpdateDate(newDateIndex, timeValue);
         }
     }
 } 

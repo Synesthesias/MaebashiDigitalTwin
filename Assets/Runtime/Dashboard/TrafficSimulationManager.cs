@@ -38,6 +38,12 @@ namespace Landscape2.Maebashi.Runtime
         private TrafficCarSimulationManager carSimulationManager;
         public TrafficCarSimulationManager CarSimulationManager => carSimulationManager;
         
+        private Dictionary<int, List<RoadIndicator>> roadDataDictionary = new ();
+        private Dictionary<int, List<VehicleTimeline>> vehicleDataDictionary = new ();
+        
+        // 現在選択中のdateID
+        private int currentDateID = 0;
+
         public TrafficSimulationManager(GameObject gameObject, SimRoadNetworkManager roadNetworkManager, PLATEAUInstancedCityModel cityModel, TrafficSystemMediatorForHumanFlow humanFlowSystemBridge)
         {
             this.gameObject = gameObject ?? throw new ArgumentNullException(nameof(gameObject));
@@ -91,14 +97,38 @@ namespace Landscape2.Maebashi.Runtime
             try
             {
                 // CSVデータのロード
-                var (trafficData, vehicleData) = LoadCsvData();
-                if (trafficData == null || vehicleData == null)
+                var dataLoader = new SimulationDataLoader();
+
+                // 交通データの読み込み
+                for (int dateID = 0; dateID <= 1; dateID++)
                 {
-                    return;
+                    var trafficData = dataLoader.LoadTrafficData(dateID);
+                    if (trafficData != null && trafficData.Any())
+                    {
+                        roadDataDictionary[dateID] = trafficData;
+                    }
+                    else
+                    {
+                        Debug.LogWarning($"交通データの読み込みに失敗しました: dateID={dateID}");
+                    }
+                }
+
+                // 車両データの読み込み
+                for (int dateID = 0; dateID <= 1; dateID++)
+                {
+                    var vehicleData = dataLoader.LoadVehicleData(dateID);
+                    if (vehicleData != null && vehicleData.Any())
+                    {
+                        vehicleDataDictionary[dateID] = vehicleData;
+                    }
+                    else
+                    {
+                        Debug.LogWarning($"車両データの読み込みに失敗しました: dateID={dateID}");
+                    }
                 }
 
                 // データセットの初期化と登録
-                await InitializeDataSets(trafficData, vehicleData);
+                await InitializeDataSets(roadDataDictionary[currentDateID], vehicleDataDictionary[currentDateID]);
             }
             catch (Exception ex)
             {
@@ -107,29 +137,6 @@ namespace Landscape2.Maebashi.Runtime
             }
 
             DebugLogger.Log(10, $"InitializeData Finish {sw.GetTimeSeconds()}", "green");
-        }
-
-        private (List<RoadIndicator> trafficData, List<VehicleTimeline> vehicleData) LoadCsvData()
-        {
-            // 交通データの読み込み
-            var trafficDataLoader = new TrafficDataLoader();
-            var trafficData = trafficDataLoader.LoadTrafficData();
-            if (trafficData == null || !trafficData.Any())
-            {
-                Debug.LogError("交通データの読み込みに失敗しました。");
-                return (null, null);
-            }
-
-            // 車両データの読み込み
-            var vehicleDataLoader = new VehicleDataLoader();
-            var vehicleData = vehicleDataLoader.LoadVehicleData();
-            if (vehicleData == null || !vehicleData.Any())
-            {
-                Debug.LogError("車両データの読み込みに失敗しました。");
-                return (null, null);
-            }
-
-            return (trafficData, vehicleData);
         }
 
         private async Task InitializeDataSets(List<RoadIndicator> trafficData, List<VehicleTimeline> vehicleData)
@@ -150,13 +157,16 @@ namespace Landscape2.Maebashi.Runtime
                 carSimulationManager.SetTrafficData(trafficData);
 
                 // GeoReferenceを使用してデータセットを初期化
-                var success = await dataManager.CurrentDataSets?.Initialize(FPS, cityModel.GeoReference);
-                if (!success)
+                if (!dataManager.CurrentDataSets.Initialized)
                 {
-                    Debug.LogError("データセットの初期化に失敗しました。");
-                    return;
+                    var success = await dataManager.CurrentDataSets?.Initialize(FPS, cityModel.GeoReference)!;
+                    if (!success)
+                    {
+                        Debug.LogError("データセットの初期化に失敗しました。");
+                        return;
+                    }
                 }
-                
+
                 // 各シミュレーターにデータを設定
                 ConfigureSimulators(roadIndicatorDataSet, vehicleTimelineDataSet);
                 
@@ -196,6 +206,26 @@ namespace Landscape2.Maebashi.Runtime
         public void UpdateTimeline(float newValue)
         {
             timelineManager?.Move(newValue);
+        }
+
+        public void UpdateDate(int dateID, float timeValue)
+        {
+            humanFlowSystemBridge?.SetDateId(dateID);
+            _ = SwitchDataByDateID(dateID, timeValue);
+        }
+
+        private async Task SwitchDataByDateID(int dateID, float timeValue)
+        {
+            if (!roadDataDictionary.ContainsKey(dateID) || !vehicleDataDictionary.ContainsKey(dateID))
+            {
+                Debug.LogWarning($"指定されたdateIDのデータが存在しません: dateID={dateID}");
+                return;
+            }
+            currentDateID = dateID;
+            // データセットの再初期化
+            await InitializeDataSets(roadDataDictionary[dateID], vehicleDataDictionary[dateID]);
+
+            UpdateBasedOnTime(timeValue);
         }
     }
 } 

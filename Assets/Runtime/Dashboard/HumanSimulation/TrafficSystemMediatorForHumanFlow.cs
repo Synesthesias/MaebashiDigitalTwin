@@ -73,11 +73,12 @@ namespace Landscape2.Maebashi.Runtime.Dashboard
                 currentDebugStop = isDebugStop;
                 humanFlowMainSystem.Debug_SetSignalState(isDebugStop);
             }
-
         }
-
-
+        
+        public void SetDateId(int dataID)
+        {
+            this.dataId = dataID;
+        }
     }
-
 }
 
