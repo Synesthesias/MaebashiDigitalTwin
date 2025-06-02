@@ -1,0 +1,21 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns="UnityEngine.UIElements">
+  <Style src="project://database/Packages/com.synesthesias.landscape-design-tool-2/Runtime/UICommon/UIStyleCommon.uss?fileID=7433441132597879392&amp;guid=5003ef441f4ce7e4881f663b95f4df1d&amp;type=3#UIStyleCommon" />
+  <Style src="project://database/Assets/Runtime/UICommon/GlobalNavi/GlobalNavi.uss?fileID=7433441132597879392&amp;guid=7f744a1dca794699b14c528326ec1519&amp;type=3#GlobalNavi" />
+  <Style src="project://database/Assets/Runtime/BuildingHeightAdjust/BuildingHeightAdjustUI.uss" />
+
+  <ui:VisualElement name="BuildingHeightAdjustRoot" class="building-height-adjust-root">
+    <ui:Label name="HeightLabel" class="height-label" text="建物高さ調整" />
+    <ui:VisualElement class="height-row">
+      <ui:TextField name="HeightInput" class="height-input" value="0.0" />
+      <ui:Label class="unit-label" text="m" />
+      <ui:VisualElement class="button-column">
+        <ui:Button name="IncreaseButton" class="increase-button">
+          <ui:VisualElement name="Icon_Up" class="icon-up" />
+        </ui:Button>
+        <ui:Button name="DecreaseButton" class="decrease-button">
+          <ui:VisualElement name="Icon_Down" class="icon-down" />
+        </ui:Button>
+      </ui:VisualElement>
+    </ui:VisualElement>
+  </ui:VisualElement>
+</ui:UXML> 

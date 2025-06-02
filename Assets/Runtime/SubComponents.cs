@@ -181,6 +181,9 @@ namespace Landscape2.Maebashi.Runtime
                 // 見通し解析
                 new LineOfSight(saveSystem,
                     uxmlHandler.GetUxml(SubMenuUxmlType.Analytics)),
+                
+                // 建物高さ編集
+                new BuildingHeightAdjustUI(uxmlHandler),
             };
         }
         

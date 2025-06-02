@@ -1,0 +1,72 @@
+/* BuildingHeightAdjustUI 専用スタイル */
+
+.building-height-adjust-root {
+    background-color: var(--Color-Green-Trasparent);
+    border-radius: 8px;
+    width: 140px;
+    padding: 8px;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+}
+
+.height-label {
+    color: white;
+    font-weight: bold;
+    margin-bottom: 8px;
+    unity-font-style: bold;
+}
+
+.height-row {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.height-input {
+    width: 48px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.button-column {
+    flex-direction: column;
+    justify-content: center;
+}
+
+.increase-button, .decrease-button {
+    width: 24px;
+    height: 24px;
+    background-color: rgba(188, 188, 188, 0.24);
+    border-radius: 4px;
+    padding: 0;
+    margin: 0;
+}
+
+.increase-button {
+    margin-bottom: 5px;
+}
+
+.icon-up, .icon-down {
+    flex-grow: 1;
+    width: 22px;
+    height: 22px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.icon-up {
+    background-image: resource("icon_arrow-up");
+}
+.icon-down {
+    background-image: resource("icon_arrow-back");
+}
+
+.unit-label {
+    color: #fff;
+    font-size: 14px;
+    margin-right: 8px;
+    margin-left: -4px;
+    align-self: flex-end;
+} 
