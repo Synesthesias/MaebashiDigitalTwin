@@ -1,6 +1,7 @@
 using Cinemachine;
 using Landscape2.Runtime;
 using Landscape2.Runtime.CameraPositionMemory;
+using StarterAssets;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -34,18 +35,15 @@ namespace Landscape2.Maebashi.Runtime
             mainCamVC.m_Lens.FarClipPlane = CAMERA_FARCLIP_VALUE;
 
             //歩行者視点用のオブジェクトの生成と設定
-            GameObject walker = new GameObject("Walker");
-            CharacterController characterController = walker.AddComponent<CharacterController>();
-            characterController.slopeLimit = 90;
-            characterController.stepOffset = 0.3f;
-            characterController.skinWidth = 0.05f;
-
+            var walkerPrefab = Resources.Load<GameObject>("PlayerArmature_HDRP");
+            var walker = GameObject.Instantiate(walkerPrefab);
+            
             //歩行者視点用のカメラの生成と設定
             GameObject walkerCam = new GameObject("WalkerCamera");
             CinemachineVirtualCamera walkerCamVC = walkerCam.AddComponent<CinemachineVirtualCamera>();
             walkerCamVC.m_Lens.FieldOfView = 60;
             walkerCamVC.m_Lens.NearClipPlane = 0.3f;
-
+            
             walkerCamVC.m_Lens.FarClipPlane = CAMERA_FARCLIP_VALUE;
             walkerCamVC.Priority = 9;
             walkerCamVC.m_StandbyUpdate = CinemachineVirtualCameraBase.StandbyUpdateMode.Never;
@@ -71,10 +69,12 @@ namespace Landscape2.Maebashi.Runtime
             walkerCam.SetActive(false);
             walkerCam.SetActive(true);
             walkerCamVC.Follow = walker.transform;
+            var transposer = walkerCamVC.GetCinemachineComponent<CinemachineTransposer>();
+            transposer.m_FollowOffset = new Vector3(0, 2, -4); // 高さ2、後方に4ユニット
 
             LandscapeCamera = new LandscapeCamera(mainCamVC, walkerCamVC, walker);
             WalkerMoveByUserInput = new WalkerMoveByUserInput(walkerCamVC, walker);
-            CameraPositionMemory = new CameraPositionMemory(mainCamVC, walkerCamVC, LandscapeCamera);
+            CameraPositionMemory = new CameraPositionMemory(mainCamVC, walkerCamVC, LandscapeCamera, 4.0f);
             CameraMoveByUserInput = new CameraMoveByUserInput(mainCamVC);
             
             // CameraMoveByUserInputのStart完了イベントを購読
@@ -93,6 +93,24 @@ namespace Landscape2.Maebashi.Runtime
                     cameraParent.transform.rotation = Quaternion.Euler(47.8f, -2.4f, 0f);
                 }
             });
+            
+            // プレイヤーの ThirdPersonController を取得
+            ThirdPersonController controller = walker.GetComponent<ThirdPersonController>();
+            if (controller != null)
+            {
+                LandscapeCamera.OnSetCameraCalled += () =>
+                {
+                    if (LandscapeCamera.cameraState == LandscapeCameraState.Walker)
+                    {
+                        controller.SetViewMode(ThirdPersonController.ViewMode.Pedestrian);
+                    }
+                    else
+                    {
+                        controller.SetViewMode(ThirdPersonController.ViewMode.Overhead);
+                    }
+                };
+                controller.SetViewMode(ThirdPersonController.ViewMode.Overhead);
+            }
         }
     }
 }
