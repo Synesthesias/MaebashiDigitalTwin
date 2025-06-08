@@ -9,8 +9,8 @@ namespace Landscape2.Maebashi.Runtime
         public float MinHeight = 1.0f;
         public float MaxHeight = 1000.0f;
         public float BaseHeight = 1.0f;
-        
-        private float DefaultGroundLevel = 101.5f;
+        private const float ParentTransformOffset = 0.5f;
+        private const float DefaultGroundLevel = 101.5f;
 
         private float originalY;
         private float originalScaleY;
@@ -56,15 +56,20 @@ namespace Landscape2.Maebashi.Runtime
             trsEditing.SetScale(scale);
 
             // メッシュの底辺を地面（Layer 31: Ground）に合わせる
-            var meshFilter = targetBuilding.GetComponent<MeshFilter>();
+            if (trsEditing.EditingObject == null)
+            {
+                Debug.LogWarning("EditingObject is null. Skipping mesh adjustment.");
+                return;
+            }
+            
+            // Retrieve the MeshFilter component from EditingObject.
+            // Assumes that EditingObject is expected to have a MeshFilter component.
+            var meshFilter = trsEditing.EditingObject.GetComponent<MeshFilter>();
             if (meshFilter != null && meshFilter.sharedMesh != null)
             {
-                var mesh = meshFilter.sharedMesh;
-                var bounds = mesh.bounds;
-                // ローカル空間での底辺中心
-                Vector3 localBottomCenter = new Vector3(bounds.center.x, bounds.min.y, bounds.center.z);
-                // ワールド座標に変換
-                Vector3 bottomCenter = targetBuilding.transform.TransformPoint(localBottomCenter);
+                var renderer = meshFilter.GetComponent<Renderer>();
+                var bounds = renderer.bounds;
+                Vector3 bottomCenter = new Vector3(bounds.center.x, bounds.min.y, bounds.center.z);
                 float worldMinY = bottomCenter.y;
                 float groundY = DefaultGroundLevel;
                 
@@ -78,8 +83,8 @@ namespace Landscape2.Maebashi.Runtime
                 {
                     groundY = hitInfo.point.y;
                 }
-                
                 float offsetY = groundY - worldMinY;
+                offsetY += ParentTransformOffset; // 親のTransformの位置を考慮して少し上げる
                 Vector3 pos = targetBuilding.transform.position;
                 pos.y += offsetY;
                 trsEditing.SetPosition(pos);
