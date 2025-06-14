@@ -100,6 +100,10 @@ namespace Landscape2.Maebashi.Runtime
             var spawnSettings = new List<RouteTrafficSimulatorConfiguration>();
             foreach (var trafficLane in spawnLaneData.TrafficLanes)
             {
+                if (trafficLane.trafficVolume <= 0)
+                {
+                    continue;
+                }
                 var spawnSetting = new RouteTrafficSimulatorConfiguration
                 {
                     npcPrefabs = spawnLaneData.VehiclePrefabs,

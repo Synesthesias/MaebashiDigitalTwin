@@ -191,7 +191,11 @@ namespace StarterAssets
                 CameraRotation();
                 AdjustCameraTargetDistance();
             }
-            else if (CurrentViewMode == ViewMode.Overhead)
+        }
+
+        public void OnCameraMoved()
+        {
+            if (CurrentViewMode == ViewMode.Overhead)
             {
                 OverheadMovePlayerToCameraFront();
             }
