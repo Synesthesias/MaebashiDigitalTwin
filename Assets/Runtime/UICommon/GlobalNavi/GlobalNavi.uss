@@ -50,6 +50,7 @@
 
 .MenuRadioButton .unity-radio-button__checkmark-background {
     margin-right: 8px;
+    border-radius: 0;
 }
 
 .MenuInDropdown #DropdownArrow {
