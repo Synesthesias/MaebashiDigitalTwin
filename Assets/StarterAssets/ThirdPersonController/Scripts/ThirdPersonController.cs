@@ -458,7 +458,7 @@ namespace StarterAssets
 
                 Vector3 rayOrigin = _mainCamera.transform.position;
                 Vector3 rayDirection = _mainCamera.transform.forward;
-                float rayDistance = 100f;
+                float rayDistance = 1000f;
 
                 RaycastHit hit;
                 if (Physics.Raycast(rayOrigin, rayDirection, out hit, rayDistance))
