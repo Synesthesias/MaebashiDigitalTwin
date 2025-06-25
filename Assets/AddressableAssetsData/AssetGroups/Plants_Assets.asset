@@ -213,6 +213,202 @@ MonoBehaviour:
     - Plants_Assets
     - Plateau_Assets
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e7cc15e7dccb3514cad649896a4e4f4b
+    m_Address: MB_pine_A
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aa5b6be874ee33c4ca130a5a6d7cc4ef
+    m_Address: MB_pine_B
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6524808ce2ea5ef4db253724acd6ba95
+    m_Address: MB_pine_C
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 52b72fb47ce4c984e83993723a6f8ab7
+    m_Address: MB_roadsidetree_BA
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 18be2a15ba20af347a0bc223f228a7d7
+    m_Address: MB_roadsidetree_BB
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 98509d590da20554f929f4c26ac49119
+    m_Address: MB_roadsidetree_CA
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3afff7ce14db0f0469c6f663e7cf494f
+    m_Address: MB_roadsidetree_DA
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7f786f36e6320504c8451ba8ebb308be
+    m_Address: MB_roadsidetree_DB
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 10a622ce272c345408cbec2233d91e28
+    m_Address: MB_roadsidetree_DC
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 96d10a33c22f0b74d95f070f9f14e530
+    m_Address: MB_roadsidetree_DD
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 78bc07b3906d75f4b8e9c56fb3879b17
+    m_Address: MB_roadsidetree_DE
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: af7b7dc5b674e20418920f29a47e7024
+    m_Address: MB_roadsidetree_DF
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 80f9950bde92051419c8e519d40c05f7
+    m_Address: MB_roadsidetrees_AA
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7b6ed7b51b580444880dcb810f0bf583
+    m_Address: MB_roadsidetrees_AB
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 359c3f897560a0947853c5b761dade55
+    m_Address: Plant_Abelia_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 150ee61173435eb419eb675fc75704e7
+    m_Address: Plant_DeciduousTree_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3a39453b42cad53418a8fa60e9ca22ba
+    m_Address: Plant_Hedge_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3016931cc6292a642bfe88bb0003f5ff
+    m_Address: Plant_Ichou_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ddabece9b53fdca48837c13478f158c1
+    m_Address: Plant_Keyaki_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eedba4a5232640f4ab4040f08153e462
+    m_Address: Plant_Planter_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dc65ab2f9324a3948916995d15e1d919
+    m_Address: Plant_Planter_02
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: def577efc73b6464ea25fe8cedc24b9c
+    m_Address: Plant_Planter_03
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c224bd7ad5f65a2448ad5ce39bb2ca80
+    m_Address: Plant_Sakura_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3e2db3cb8c74e424885686f239116838
+    m_Address: Plant_TreeMedium_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a88c6a265a1aa074687a56e7652f6592
+    m_Address: Plant_TreeSmall_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 17398c15cb00eb54b991dd2070689e0f
+    m_Address: Plant_Tutuji_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 71d9673c094fd734db32f05b447f00d9
+    m_Address: Plant_Tutuji_02
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cae67dc9030451d4cb6a0d08957a31a2
+    m_Address: Plant_Yanagi_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Plants_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 917cb777ddfc5524ab90ba4e46938c20, type: 2}
   m_SchemaSet:
