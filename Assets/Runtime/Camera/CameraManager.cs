@@ -80,7 +80,7 @@ namespace Landscape2.Maebashi.Runtime
             transposer.m_FollowOffset = new Vector3(0, 2, -4); // 高さ2、後方に4ユニット
 
             LandscapeCamera = new LandscapeCamera(mainCamVC, walkerCamVC, walker);
-            WalkerMoveByUserInput = new WalkerMoveByUserInput(walkerCamVC, walker);
+            WalkerMoveByUserInput = new WalkerMoveByUserInput(walkerCamVC, walker, false);
             CameraPositionMemory = new CameraPositionMemory(mainCamVC, walkerCamVC, LandscapeCamera, 4.0f);
             CameraMoveByUserInput = new CameraMoveByUserInput(mainCamVC);
             
