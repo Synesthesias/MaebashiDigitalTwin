@@ -5,16 +5,16 @@
     <ui:VisualElement style="flex-grow: 1; width: 100%; height: 100%; align-items: flex-start; justify-content: flex-end;">
         <ui:VisualElement name="ExampleContainer" style="flex-grow: 0; height: 450px; width: 400px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-bottom: 16px; margin-left: 16px; justify-content: center; align-items: flex-start;">
             <ui:VisualElement style="flex-grow: 1; border-top-left-radius: 12px; border-top-right-radius: 12px; border-bottom-right-radius: 12px; border-bottom-left-radius: 12px; background-color: rgba(0, 0, 0, 0.72); padding-top: 16px; padding-right: 16px; padding-bottom: 16px; padding-left: 16px;">
-                <ui:Label tabindex="-1" text="道路指標値凡例" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-font-style: bold; font-size: 16px;" />
-                <ui:Label tabindex="-1" text="交通量" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-font-style: bold; font-size: 16px;" />
+                <ui:Label tabindex="-1" text="道路指標値凡例" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 16px;" />
+                <ui:Label tabindex="-1" text="交通量" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 16px;" />
                 <ui:VisualElement style="flex-grow: 1; align-items: stretch; flex-direction: row;">
                     <ui:VisualElement name="ExampleColorBar" style="flex-grow: 0; width: 22px; height: 320px; flex-shrink: 0;" />
                     <ui:VisualElement name="ExampleThreshold" style="flex-grow: 1; justify-content: space-between; height: 320px; margin-left: 16px;">
-                        <ui:Label tabindex="-1" text="1200台" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 16px; -unity-font-style: bold;" />
-                        <ui:Label tabindex="-1" text="950台" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 16px; -unity-font-style: bold;" />
-                        <ui:Label tabindex="-1" text="700台" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 16px; -unity-font-style: bold;" />
-                        <ui:Label tabindex="-1" text="450台" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 16px; -unity-font-style: bold;" />
-                        <ui:Label tabindex="-1" text="200台" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 16px; -unity-font-style: bold;" />
+                        <ui:Label tabindex="-1" text="1200台" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 16px;" />
+                        <ui:Label tabindex="-1" text="950台" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 16px;" />
+                        <ui:Label tabindex="-1" text="700台" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 16px;" />
+                        <ui:Label tabindex="-1" text="450台" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 16px;" />
+                        <ui:Label tabindex="-1" text="200台" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 16px;" />
                     </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>

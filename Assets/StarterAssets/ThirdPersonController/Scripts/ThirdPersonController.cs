@@ -116,6 +116,7 @@ namespace StarterAssets
 
         private Vector2 _lastInputMove = Vector2.zero;
         private Vector2 _lastCameraPositionXZ = Vector2.zero;
+        private float _cameraDistanceThreshold = 0.1f; // カメラ移動の閾値
 
         public enum ViewMode
         {
@@ -290,17 +291,18 @@ namespace StarterAssets
             // if there is a move input rotate player when the player is moving
             if (_input.move != Vector2.zero)
             {
-                // カメラのY軸回転を目標回転とする
-                float targetYaw = _mainCamera.transform.eulerAngles.y;
-                float currentYaw = transform.eulerAngles.y;
-                // スムーズに追従（RotationSmoothTimeは既存の値を利用）
-                float smoothYaw = Mathf.SmoothDampAngle(currentYaw, targetYaw, ref _rotationVelocity, RotationSmoothTime);
-                // キャラクターの回転を更新
-                transform.rotation = Quaternion.Euler(0.0f, smoothYaw, 0.0f);
-                // _targetRotationも更新しておく（移動方向計算用）
-                _targetRotation = smoothYaw;
+                // カメラの向きに基づいて移動方向を計算
+                _targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg + _mainCamera.transform.eulerAngles.y;
+            }
+            else
+            {
+                // 移動入力がない場合でも、カメラの向きにプレイヤーを向かせる
+                _targetRotation = _mainCamera.transform.eulerAngles.y;
             }
 
+            // プレイヤーの回転を常に更新（移動入力の有無に関わらず）
+            float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetRotation, ref _rotationVelocity, RotationSmoothTime);
+            transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
 
             Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
 
@@ -444,14 +446,16 @@ namespace StarterAssets
             CinemachineCameraTarget.transform.localPosition = new Vector3(localPos.x, localPos.y, newZ);
         }
 
-        // 俯瞰モード時にカメラのforward方向にRayを飛ばし、地面に当たった位置にプレイヤーを移動（移動入力が変化したときのみRaycast）
+        // 俯瞰モード時にカメラのforward方向にRayを飛ばし、地面に当たった位置にプレイヤーを移動
         private void OverheadMovePlayerToCameraFront()
         {
             if (_mainCamera == null) return;
 
             Vector2 currentCameraPositionXZ = new Vector2(_mainCamera.transform.position.x, _mainCamera.transform.position.z);
-            // 移動入力またはカメラ位置(xz)が変化したときだけRaycast
-            if (_input.move != _lastInputMove || currentCameraPositionXZ != _lastCameraPositionXZ)
+            float cameraMovementDistance = Vector2.Distance(currentCameraPositionXZ, _lastCameraPositionXZ);
+            
+            // 移動入力が変化したか、カメラが閾値以上移動したときRaycast
+            if (_input.move != _lastInputMove || cameraMovementDistance > _cameraDistanceThreshold)
             {
                 _lastInputMove = _input.move;
                 _lastCameraPositionXZ = currentCameraPositionXZ;
@@ -461,14 +465,18 @@ namespace StarterAssets
                 float rayDistance = 1000f;
 
                 RaycastHit hit;
-                if (Physics.Raycast(rayOrigin, rayDirection, out hit, rayDistance))
+                if (Physics.Raycast(rayOrigin, rayDirection, out hit, rayDistance, GroundLayers))
                 {
-                    Vector3 targetPos = hit.point;
-                    // Lerpで滑らかに移動
-                    transform.position = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * 10f);
+                    // 地面の上に適切な高さでプレイヤーを配置（俯瞰モード用）
+                    Vector3 targetPos = hit.point + Vector3.up * (GroundedRadius * 0.5f);
+                    
+                    // カメラの移動距離に応じて補間速度を調整（高速移動時は追従を早める）
+                    float lerpSpeed = cameraMovementDistance > 5.0f ? 25.0f : 10.0f;
+                    transform.position = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * lerpSpeed);
 
                     float targetYaw = _mainCamera.transform.eulerAngles.y;
-                    float smoothYaw = Mathf.LerpAngle(transform.eulerAngles.y, targetYaw, Time.deltaTime * 10f);
+                    float rotationSpeed = cameraMovementDistance > 5.0f ? 20.0f : 10.0f;
+                    float smoothYaw = Mathf.LerpAngle(transform.eulerAngles.y, targetYaw, Time.deltaTime * rotationSpeed);
                     transform.rotation = Quaternion.Euler(0.0f, smoothYaw, 0.0f);
                 }
             }
@@ -477,7 +485,34 @@ namespace StarterAssets
         // 外部からモードを切り替えるためのメソッド
         public void SetViewMode(ViewMode mode)
         {
+            ViewMode previousMode = CurrentViewMode;
             CurrentViewMode = mode;
+            
+            // 俯瞰モードから歩行者モードに切り替わった時にプレイヤーの位置を調整
+            if (previousMode == ViewMode.Overhead && mode == ViewMode.Pedestrian)
+            {
+                AdjustPlayerPositionForWalkerMode();
+            }
+        }
+        
+        // 歩行者モード用にプレイヤーの位置を調整
+        private void AdjustPlayerPositionForWalkerMode()
+        {
+            // 現在の位置から下方向にRaycastして地面を探す
+            Vector3 rayOrigin = transform.position + Vector3.up * 2.0f; // 少し上から開始
+            Vector3 rayDirection = Vector3.down;
+            float rayDistance = 10.0f;
+            
+            RaycastHit hit;
+            if (Physics.Raycast(rayOrigin, rayDirection, out hit, rayDistance, GroundLayers))
+            {
+                // 地面の上に適切な高さでプレイヤーを配置（GroundedOffsetは負の値なので注意）
+                Vector3 targetPos = hit.point + Vector3.up * (GroundedRadius + 0.1f);
+                transform.position = targetPos;
+                
+                // 垂直速度をリセット
+                _verticalVelocity = 0f;
+            }
         }
     }
 }
