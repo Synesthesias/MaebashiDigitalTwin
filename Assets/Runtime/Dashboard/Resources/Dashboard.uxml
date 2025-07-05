@@ -16,11 +16,11 @@
                     <ui:Toggle name="HeatmapIcon" value="false" class="DashboardPanel__Icon" />
                 </ui:VisualElement>
                 <ui:VisualElement name="CarSimulationToggle" class="DashboardPanel__Button">
-                    <ui:Label text="自動車シュミレーション" class="DashboardPanel__Label" />
+                    <ui:Label text="自動車シミュレーション" class="DashboardPanel__Label" />
                     <ui:Toggle name="CarSimulationIcon" value="false" class="DashboardPanel__Icon" />
                 </ui:VisualElement>
                 <ui:VisualElement name="PeopleSimulationToggle" class="DashboardPanel__Button">
-                    <ui:Label text="人流シュミレーション" class="DashboardPanel__Label" />
+                    <ui:Label text="人流シミュレーション" class="DashboardPanel__Label" />
                     <ui:Toggle name="PeopleSimulationIcon" value="false" class="DashboardPanel__Icon" />
                 </ui:VisualElement>
             </ui:VisualElement>
