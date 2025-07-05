@@ -114,6 +114,11 @@ namespace Landscape2.Maebashi.Runtime
                 footerNaviUI,
                 trafficSimulationManager);
             
+            // 建物編集
+            var buildingTrs = new BuildingTRSEditor(editBuilding,
+                uxmlHandler.GetUxml(SubMenuUxmlType.EditBuilding),
+                cameraManager.LandscapeCamera);
+            
             // モジュールをサブコンポーネントに追加
             subComponents = new List<ISubComponent>()
             {
@@ -154,9 +159,7 @@ namespace Landscape2.Maebashi.Runtime
                     uxmlHandler.GetUxml(SubMenuUxmlType.EditBuilding)),
                 
                 // 建物編集
-                new BuildingTRSEditor(editBuilding,
-                    uxmlHandler.GetUxml(SubMenuUxmlType.EditBuilding),
-                    cameraManager.LandscapeCamera),
+                buildingTrs,
                 
                 // 天候制御
                 new WeatherTimeEditorUI(
@@ -183,7 +186,7 @@ namespace Landscape2.Maebashi.Runtime
                     uxmlHandler.GetUxml(SubMenuUxmlType.Analytics)),
                 
                 // 建物高さ編集
-                new BuildingHeightAdjustUI(uxmlHandler),
+                new BuildingHeightAdjustUI(uxmlHandler, buildingTrs),
             };
         }
         

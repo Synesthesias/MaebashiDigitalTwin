@@ -46,7 +46,7 @@ namespace Landscape2.Maebashi.Runtime
             originalY = targetBuilding.transform.position.y;
             originalScaleY = targetBuilding.transform.localScale.y;
         }
-
+        
         public void SetHeight(float height)
         {
             height = Mathf.Clamp(height, MinHeight, MaxHeight);

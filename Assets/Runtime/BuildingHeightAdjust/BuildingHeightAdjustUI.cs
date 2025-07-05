@@ -1,6 +1,9 @@
 using Landscape2.Runtime;
 using Landscape2.Runtime.UiCommon;
+using Landscape2.Runtime.Common;
+using Landscape2.Runtime.BuildingEditor;
 using PLATEAU.CityInfo;
+using System;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -14,12 +17,15 @@ namespace Landscape2.Maebashi.Runtime
         private BuildingHeightAdjust targetBuilding;
         private UxmlHandler uxmlHandler;
         private Camera mainCamera;
-        
-        public BuildingHeightAdjustUI(UxmlHandler uxmlHandler)
+        private BuildingTRSEditor buildingTRSEditor;
+
+        public BuildingHeightAdjustUI(UxmlHandler uxmlHandler, BuildingTRSEditor buildingTRSEditor)
         {
             uiRoot = new UIDocumentFactory().CreateWithUxmlName("BuildingHeightAdjustUI");
             uiRoot.style.display = DisplayStyle.None;
             this.uxmlHandler = uxmlHandler;
+            this.buildingTRSEditor = buildingTRSEditor;
+            buildingTRSEditor.assetFocus.focusFinishCallback += OnBuildingFocusFinished;
             RegisterUIEvents();
             mainCamera = Camera.main;
         }
@@ -101,10 +107,19 @@ namespace Landscape2.Maebashi.Runtime
                 return;
             }
 
-            // UIが表示されているときはカメラ移動に合わせて位置を調整
-            if (uiRoot != null && uiRoot.style.display == DisplayStyle.Flex && targetBuilding != null)
+            if (targetBuilding != null)
             {
-                ShowUIAtScreenPosition();
+                // ターゲット建物が削除された場合はUIを非表示にする
+                if (targetBuilding.Target.layer == LayerMaskUtil.hiddenBuildingLayer)
+                {
+                    uiRoot.style.display = DisplayStyle.None;
+                }
+
+                // UIが表示されているときはカメラ移動に合わせて位置を調整
+                if (uiRoot != null && uiRoot.style.display == DisplayStyle.Flex)
+                {
+                    ShowUIAtScreenPosition();
+                }
             }
 
             // クリック判定
@@ -123,6 +138,10 @@ namespace Landscape2.Maebashi.Runtime
                             if (targetBuilding == null || !targetBuilding.IsCurrentTarget(cityObjectGroup.gameObject))
                             {
                                 targetBuilding = new BuildingHeightAdjust(cityObjectGroup.gameObject, trsEditing);
+                                if (targetBuilding.Target.layer == LayerMaskUtil.hiddenBuildingLayer)
+                                {
+                                    return;
+                                }
                                 ShowUIAtScreenPosition();
                                 UpdateUI();
                             }
@@ -142,10 +161,34 @@ namespace Landscape2.Maebashi.Runtime
 
         public void OnDisable()
         {
+            // assetFocusのイベントリスナーを解除
+            if (buildingTRSEditor != null && buildingTRSEditor.assetFocus != null)
+            {
+                buildingTRSEditor.assetFocus.focusFinishCallback -= OnBuildingFocusFinished;
+            }
         }
 
         public void Start()
         {
+        }
+        
+        /// <summary>
+        /// 建物フォーカス完了時のハンドラー
+        /// </summary>
+        private void OnBuildingFocusFinished(GameObject focusedBuilding)
+        {
+            if (focusedBuilding != null)
+            {
+                // 建物が削除済み（HiddenBuildingレイヤー）の場合はUIを非表示
+                if (focusedBuilding.layer == LayerMaskUtil.hiddenBuildingLayer)
+                {
+                    uiRoot.style.display = DisplayStyle.None;
+                }
+                else
+                {
+                    uiRoot.style.display = DisplayStyle.Flex;
+                }
+            }
         }
     }
 }
