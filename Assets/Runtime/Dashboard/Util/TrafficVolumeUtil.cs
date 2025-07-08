@@ -9,7 +9,7 @@ namespace Landscape2.Maebashi.Runtime.Util
     public static class TrafficVolumeUtil
     {
         // シミュレーションの基本設定
-        public const float MIN_SPAWN_INTERVAL = 2.0f;  // 最小スポーン間隔（秒）
+        public const float MIN_SPAWN_INTERVAL = 2f;  // 最小スポーン間隔（秒）
         public const float MAX_SPAWN_INTERVAL = 30.0f; // 最大スポーン間隔（秒）
 
         private const float MIN_SPEED = 5f;      // 最小速度 (km/h)

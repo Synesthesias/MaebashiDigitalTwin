@@ -107,7 +107,8 @@ namespace Landscape2.Maebashi.Runtime
                 var spawnSetting = new RouteTrafficSimulatorConfiguration
                 {
                     npcPrefabs = spawnLaneData.VehiclePrefabs,
-                    route = trafficLane.lanes.ToArray(),
+                    route = trafficLane.lanes.ToArray(), // ダミーのルート（spawnableLanes使用時は無視される）
+                    spawnableLanes = trafficLane.lanes.ToArray(), // 全車線でランダムスポーン
                     maximumSpawns = 0, // 無限にスポーン
                     enabled = trafficLane.isEnabled,
                     spawnIntervalTime = TrafficVolumeUtil.CalculateSpawnInterval(trafficLane.trafficVolume),
