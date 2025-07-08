@@ -88,16 +88,16 @@ namespace Landscape2.Maebashi.Runtime
                         controller.SetViewMode(ThirdPersonController.ViewMode.Overhead);
                     }
 
-                    // 歩行者カメラの移動を無効化
-                    WalkerMoveByUserInput.IsActive = false;
                 };
                 controller.SetViewMode(ThirdPersonController.ViewMode.Overhead);
             
-                // カメラの移動通知
-                CameraMoveByUserInput.OnCameraMoved.AddListener(() =>
-                {
-                    CheckCameraMoveComplete(controller);
-                });
+                // // カメラの移動通知
+                // CameraMoveByUserInput.OnCameraMoved.AddListener(() =>
+                // {
+                //     CheckCameraMoveComplete(controller);
+                // });
+                // 歩行者カメラの移動を無効化
+                WalkerMoveByUserInput.IsActive = false;
             }
         }
 

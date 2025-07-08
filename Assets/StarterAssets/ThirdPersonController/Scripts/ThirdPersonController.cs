@@ -246,6 +246,11 @@ namespace StarterAssets
 
         public void Move()
         {
+            if (_input == null || _controller == null || _mainCamera == null)
+            {
+                return;
+            }
+
             // Input Systemを使用してmove inputを取得
             Vector2 inputMove = _input.move;
             bool hasMovementInput = inputMove.magnitude >= _threshold;
@@ -462,12 +467,7 @@ namespace StarterAssets
         {
             ViewMode previousMode = CurrentViewMode;
             CurrentViewMode = mode;
-            
-            // 俯瞰モードから歩行者モードに切り替わった時にプレイヤーの位置を調整
-            if (previousMode == ViewMode.Overhead && mode == ViewMode.Pedestrian)
-            {
-                AdjustPlayerPositionForWalkerMode();
-            }
+            gameObject.SetActive(CurrentViewMode == ViewMode.Pedestrian);
 #if ENABLE_INPUT_SYSTEM 
             if (_playerInput != null)
             {
