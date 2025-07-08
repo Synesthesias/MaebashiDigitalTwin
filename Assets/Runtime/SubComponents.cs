@@ -119,6 +119,11 @@ namespace Landscape2.Maebashi.Runtime
                 uxmlHandler.GetUxml(SubMenuUxmlType.EditBuilding),
                 cameraManager.LandscapeCamera);
             
+            // スピード調整
+            var speedAdjuster = new SpeedControlUI(
+                cameraManager.LandscapeCamera,
+                cameraManager.ThirdPersonController);
+            
             // モジュールをサブコンポーネントに追加
             subComponents = new List<ISubComponent>()
             {
@@ -139,7 +144,8 @@ namespace Landscape2.Maebashi.Runtime
                     uxmlHandler.Uxmls.ToArray(),
                     cameraManager.WalkerMoveByUserInput,
                     saveSystem,
-                    globalNaviUI.UiRoot),
+                    globalNaviUI.UiRoot,
+                    footerNaviUI.UiRoot),
                 cameraManager.CameraMoveByUserInput,
                 cameraManager.WalkerMoveByUserInput,
                 

@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Packages/com.synesthesias.landscape-design-tool-2/Runtime/UICommon/UIStyleCommon.uss?fileID=7433441132597879392&amp;guid=5003ef441f4ce7e4881f663b95f4df1d&amp;type=3#UIStyleCommon" />
+    <Style src="project://database/Assets/Runtime/UICommon/FooterNavi/SpeedControlPanel.uss?fileID=7433441132597879392&amp;guid=a1b2c3d4e5f6789a0b1c2d3e4f5a6b7c&amp;type=3#SpeedControlPanel" />
+    <ui:VisualElement name="SpeedControlPanel" class="SpeedControl__Panel">
+        <ui:Label text="歩行スピード" class="SpeedControl__Label" picking-mode="Ignore" />
+        <ui:VisualElement class="SpeedControl__Container" picking-mode="Ignore">
+            <ui:VisualElement class="SpeedControl__Icon SpeedControl__Icon--Turtle" picking-mode="Ignore" />
+            <ui:Slider name="SpeedSlider" class="SpeedControl__Slider" />
+            <ui:VisualElement class="SpeedControl__Icon SpeedControl__Icon--Rabbit" picking-mode="Ignore" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

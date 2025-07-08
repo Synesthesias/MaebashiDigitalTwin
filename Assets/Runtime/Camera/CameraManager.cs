@@ -13,6 +13,7 @@ namespace Landscape2.Maebashi.Runtime
         public WalkerMoveByUserInput WalkerMoveByUserInput { get; private set; }
         public CameraPositionMemory CameraPositionMemory { get; private set; }
         public CameraMoveByUserInput CameraMoveByUserInput { get; private set; }
+        public ThirdPersonController ThirdPersonController { get; private set; }
         
         const int CAMERA_FARCLIP_VALUE = 20000;
         
@@ -42,46 +43,16 @@ namespace Landscape2.Maebashi.Runtime
             mainCamVC.m_Lens.FarClipPlane = CAMERA_FARCLIP_VALUE;
 
             //歩行者視点用のオブジェクトの生成と設定
-            var walkerPrefab = Resources.Load<GameObject>("PlayerArmature_HDRP");
+            var walkerPrefab = Resources.Load<GameObject>("PlayerComponent");
             var walker = GameObject.Instantiate(walkerPrefab);
-            
-            //歩行者視点用のカメラの生成と設定
-            GameObject walkerCam = new GameObject("WalkerCamera");
-            CinemachineVirtualCamera walkerCamVC = walkerCam.AddComponent<CinemachineVirtualCamera>();
-            walkerCamVC.m_Lens.FieldOfView = 60;
-            walkerCamVC.m_Lens.NearClipPlane = 0.3f;
-            
-            walkerCamVC.m_Lens.FarClipPlane = CAMERA_FARCLIP_VALUE;
-            walkerCamVC.Priority = 9;
-            walkerCamVC.m_StandbyUpdate = CinemachineVirtualCameraBase.StandbyUpdateMode.Never;
-            walkerCamVC.AddCinemachineComponent<CinemachineTransposer>();
-            CinemachineInputProvider walkerCamInput = walkerCam.AddComponent<CinemachineInputProvider>();
+            var playerCameraController = walker.GetComponent<PlayerCameraController>();
+            playerCameraController.Initialize();
 
             var cameraMoveSpeedData = Resources.Load<CameraMoveData>("CameraMoveSpeedData_Slow");
-            
-            // 歩行者視点時カメラ回転の移動量補正
-            var ia = new DefaultInputActions();
-            {
-                float val = cameraMoveSpeedData.walkerCameraRotateSpeed;
-                string overrideProcessor = $"ClampVector2Processor(minX={-val}, minY={-val}, maxX={val}, maxY={val})";
 
-                ia.Player.Look.ApplyBindingOverride(
-                    new InputBinding
-                    {
-                        overrideProcessors = overrideProcessor
-                    });
-            }
-            walkerCamInput.XYAxis = InputActionReference.Create(ia.Player.Look);
-
-            walkerCam.SetActive(false);
-            walkerCam.SetActive(true);
-            walkerCamVC.Follow = walker.transform;
-            var transposer = walkerCamVC.GetCinemachineComponent<CinemachineTransposer>();
-            transposer.m_FollowOffset = new Vector3(0, 2, -4); // 高さ2、後方に4ユニット
-
-            LandscapeCamera = new LandscapeCamera(mainCamVC, walkerCamVC, walker);
-            WalkerMoveByUserInput = new WalkerMoveByUserInput(walkerCamVC, walker, false);
-            CameraPositionMemory = new CameraPositionMemory(mainCamVC, walkerCamVC, LandscapeCamera, 4.0f);
+            LandscapeCamera = new LandscapeCamera(mainCamVC, playerCameraController.VirtualCamera, playerCameraController.ThirdPersonController.gameObject);
+            WalkerMoveByUserInput = new WalkerMoveByUserInput(playerCameraController.VirtualCamera, playerCameraController.ThirdPersonController.gameObject, false);
+            CameraPositionMemory = new CameraPositionMemory(mainCamVC, playerCameraController.VirtualCamera, LandscapeCamera, 4.0f);
             CameraMoveByUserInput = new CameraMoveByUserInput(mainCamVC);
             
             // CameraMoveByUserInputのStart完了イベントを購読
@@ -102,7 +73,8 @@ namespace Landscape2.Maebashi.Runtime
             });
             
             // プレイヤーの ThirdPersonController を取得
-            ThirdPersonController controller = walker.GetComponent<ThirdPersonController>();
+            ThirdPersonController controller = playerCameraController.ThirdPersonController;
+            ThirdPersonController = controller;
             if (controller != null)
             {
                 LandscapeCamera.OnSetCameraCalled += () =>
@@ -115,6 +87,9 @@ namespace Landscape2.Maebashi.Runtime
                     {
                         controller.SetViewMode(ThirdPersonController.ViewMode.Overhead);
                     }
+
+                    // 歩行者カメラの移動を無効化
+                    WalkerMoveByUserInput.IsActive = false;
                 };
                 controller.SetViewMode(ThirdPersonController.ViewMode.Overhead);
             

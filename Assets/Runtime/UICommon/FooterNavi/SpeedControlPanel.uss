@@ -1,0 +1,55 @@
+@import url(../../UICommon/Resources/UICommon.uss);
+
+.SpeedControl__Panel {
+    display: none;
+    position: absolute;
+    bottom: 50px;
+    right: 20px;
+    background-color: var(--Color-Black-Trasparent);
+    border-radius: 20px;
+    padding: 15px 20px;
+    flex-direction: column;
+    align-items: center;
+    min-height: 80px;
+}
+
+.SpeedControl__Container {
+    flex-direction: row;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.SpeedControl__Label {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 8px;
+    -unity-text-align: middle-center;
+    font-weight: bold;
+}
+
+.SpeedControl__Slider {
+    flex-grow: 1;
+    width: 200px;
+    margin: 0 15px;
+}
+
+.SpeedControl__Slider .unity-base-slider__dragger {
+    width: 12px;
+    height: 30px;
+    margin-top: -15px;
+}
+
+.SpeedControl__Icon {
+    width: 75px;
+    height: 75px;
+}
+
+.SpeedControl__Icon--Turtle {
+    background-image: url('../Components/Icon/Resources/Images/Icon_Turtle.png');
+    margin-right: 8px;
+}
+
+.SpeedControl__Icon--Rabbit {
+    background-image: url('../Components/Icon/Resources/Images/Icon_Rabbit.png');
+    margin-left: 8px;
+}
