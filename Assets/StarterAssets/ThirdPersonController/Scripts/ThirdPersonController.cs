@@ -14,12 +14,16 @@ namespace StarterAssets
 #endif
     public class ThirdPersonController : MonoBehaviour
     {
+        [SerializeField]
+        private CharacterController _controller;
+        public float CharacterHeight => _controller.height;
+        
+        [SerializeField]
+        private StarterAssetsInputs _input;
+        
         [Header("Player")]
         [Tooltip("Move speed of the character in m/s")]
         public float MoveSpeed = 2.0f;
-
-        [Tooltip("Sprint speed of the character in m/s")]
-        public float SprintSpeed = 5.335f;
 
         [Tooltip("How fast the character turns to face movement direction")]
         [Range(0.0f, 0.3f)]
@@ -27,9 +31,15 @@ namespace StarterAssets
 
         [Tooltip("Acceleration and deceleration")]
         public float SpeedChangeRate = 10.0f;
-
+        
+        [Header("Audio")]
+        [Tooltip("Audio clip to play when landing")]
         public AudioClip LandingAudioClip;
+        
+        [Tooltip("Array of footstep audio clips")]
         public AudioClip[] FootstepAudioClips;
+        
+        [Tooltip("Volume of footstep and landing sounds")]
         [Range(0, 1)] public float FootstepAudioVolume = 0.5f;
 
         [Space(10)]
@@ -69,12 +79,6 @@ namespace StarterAssets
         [Tooltip("How far in degrees can you move the camera down")]
         public float BottomClamp = -30.0f;
 
-        [Tooltip("Additional degress to override the camera. Useful for fine tuning camera position when locked")]
-        public float CameraAngleOverride = 0.0f;
-
-        [Tooltip("For locking the camera position on all axis")]
-        public bool LockCameraPosition = false;
-
         // cinemachine
         private float _cinemachineTargetYaw;
         private float _cinemachineTargetPitch;
@@ -99,21 +103,16 @@ namespace StarterAssets
         private int _animIDMotionSpeed;
 
 #if ENABLE_INPUT_SYSTEM 
+        [SerializeField]
         private PlayerInput _playerInput;
 #endif
         private Animator _animator;
-        private CharacterController _controller;
         
-        private StarterAssetsInputs _input;
         private GameObject _mainCamera;
 
         private const float _threshold = 0.01f;
 
         private bool _hasAnimator;
-
-        private float _cameraTargetDefaultZ = -2.0f; // 前進時の距離
-        private float _cameraTargetBackZ = -4.0f;    // 後退時の距離
-        private float _cameraTargetLerpSpeed = 5.0f; // 補間速度
 
         private Vector2 _lastInputMove = Vector2.zero;
         private Vector2 _lastCameraPositionXZ = Vector2.zero;
@@ -139,7 +138,6 @@ namespace StarterAssets
             }
         }
 
-
         private void Awake()
         {
             // get a reference to our main camera
@@ -147,21 +145,24 @@ namespace StarterAssets
             {
                 _mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
             }
+            if (_controller == null)
+            {
+                _controller = GetComponent<CharacterController>();
+            }
+            if (_input == null)
+            {
+                _input = GetComponent<StarterAssetsInputs>();
+                if (_input == null)
+                {
+                    Debug.LogError("StarterAssetsInputs component is missing from the GameObject.");
+                }
+            }
         }
 
         private void Start()
         {
             _cinemachineTargetYaw = CinemachineCameraTarget.transform.rotation.eulerAngles.y;
-            
             _hasAnimator = TryGetComponent(out _animator);
-            _controller = GetComponent<CharacterController>();
-            _input = GetComponent<StarterAssetsInputs>();
-#if ENABLE_INPUT_SYSTEM 
-            _playerInput = GetComponent<PlayerInput>();
-#else
-			Debug.LogError( "Starter Assets package is missing dependencies. Please use Tools/Starter Assets/Reinstall Dependencies to fix it");
-#endif
-
             AssignAnimationIDs();
 
             // reset our timeouts on start
@@ -180,14 +181,6 @@ namespace StarterAssets
 
             JumpAndGravity();
             GroundedCheck();
-        }
-
-        private void LateUpdate()
-        {
-            if (CurrentViewMode == ViewMode.Pedestrian)
-            {
-                CameraRotation();
-            }
         }
 
         public void OnCameraMoved()
@@ -222,27 +215,6 @@ namespace StarterAssets
             }
         }
 
-        public void CameraRotation()
-        {
-            // if there is an input and camera position is not fixed
-            if (_input.look.sqrMagnitude >= _threshold && !LockCameraPosition)
-            {
-                //Don't multiply mouse input by Time.deltaTime;
-                float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
-            
-                _cinemachineTargetYaw += _input.look.x * deltaTimeMultiplier;
-                _cinemachineTargetPitch += _input.look.y * deltaTimeMultiplier;
-            }
-
-            // clamp our rotations so our values are limited 360 degrees
-            _cinemachineTargetYaw = ClampAngle(_cinemachineTargetYaw, float.MinValue, float.MaxValue);
-            _cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
-
-            // Cinemachine will follow this target
-            CinemachineCameraTarget.transform.rotation = Quaternion.Euler(_cinemachineTargetPitch + CameraAngleOverride,
-                _cinemachineTargetYaw, 0.0f);
-        }
-
         public void Move()
         {
             if (_input == null || _controller == null || _mainCamera == null)
@@ -252,13 +224,24 @@ namespace StarterAssets
 
             // Input Systemを使用してmove inputを取得
             Vector2 inputMove = _input.move;
+            MoveWithInput(inputMove);
+        }
+        
+        // 外部から移動入力を与えて移動させるメソッド
+        public void MoveWithInput(Vector2 inputMove)
+        {
+            if (_controller == null || _mainCamera == null)
+            {
+                return;
+            }
+
             bool hasMovementInput = inputMove.magnitude >= _threshold;
             
             // set target speed based on move speed, sprint speed and if sprint is pressed
             float targetSpeed = hasMovementInput ? MoveSpeed : 0.0f;
             
-            // 入力に基づいて直接速度を設定（加速・減速なし）
-            float inputMagnitude = hasMovementInput ? inputMove.magnitude : 0f;
+            // 入力に基づいて直接速度を設定（斜め移動でも速度が一定になるようにクランプ）
+            float inputMagnitude = hasMovementInput ? Mathf.Min(inputMove.magnitude, 1.0f) : 0f;
             _speed = targetSpeed * inputMagnitude;
 
             _animationBlend = Mathf.Lerp(_animationBlend, targetSpeed, Time.deltaTime * SpeedChangeRate);
@@ -287,6 +270,52 @@ namespace StarterAssets
             {
                 _animator.SetFloat(_animIDSpeed, _animationBlend);
                 _animator.SetFloat(_animIDMotionSpeed, inputMagnitude);
+            }
+        }
+        
+        // 直接移動ベクトルを与えて移動させるメソッド（カメラの回転を考慮しない）
+        public void MoveDirectly(Vector3 moveDirection)
+        {
+            if (_controller == null)
+            {
+                return;
+            }
+            
+            // 重力を加えて移動
+            _controller.Move(moveDirection + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
+        }
+        
+        // 一瞬で指定された距離だけ移動する（UI入力用）
+        public void MoveInstantly(Vector2 inputMove)
+        {
+            if (_controller == null || _mainCamera == null)
+            {
+                return;
+            }
+            
+            // 入力に基づいて移動方向を計算
+            Vector3 inputDirection = new Vector3(inputMove.x, 0.0f, inputMove.y);
+            
+            // カメラの向きを基準に移動方向を変換
+            Vector3 cameraForward = _mainCamera.transform.forward;
+            Vector3 cameraRight = _mainCamera.transform.right;
+            
+            // Y軸回転のみ考慮
+            cameraForward.y = 0f;
+            cameraRight.y = 0f;
+            cameraForward.Normalize();
+            cameraRight.Normalize();
+            
+            // 移動方向を計算
+            Vector3 moveDirection = cameraRight * inputDirection.x + cameraForward * inputDirection.z;
+            
+            // 一瞬で移動（Time.deltaTimeを使わない）
+            _controller.Move(moveDirection);
+            
+            // プレイヤーの向きを移動方向に合わせる
+            if (moveDirection.magnitude > 0.1f)
+            {
+                transform.rotation = Quaternion.LookRotation(moveDirection);
             }
         }
 
@@ -382,48 +411,47 @@ namespace StarterAssets
                 new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z),
                 GroundedRadius);
         }
-
+        
         private void OnFootstep(AnimationEvent animationEvent)
         {
-            if (animationEvent.animatorClipInfo.weight > 0.5f)
+            // animationEventがnullまたはweightが低い場合は処理しない
+            if (animationEvent == null || animationEvent.animatorClipInfo.weight <= 0.5f)
             {
-                if (FootstepAudioClips != null && FootstepAudioClips.Length > 0 && _controller != null)
+                return;
+            }
+            
+            // FootstepAudioClipsが設定されていて、有効なクリップがある場合
+            if (FootstepAudioClips != null && FootstepAudioClips.Length > 0 && _controller != null)
+            {
+                // ランダムにクリップを選択
+                var index = Random.Range(0, FootstepAudioClips.Length);
+                var clip = FootstepAudioClips[index];
+                
+                // クリップがnullでない場合は再生
+                if (clip != null)
                 {
-                    var index = Random.Range(0, FootstepAudioClips.Length);
-                    var clip = FootstepAudioClips[index];
-                    if (clip != null)
-                    {
-                        AudioSource.PlayClipAtPoint(clip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
-                    }
+                    // プレイヤーの中心位置で音を再生
+                    AudioSource.PlayClipAtPoint(clip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
                 }
             }
         }
-
+        
         private void OnLand(AnimationEvent animationEvent)
         {
-            if (animationEvent.animatorClipInfo.weight > 0.5f)
+            // animationEventがnullまたはweightが低い場合は処理しない
+            if (animationEvent == null || animationEvent.animatorClipInfo.weight <= 0.5f)
             {
-                if (LandingAudioClip != null && _controller != null)
-                {
-                    AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
-                }
+                return;
+            }
+            
+            // LandingAudioClipが設定されている場合
+            if (LandingAudioClip != null && _controller != null)
+            {
+                // プレイヤーの中心位置で音を再生
+                AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
             }
         }
 
-        // カメラターゲットの距離を前進・後退で調整
-        private void AdjustCameraTargetDistance()
-        {
-            if (CinemachineCameraTarget == null) return;
-
-            // 後退時は距離を遠く、前進時は近く
-            float targetZ = _input.move.y < -0.1f ? _cameraTargetBackZ : _cameraTargetDefaultZ;
-
-            // 現在のローカル座標
-            Vector3 localPos = CinemachineCameraTarget.transform.localPosition;
-            // Z座標だけ補間
-            float newZ = Mathf.Lerp(localPos.z, targetZ, Time.deltaTime * _cameraTargetLerpSpeed);
-            CinemachineCameraTarget.transform.localPosition = new Vector3(localPos.x, localPos.y, newZ);
-        }
 
         // 俯瞰モード時にカメラのforward方向にRayを飛ばし、地面に当たった位置にプレイヤーを移動
         private void OverheadMovePlayerToCameraFront()

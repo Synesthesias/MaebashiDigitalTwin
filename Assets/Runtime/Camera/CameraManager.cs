@@ -51,8 +51,19 @@ namespace Landscape2.Maebashi.Runtime
             var cameraMoveSpeedData = Resources.Load<CameraMoveData>("CameraMoveSpeedData_Slow");
 
             LandscapeCamera = new LandscapeCamera(mainCamVC, playerCameraController.VirtualCamera, playerCameraController.ThirdPersonController.gameObject);
-            WalkerMoveByUserInput = new WalkerMoveByUserInput(playerCameraController.VirtualCamera, playerCameraController.ThirdPersonController.gameObject, false);
-            CameraPositionMemory = new CameraPositionMemory(mainCamVC, playerCameraController.VirtualCamera, LandscapeCamera, 4.0f);
+            WalkerMoveByUserInput = new WalkerMoveByUserInput(
+                playerCameraController.VirtualCamera,
+                playerCameraController.ThirdPersonController.gameObject,
+                false, (moveDelta) =>
+                {
+                    // 一瞬で指定された距離だけ移動
+                    playerCameraController.ThirdPersonController.MoveInstantly(-moveDelta);
+                });
+            CameraPositionMemory = new CameraPositionMemory(
+                mainCamVC, 
+                playerCameraController.VirtualCamera,
+                LandscapeCamera,
+                4.0f);
             CameraMoveByUserInput = new CameraMoveByUserInput(mainCamVC);
             
             // CameraMoveByUserInputのStart完了イベントを購読

@@ -52,12 +52,10 @@ namespace Landscape2.Maebashi.Runtime
                 if (thirdPersonController != null)
                 {
                     thirdPersonController.MoveSpeed = evt.newValue;
-                    UnityEngine.Debug.Log($"SpeedControlUI: MoveSpeed changed to {evt.newValue}, ViewMode: {thirdPersonController.CurrentViewMode}");
                 }
                 if (cameraMoveSpeedData != null)
                 {
                     cameraMoveSpeedData.walkerMoveSpeed = evt.newValue;
-                    UnityEngine.Debug.Log($"SpeedControlUI: CameraMoveSpeedData.walkerMoveSpeed changed to {evt.newValue}");
                 }
             });
 
@@ -65,7 +63,6 @@ namespace Landscape2.Maebashi.Runtime
             if (thirdPersonController != null)
             {
                 thirdPersonController.MoveSpeed = defaultWalkSpeed;
-                UnityEngine.Debug.Log($"SpeedControlUI: Initial MoveSpeed set to {defaultWalkSpeed}");
             }
             if (cameraMoveSpeedData != null)
             {
