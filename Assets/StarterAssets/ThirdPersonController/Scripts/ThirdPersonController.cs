@@ -95,6 +95,13 @@ namespace StarterAssets
         private float _jumpTimeoutDelta;
         private float _fallTimeoutDelta;
 
+        // fall detection and reset
+        [SerializeField]
+        private Vector3 _initialPosition;
+        [Header("Fall Detection")]
+        [Tooltip("Y position threshold for fall detection. Player resets when falling below this value")]
+        public float FallThreshold = -100f;
+
         // animation IDs
         private int _animIDSpeed;
         private int _animIDGrounded;
@@ -181,6 +188,13 @@ namespace StarterAssets
 
             JumpAndGravity();
             GroundedCheck();
+            
+            // Check if player has fallen below threshold
+            float currentYPosition = transform.position.y;
+            if (currentYPosition < FallThreshold)
+            {
+                ResetToInitialPosition();
+            }
         }
 
         public void OnCameraMoved()
@@ -520,6 +534,35 @@ namespace StarterAssets
                 
                 // 垂直速度をリセット
                 _verticalVelocity = 0f;
+            }
+        }
+
+        private void ResetToInitialPosition()
+        {
+            // Disable character controller to allow position change
+            if (_controller != null)
+            {
+                _controller.enabled = false;
+            }
+
+            // Reset position and rotation
+            transform.position = _initialPosition;
+
+            // Reset velocities
+            _verticalVelocity = 0f;
+            _speed = 0f;
+            _animationBlend = 0f;
+
+            // Reset camera rotation if needed
+            if (CinemachineCameraTarget != null)
+            {
+                _cinemachineTargetPitch = 0f;
+            }
+
+            // Re-enable character controller
+            if (_controller != null)
+            {
+                _controller.enabled = true;
             }
         }
     }

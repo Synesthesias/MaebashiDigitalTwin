@@ -1383,6 +1383,9 @@ MonoBehaviour:
   MoveSpeed: 5
   RotationSmoothTime: 0.12
   SpeedChangeRate: 10
+  LandingAudioClip: {fileID: 0}
+  FootstepAudioClips: []
+  FootstepAudioVolume: 0.5
   JumpHeight: 1.2
   Gravity: -10
   JumpTimeout: 0.3
@@ -1394,6 +1397,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2561
   CinemachineCameraTarget: {fileID: 8338988566280778634}
+  TopClamp: 70
+  BottomClamp: -30
+  _initialPosition: {x: -73.29451, y: 102.784996, z: -705.14026}
+  FallThreshold: 50
   _playerInput: {fileID: 4416926081852918493}
   CurrentViewMode: 0
 --- !u!114 &5885216827943657505
@@ -1439,7 +1446,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4416926081852918481}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
@@ -3161,7 +3168,7 @@ Transform:
   m_GameObject: {fileID: 8338988566280778634}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.375, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

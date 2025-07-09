@@ -20,8 +20,19 @@ namespace StarterAssets
         [SerializeField]
         private float rotateSpeed = 1f;
         
+        [Header("Camera Zoom Control")]
+        [SerializeField]
+        private float zoomSpeed = 20f;
+        [SerializeField]
+        private float minFOV = 20f;
+        [SerializeField]
+        private float maxFOV = 80f;
+        [SerializeField]
+        private float defaultFOV = 40f;
+        
         private bool isRightClicking = false;
         private CinemachineFramingTransposer framingTransposer;
+        private float currentFOV;
         
         private const float cameraHeightOffset = 0.5f; // カメラの高さオフセット（胸の高さ）
 
@@ -51,6 +62,13 @@ namespace StarterAssets
                 {
                     framingTransposer.m_TrackedObjectOffset.y = height - cameraHeightOffset;
                 }
+                
+                // Initialize FOV
+                currentFOV = defaultFOV;
+                if (virtualCamera != null)
+                {
+                    virtualCamera.m_Lens.FieldOfView = currentFOV;
+                }
             }
         }
 
@@ -65,6 +83,7 @@ namespace StarterAssets
             {
                 thirdPersonController.Move();
                 HandleCameraRotationInput();
+                HandleCameraZoomInput();
             }
         }
 
@@ -94,6 +113,24 @@ namespace StarterAssets
             newAngles.y += rotationDelta.x;
             newAngles.z = 0f;
             virtualCamera.transform.eulerAngles = newAngles;
+        }
+        
+        private void HandleCameraZoomInput()
+        {
+            if (virtualCamera == null) return;
+            
+            // Get mouse wheel input
+            float scrollInput = Input.GetAxis("Mouse ScrollWheel");
+            
+            if (scrollInput != 0)
+            {
+                // Calculate new FOV
+                currentFOV -= scrollInput * zoomSpeed;
+                currentFOV = Mathf.Clamp(currentFOV, minFOV, maxFOV);
+                
+                // Apply FOV to camera
+                virtualCamera.m_Lens.FieldOfView = currentFOV;
+            }
         }
     }
 }
