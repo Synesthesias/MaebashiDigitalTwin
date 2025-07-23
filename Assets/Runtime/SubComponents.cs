@@ -3,6 +3,7 @@ using Landscape2.Runtime;
 using Landscape2.Runtime.BuildingEditor;
 using Landscape2.Runtime.CameraPositionMemory;
 using Landscape2.Runtime.GisDataLoader;
+using Landscape2.Runtime.LandscapePlanLoader;
 using Landscape2.Runtime.WalkerMode;
 using Landscape2.Runtime.WeatherTimeEditor;
 using PLATEAU.CityInfo;
@@ -101,6 +102,7 @@ namespace Landscape2.Maebashi.Runtime
             var gisDataLoaderUI = new GisDataLoaderUI(
                 uxmlHandler.GetUxml(SubMenuUxmlType.Gis),
                 saveSystem);
+            
             var buildingSaveLoadSystem = new BuildingSaveLoadSystem();
             buildingSaveLoadSystem.SetEvent(saveSystem);
 
@@ -193,6 +195,9 @@ namespace Landscape2.Maebashi.Runtime
                 
                 // 建物高さ編集
                 new BuildingHeightAdjustUI(uxmlHandler, buildingTrs),
+
+                // 景観区域作成
+                new PlanningUI(uxmlHandler.GetUxml(SubMenuUxmlType.Planning), globalNaviUI.UiRoot, CreateDbfFieldSettings()),
             };
         }
         
@@ -240,6 +245,17 @@ namespace Landscape2.Maebashi.Runtime
         {
             public const float START_TIME = 0.2917f;  // 7時
             public const float END_TIME = 0.834f;     // 20時
+        }
+
+        /// <summary>
+        /// 景観区域プランニング用のDBFフィールドマッピング設定を作成
+        /// </summary>
+        private AreaPlanningDbfFieldSettings CreateDbfFieldSettings()
+        {
+            // デフォルト設定に追加のフィールド名を加える
+            return new AreaPlanningDbfFieldSettings()
+                .AddAreaNameField("固有名")
+                .AddAreaNameField("種類");
         }
     }
 }

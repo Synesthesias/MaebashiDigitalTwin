@@ -146,6 +146,18 @@ namespace Landscape2.Maebashi.Runtime
                 uxmlHandler.Show(SubComponents.SubMenuUxmlType.Analytics);
                 onChangeView.Invoke(SubComponents.SubMenuUxmlType.Analytics);
             });
+            
+            // 景観区域
+            UiRoot.Q<RadioButton>("MenuLandscapeArea").RegisterCallback<ChangeEvent<bool>>((evt) =>
+            {
+                if (!evt.newValue)
+                {
+                    return;
+                }
+                HideAll();
+                uxmlHandler.Show(SubComponents.SubMenuUxmlType.Planning);
+                onChangeView.Invoke(SubComponents.SubMenuUxmlType.Planning);
+            });
         }
 
         private void HideAll()

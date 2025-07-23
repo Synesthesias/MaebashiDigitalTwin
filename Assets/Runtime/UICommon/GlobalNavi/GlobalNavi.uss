@@ -53,6 +53,18 @@
     border-radius: 0;
 }
 
+.MenuRadioButton .unity-radio-button__checkmark {
+    width: 0;
+}
+
+.MenuRadioButton#MenuCamera {
+   height: 50px; 
+}
+
+.MenuRadioButton#MenuLandscapeArea {
+    width: 160px;
+}
+
 .MenuInDropdown #DropdownArrow {
     position: absolute;
     right: 20px;
