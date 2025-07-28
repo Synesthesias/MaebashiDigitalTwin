@@ -20,8 +20,8 @@
                     </ui:VisualElement>
                     <ui:RadioButton label="Radio Button" name="MenuDashboard" class="MenuRadioButton IconDashboard" text="ダッシュボード" tabindex="3" />
                     <ui:RadioButton label="Radio Button" name="MenuGis" class="MenuRadioButton IconGis" text="GISデータ" tabindex="4" />
-                    <ui:RadioButton label="Radio Button" name="MenuLandscapeArea" class="MenuRadioButton IconLandscapeArea" text="景観計画区域" tabindex="5" />
-                    <ui:RadioButton label="Radio Button" name="MenuLineOfSight" class="MenuRadioButton IconLineOfSight" text="見通し解析" tabindex="6" />
+                    <ui:RadioButton label="Radio Button" name="MenuLineOfSight" class="MenuRadioButton IconLineOfSight" text="見通し解析" tabindex="5" />
+                    <ui:RadioButton label="Radio Button" name="MenuLandscapeArea" class="MenuRadioButton IconLandscapeArea" text="景観計画区域" tabindex="6" />
                 </ui:GroupBox>
             </ui:VisualElement>
             <ui:VisualElement name="GlobalNavi_Right" picking-mode="Ignore">

@@ -16,5 +16,9 @@
 }
 
 .IconLineOfSight .unity-radio-button__checkmark-background {
-    background-image: resource('Icon_Data');
+    background-image: url('./Resources/Images/Icon_LineOfSight.png');
+}
+
+.IconLandscapeArea .unity-radio-button__checkmark-background {
+    background-image: url('./Resources/Images/Icon_LandscapeArea.png');
 }

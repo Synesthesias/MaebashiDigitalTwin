@@ -37,7 +37,7 @@
 }
 
 .MenuRadioButton.IconDashboard {
-    width: 180px;
+    width: 190px;
 }
 
 .MenuRadioButton .unity-radio-button__text {
@@ -51,6 +51,8 @@
 .MenuRadioButton .unity-radio-button__checkmark-background {
     margin-right: 8px;
     border-radius: 0;
+    width: 30px;
+    height: 30px;
 }
 
 .MenuRadioButton .unity-radio-button__checkmark {
@@ -62,13 +64,17 @@
 }
 
 .MenuRadioButton#MenuLandscapeArea {
-    width: 160px;
+    width: 165px;
 }
 
 .MenuInDropdown #DropdownArrow {
     position: absolute;
-    right: 20px;
-    top: 8px;
+    right: 15px;
+    top: 12px;
+}
+
+.MenuRadioButton#MenuLineOfSight .unity-radio-button__checkmark-background {
+    width: 29px; /* Adjusted width for Line of Sight icon */
 }
 
 /* SubMenuContainer */
