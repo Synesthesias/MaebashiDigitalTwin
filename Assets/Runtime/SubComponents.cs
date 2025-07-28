@@ -1,4 +1,5 @@
 ﻿using Landscape2.Maebashi.Runtime.Dashboard;
+using Landscape2.Maebashi.Runtime.UICommon.Components;
 using Landscape2.Runtime;
 using Landscape2.Runtime.BuildingEditor;
 using Landscape2.Runtime.CameraPositionMemory;
@@ -198,6 +199,9 @@ namespace Landscape2.Maebashi.Runtime
 
                 // 景観区域作成
                 new PlanningUI(uxmlHandler.GetUxml(SubMenuUxmlType.Planning), globalNaviUI.UiRoot, CreateDbfFieldSettings()),
+                
+                // デザインコンペデータ表示
+                new DesignCompDisplay(),
             };
         }
         
