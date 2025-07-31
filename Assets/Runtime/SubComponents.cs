@@ -1,4 +1,5 @@
-﻿using Landscape2.Maebashi.Runtime.Dashboard;
+﻿using Landscape2.Maebashi.Runtime.Common;
+using Landscape2.Maebashi.Runtime.Dashboard;
 using Landscape2.Maebashi.Runtime.UICommon.Components;
 using Landscape2.Runtime;
 using Landscape2.Runtime.BuildingEditor;
@@ -202,6 +203,9 @@ namespace Landscape2.Maebashi.Runtime
                 
                 // デザインコンペデータ表示
                 new DesignCompDisplay(),
+                
+                // キー入力表示（デバッグ用）
+                new KeyInputDisplayDebug(globalNaviUI.UiRoot),
             };
         }
         
