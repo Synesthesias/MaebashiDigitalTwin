@@ -4,7 +4,10 @@
     width: 100%;
     min-width: 1000px;
     height: 128px;
-    background-image: url('./Resources/Images/GNavi_Base.png');
+    background-image: url('./Resources/Images/GNavi_Base_bg.png');
+    background-size: auto 100%;
+    background-repeat: repeat-x;
+    -unity-background-scale-mode: stretch-to-fill;
     flex-shrink: 0;
 }
 
@@ -12,6 +15,21 @@
     width: 100%;
     flex-direction: row;
     justify-content: center;
+}
+
+/* Logo Styles */
+.HeaderLogo {
+    width: 77px;
+    height: 77px;
+    align-items: center;
+    justify-content: center;
+}
+
+.LogoIcon {
+    width: 100%;
+    height: 100%;
+    background-image: url('./Resources/Images/KeikanToolLogo_blue.png');
+    -unity-background-scale-mode: scale-and-crop;
 }
 
 #GlobalNavi_CenterGroup {

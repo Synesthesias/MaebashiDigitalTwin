@@ -1,35 +1,37 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
-    <Style src="project://database/Packages/com.synesthesias.landscape-design-tool-2/Runtime/UICommon/UIStyleCommon.uss?fileID=7433441132597879392&amp;guid=5003ef441f4ce7e4881f663b95f4df1d&amp;type=3#UIStyleCommon" />
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Packages/com.synesthesias.landscape-design-tool/Runtime/UICommon/UIStyleCommon.uss?fileID=7433441132597879392&amp;guid=5003ef441f4ce7e4881f663b95f4df1d&amp;type=3#UIStyleCommon" />
     <Style src="project://database/Assets/Runtime/UICommon/GlobalNavi/GlobalNavi.uss?fileID=7433441132597879392&amp;guid=7f744a1dca794699b14c528326ec1519&amp;type=3#GlobalNavi" />
     <ui:VisualElement name="MainContainer">
         <ui:VisualElement name="GlobalNavi_Container">
+            <ui:VisualElement name="LogoContainer" class="HeaderLogo">
+                <ui:VisualElement name="KeikanToolLogo" class="LogoIcon" />
+            </ui:VisualElement>
             <ui:VisualElement name="GlobalNavi_CenterGroup" tabindex="1" picking-mode="Ignore">
                 <ui:GroupBox name="Menu" focusable="false" picking-mode="Ignore">
                     <ui:RadioButton label="Radio Button" name="MenuMain" text="メイン" value="true" tabindex="-1" class="MenuRadioButton" />
-                    <ui:RadioButton label="Radio Button" name="MenuEdit" text="建物編集" tabindex="0" class="MenuRadioButton"/>
-                    <ui:RadioButton label="Radio Button" name="MenuAsset" class="IconAsset MenuRadioButton" text="アセット" tabindex="1" />
+                    <ui:RadioButton label="Radio Button" name="MenuEdit" text="建物編集" tabindex="0" class="MenuRadioButton" />
+                    <ui:RadioButton label="Radio Button" name="MenuAsset" text="アセット" tabindex="1" class="IconAsset MenuRadioButton" />
                     <ui:VisualElement class="MenuInDropdown">
                         <ui:RadioButton label="Radio Button" name="MenuCamera" text="カメラ" tabindex="2" class="MenuRadioButton" />
                         <ui:VisualElement name="DropdownArrow" />
-                        
                         <ui:VisualElement name="GlobalNavi_SubMenuContainer" class="Is-Hide">
                             <ui:VisualElement name="PanelArrow" />
-                            <ui:Label name="GlobalNavi-CameraList" class="SubMenuItem" text="視点一覧"/>
-                            <ui:Label name="GlobalNavi-CameraEdit" class="SubMenuItem" text="視点編集"/>
+                            <ui:Label name="GlobalNavi-CameraList" text="視点一覧" class="SubMenuItem" />
+                            <ui:Label name="GlobalNavi-CameraEdit" text="視点編集" class="SubMenuItem" />
                         </ui:VisualElement>
                     </ui:VisualElement>
-                    <ui:RadioButton label="Radio Button" name="MenuDashboard" class="MenuRadioButton IconDashboard" text="ダッシュボード" tabindex="3" />
-                    <ui:RadioButton label="Radio Button" name="MenuGis" class="MenuRadioButton IconGis" text="GISデータ" tabindex="4" />
-                    <ui:RadioButton label="Radio Button" name="MenuLineOfSight" class="MenuRadioButton IconLineOfSight" text="見通し解析" tabindex="5" />
-                    <ui:RadioButton label="Radio Button" name="MenuLandscapeArea" class="MenuRadioButton IconLandscapeArea" text="景観計画区域" tabindex="6" />
+                    <ui:RadioButton label="Radio Button" name="MenuDashboard" text="ダッシュボード" tabindex="3" class="MenuRadioButton IconDashboard" />
+                    <ui:RadioButton label="Radio Button" name="MenuGis" text="GISデータ" tabindex="4" class="MenuRadioButton IconGis" />
+                    <ui:RadioButton label="Radio Button" name="MenuLineOfSight" text="見通し解析" tabindex="5" class="MenuRadioButton IconLineOfSight" />
+                    <ui:RadioButton label="Radio Button" name="MenuLandscapeArea" text="景観計画区域" tabindex="6" class="MenuRadioButton IconLandscapeArea" />
                 </ui:GroupBox>
             </ui:VisualElement>
             <ui:VisualElement name="GlobalNavi_Right" picking-mode="Ignore">
                 <ui:VisualElement name="SettingContainer" picking-mode="Ignore">
-                    <ui:VisualElement class="SettingProject" picking-mode="Ignore">
+                    <ui:VisualElement picking-mode="Ignore" class="SettingProject">
                         <ui:Label tabindex="-1" text="プロジェクト編集" parse-escape-sequences="true" display-tooltip-when-elided="true" />
                         <ui:Button name="Btn_SelectProject" text="&#x9;" parse-escape-sequences="true" display-tooltip-when-elided="true">
-                            <ui:Label name="SelectProject_Name" tabindex="-1" text="" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                            <ui:Label name="SelectProject_Name" tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" />
                             <ui:VisualElement name="DropdownArrow" />
                         </ui:Button>
                         <ui:VisualElement name="Project_List_Container">
