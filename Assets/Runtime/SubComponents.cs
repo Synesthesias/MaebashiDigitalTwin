@@ -205,7 +205,7 @@ namespace Landscape2.Maebashi.Runtime
                 new DesignCompDisplay(),
                 
                 // キー入力表示（デバッグ用）
-                new KeyInputDisplayDebug(globalNaviUI.UiRoot),
+                // new KeyInputDisplayDebug(globalNaviUI.UiRoot),
             };
         }
         
