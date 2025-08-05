@@ -16,7 +16,7 @@ namespace Landscape2.Maebashi.Runtime.Common
         private List<KeyDisplayItem> activeKeyDisplays = new List<KeyDisplayItem>();
         private List<KeyDisplayItem> expiredKeyDisplays = new List<KeyDisplayItem>(); // 表示期間が終了したキーアイテム
         private const int MAX_DISPLAY_COUNT = 5;
-        private const float DISPLAY_DURATION = 2.0f;
+        private const float DISPLAY_DURATION = 0.5f;
 
         private readonly System.Array cachedKeyCodes;
         
