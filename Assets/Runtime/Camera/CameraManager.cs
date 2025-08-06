@@ -81,6 +81,9 @@ namespace Landscape2.Maebashi.Runtime
                     cameraParent.transform.position = new Vector3(-77.6360397f ,206.438171f, -778.114075f);
                     cameraParent.transform.rotation = Quaternion.Euler(47.8f, -2.4f, 0f);
                 }
+                
+                // 初期位置と回転を記録
+                LandscapeCamera.SetCameraDefaults();
             });
             
             // プレイヤーの ThirdPersonController を取得
