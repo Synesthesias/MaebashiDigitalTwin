@@ -2,6 +2,7 @@
 #if ENABLE_INPUT_SYSTEM 
 using UnityEngine.InputSystem;
 #endif
+using Landscape2.Runtime;
 
 /* Note: animations are called via the controller for both the character and capsule using animator null checks
  */
@@ -112,6 +113,7 @@ namespace StarterAssets
 #if ENABLE_INPUT_SYSTEM 
         [SerializeField]
         private PlayerInput _playerInput;
+        private IInputFocusHandler focusHandler;
 #endif
         private Animator _animator;
         
@@ -175,6 +177,27 @@ namespace StarterAssets
             // reset our timeouts on start
             _jumpTimeoutDelta = JumpTimeout;
             _fallTimeoutDelta = FallTimeout;
+
+#if ENABLE_INPUT_SYSTEM
+            // フォーカス制御の登録
+            if (_playerInput == null)
+            {
+                _playerInput = GetComponent<PlayerInput>();
+            }
+            
+            if (_playerInput != null)
+            {
+                try
+                {
+                    focusHandler = new PlayerInputFocusHandler(_playerInput);
+                    InputFocusManager.RegisterHandler(focusHandler);
+                }
+                catch (System.Exception ex)
+                {
+                    Debug.LogError($"PlayerInputFocusHandler の初期化に失敗しました: {ex.Message}");
+                }
+            }
+#endif
         }
 
         private void Update()
@@ -565,5 +588,16 @@ namespace StarterAssets
                 _controller.enabled = true;
             }
         }
+
+#if ENABLE_INPUT_SYSTEM
+        private void OnDestroy()
+        {
+            // フォーカス制御の登録解除
+            if (focusHandler != null)
+            {
+                InputFocusManager.UnregisterHandler(focusHandler);
+            }
+        }
+#endif
     }
 }
