@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
+using UnityEngine.EventSystems;
 
 namespace Landscape2.Maebashi.Runtime
 {
@@ -33,7 +34,38 @@ namespace Landscape2.Maebashi.Runtime
             // プロジェクト管理リスト
             projectListUI = UiRoot.Q<VisualElement>("Project_List_Container");
             
+            // MouseEnter/Leave イベントを登録してUI上でのクリック通り抜けを防ぐ
+            RegisterMouseEvents();
+            
             RegisterEvents();
+        }
+
+        private void RegisterMouseEvents()
+        {
+            var mainContainer = UiRoot.Q<VisualElement>("MainContainer");
+            if (mainContainer != null)
+            {
+                RegisterMouseEventsForElement(mainContainer);
+            }
+        }
+
+        private void RegisterMouseEventsForElement(VisualElement element)
+        {
+            // 要素自体にイベントを登録
+            element.RegisterCallback<MouseEnterEvent>(OnMouseEnter);
+            element.RegisterCallback<MouseLeaveEvent>(OnMouseLeave);
+        }
+
+        private void OnMouseEnter(MouseEnterEvent evt)
+        {
+            // UIStateManagerにグローバル状態を設定
+            UIStateManager.IsMouseOverUI = true;
+        }
+
+        private void OnMouseLeave(MouseLeaveEvent evt)
+        {
+            // UIStateManagerのグローバル状態をクリア
+            UIStateManager.IsMouseOverUI = false;
         }
 
         private void RegisterEvents()

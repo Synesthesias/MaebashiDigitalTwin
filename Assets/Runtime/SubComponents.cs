@@ -10,6 +10,7 @@ using Landscape2.Runtime.WalkerMode;
 using Landscape2.Runtime.WeatherTimeEditor;
 using PLATEAU.CityInfo;
 using System.Collections.Generic;
+using System.Linq;
 using TrafficSimulationTool.Runtime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -142,7 +143,7 @@ namespace Landscape2.Maebashi.Runtime
                 // カメラ
                 new LandscapeCameraUI(cameraManager.LandscapeCamera,
                     footerNaviUI.UiRoot,
-                    uxmlHandler.Uxmls.ToArray()),
+                     uxmlHandler.Uxmls.Concat(new[] { globalNaviUI.UiRoot }).ToArray()),
                 new CameraPositionMemoryUI(
                     cameraManager.CameraPositionMemory,
                     uxmlHandler.Uxmls.ToArray(),

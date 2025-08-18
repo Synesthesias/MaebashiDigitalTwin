@@ -6,8 +6,8 @@
             <ui:VisualElement name="LogoContainer" class="HeaderLogo">
                 <ui:VisualElement name="KeikanToolLogo" class="LogoIcon" />
             </ui:VisualElement>
-            <ui:VisualElement name="GlobalNavi_CenterGroup" tabindex="1" picking-mode="Ignore">
-                <ui:GroupBox name="Menu" focusable="false" picking-mode="Ignore">
+            <ui:VisualElement name="GlobalNavi_CenterGroup" tabindex="1">
+                <ui:GroupBox name="Menu" focusable="false">
                     <ui:RadioButton label="Radio Button" name="MenuMain" text="メイン" value="true" tabindex="-1" class="MenuRadioButton" />
                     <ui:RadioButton label="Radio Button" name="MenuEdit" text="建物編集" tabindex="0" class="MenuRadioButton" />
                     <ui:RadioButton label="Radio Button" name="MenuAsset" text="アセット" tabindex="1" class="IconAsset MenuRadioButton" />
@@ -26,9 +26,9 @@
                     <ui:RadioButton label="Radio Button" name="MenuLandscapeArea" text="景観計画区域" tabindex="6" class="MenuRadioButton IconLandscapeArea" />
                 </ui:GroupBox>
             </ui:VisualElement>
-            <ui:VisualElement name="GlobalNavi_Right" picking-mode="Ignore">
-                <ui:VisualElement name="SettingContainer" picking-mode="Ignore">
-                    <ui:VisualElement picking-mode="Ignore" class="SettingProject">
+            <ui:VisualElement name="GlobalNavi_Right">
+                <ui:VisualElement name="SettingContainer">
+                    <ui:VisualElement class="SettingProject">
                         <ui:Label tabindex="-1" text="プロジェクト編集" parse-escape-sequences="true" display-tooltip-when-elided="true" />
                         <ui:Button name="Btn_SelectProject" text="&#x9;" parse-escape-sequences="true" display-tooltip-when-elided="true">
                             <ui:Label name="SelectProject_Name" tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" />

@@ -1,9 +1,9 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Packages/com.synesthesias.landscape-design-tool-2/Runtime/UICommon/UIStyleCommon.uss?fileID=7433441132597879392&amp;guid=5003ef441f4ce7e4881f663b95f4df1d&amp;type=3#UIStyleCommon" />
     <Style src="project://database/Assets/Runtime/FooterNavi/FooterNavi.uss?fileID=7433441132597879392&amp;guid=693be8c035404742a85f08667cf1801e&amp;type=3#FooterNavi" />
-    <ui:VisualElement picking-mode="Ignore" class="FooterNavi__Wrapper">
-        <ui:VisualElement picking-mode="Ignore" class="FooterNavi__Container">
-            <ui:Label text="09:00" name="TimeText" class="FooterNavi__Time" picking-mode="Ignore" />
+    <ui:VisualElement class="FooterNavi__Wrapper">
+        <ui:VisualElement class="FooterNavi__Container">
+            <ui:Label text="09:00" name="TimeText" class="FooterNavi__Time" />
             <ui:VisualElement name="FooterNavi__Weather" class="FooterNavi__Weather">
                 <ui:GroupBox name="Weather">
                     <ui:RadioButton label="Radio Button" name="Sun" value="true" />

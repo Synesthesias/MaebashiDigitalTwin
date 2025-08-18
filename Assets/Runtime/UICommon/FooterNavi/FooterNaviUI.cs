@@ -28,7 +28,34 @@ namespace Landscape2.Maebashi.Runtime
             var timeSliderUI = new TimeSliderUI(UiRoot);
             timeSliderUI.OnTimeChanged.AddListener(OnTimeChanged.Invoke);
 
+            // MouseEnter/Leave イベントを登録してUI上でのクリック通り抜けを防ぐ
+            RegisterMouseEvents();
+
             RegisterEvents();
+        }
+
+        private void RegisterMouseEvents()
+        {
+            RegisterMouseEventsForElement(UiRoot);
+        }
+
+        private void RegisterMouseEventsForElement(VisualElement element)
+        {
+            // 要素自体にイベントを登録
+            element.RegisterCallback<MouseEnterEvent>(OnMouseEnter);
+            element.RegisterCallback<MouseLeaveEvent>(OnMouseLeave);
+        }
+
+        private void OnMouseEnter(MouseEnterEvent evt)
+        {
+            // UIStateManagerにグローバル状態を設定
+            UIStateManager.IsMouseOverUI = true;
+        }
+
+        private void OnMouseLeave(MouseLeaveEvent evt)
+        {
+            // UIStateManagerのグローバル状態をクリア
+            UIStateManager.IsMouseOverUI = false;
         }
 
         private void RegisterEvents()
