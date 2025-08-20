@@ -202,9 +202,6 @@ namespace Landscape2.Maebashi.Runtime
                 // 景観区域作成
                 new PlanningUI(uxmlHandler.GetUxml(SubMenuUxmlType.Planning), globalNaviUI.UiRoot, CreateDbfFieldSettings()),
                 
-                // デザインコンペデータ表示
-                new DesignCompDisplay(),
-                
                 // キー入力表示（デバッグ用）
                 // new KeyInputDisplayDebug(globalNaviUI.UiRoot),
             };
