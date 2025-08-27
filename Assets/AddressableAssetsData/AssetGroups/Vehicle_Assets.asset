@@ -17,141 +17,8 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 677701ee304b12643b3d11a48214bd87
   m_SerializeEntries:
-  - m_GUID: 49672caeb57b8ce49b80e665ff486959
-    m_Address: Vehicle_Sedan_DecalFloorEmission
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Vehicle_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 3d0e7105b7efe3446998ed5fac7c22a7
-    m_Address: Vehicle_Sedan_01_Yellow
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Vehicle_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: f96685c5022f95f4fa7fc40872014ff0
-    m_Address: Vehicle_Sedan_01_White
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Vehicle_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 937b2ad60afc2da458f08e43b5a28ced
-    m_Address: Vehicle_Sedan_01_Red
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Vehicle_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: cb7774308a522e645a5d4463dc8bbf01
-    m_Address: Vehicle_Sedan_01_Pink
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Vehicle_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: f226824dc584b844cab3fe36fc6ce2fd
-    m_Address: Vehicle_Sedan_01_Orange
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Vehicle_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ca26ec4289a3d3941a81f50a312fec1b
-    m_Address: Vehicle_Sedan_01_Gray
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Vehicle_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 6dc3fe139cf88e94892b28b5600322c8
-    m_Address: Vehicle_Sedan_01_Blue
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Vehicle_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 92931b5672ebc2348bb55618490daffc
-    m_Address: Vehicle_Sedan_01_Black
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Vehicle_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: b1c83b14d269e89439a671ed69c54008
-    m_Address: Vehicle_Motorcycle_01_White
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Vehicle_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 4a6ea947a28bcbc4a8f294c1a5734396
-    m_Address: Vehicle_Motorcycle_01_Red
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Vehicle_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 442f5c632c6d9924884b822e01955075
-    m_Address: Vehicle_Motorcycle_01_Black
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Vehicle_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 9105133310a54d341a7946e75bd5458d
-    m_Address: Vehicle_Minivan_DecalFloorEmission
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Vehicle_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 446dc2024b71fcf4b801926a37665765
-    m_Address: Vehicle_Minivan_01_White
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Vehicle_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 0657a7a4edb64dc4c94d035f550616da
-    m_Address: Vehicle_Minivan_01_Red
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Vehicle_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c34faad772ea1c84980c3a6c6abada23
-    m_Address: Vehicle_Minivan_01_Orange
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Vehicle_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 4132364518870c34abb643fed31d5b8d
-    m_Address: Vehicle_Minivan_01_Green
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Vehicle_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c81652aa78825db48b958458ec6e1d1b
-    m_Address: Vehicle_Minivan_01_Aqua
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Vehicle_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e95ae129d219f5a499ecd78de18b55bf
-    m_Address: Vehicle_Bus_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Vehicle_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: baf43264e8e717441beebed7f96130c5
-    m_Address: Vehicle_Bicycle_01_White
+  - m_GUID: 5b7c449c54c5882469747548cdc431b9
+    m_Address: Vehicle_Bicycle_01_Black
     m_ReadOnly: 0
     m_SerializedLabels:
     - Vehicle_Assets
@@ -164,8 +31,141 @@ MonoBehaviour:
     - Vehicle_Assets
     - Plateau_Assets
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 5b7c449c54c5882469747548cdc431b9
-    m_Address: Vehicle_Bicycle_01_Black
+  - m_GUID: baf43264e8e717441beebed7f96130c5
+    m_Address: Vehicle_Bicycle_01_White
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Vehicle_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e95ae129d219f5a499ecd78de18b55bf
+    m_Address: Vehicle_Bus_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Vehicle_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c81652aa78825db48b958458ec6e1d1b
+    m_Address: Vehicle_Minivan_01_Aqua
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Vehicle_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4132364518870c34abb643fed31d5b8d
+    m_Address: Vehicle_Minivan_01_Green
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Vehicle_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c34faad772ea1c84980c3a6c6abada23
+    m_Address: Vehicle_Minivan_01_Orange
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Vehicle_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0657a7a4edb64dc4c94d035f550616da
+    m_Address: Vehicle_Minivan_01_Red
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Vehicle_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 446dc2024b71fcf4b801926a37665765
+    m_Address: Vehicle_Minivan_01_White
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Vehicle_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9105133310a54d341a7946e75bd5458d
+    m_Address: Vehicle_Minivan_DecalFloorEmission
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Vehicle_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 442f5c632c6d9924884b822e01955075
+    m_Address: Vehicle_Motorcycle_01_Black
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Vehicle_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4a6ea947a28bcbc4a8f294c1a5734396
+    m_Address: Vehicle_Motorcycle_01_Red
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Vehicle_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b1c83b14d269e89439a671ed69c54008
+    m_Address: Vehicle_Motorcycle_01_White
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Vehicle_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 92931b5672ebc2348bb55618490daffc
+    m_Address: Vehicle_Sedan_01_Black
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Vehicle_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6dc3fe139cf88e94892b28b5600322c8
+    m_Address: Vehicle_Sedan_01_Blue
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Vehicle_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ca26ec4289a3d3941a81f50a312fec1b
+    m_Address: Vehicle_Sedan_01_Gray
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Vehicle_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f226824dc584b844cab3fe36fc6ce2fd
+    m_Address: Vehicle_Sedan_01_Orange
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Vehicle_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cb7774308a522e645a5d4463dc8bbf01
+    m_Address: Vehicle_Sedan_01_Pink
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Vehicle_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 937b2ad60afc2da458f08e43b5a28ced
+    m_Address: Vehicle_Sedan_01_Red
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Vehicle_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f96685c5022f95f4fa7fc40872014ff0
+    m_Address: Vehicle_Sedan_01_White
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Vehicle_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3d0e7105b7efe3446998ed5fac7c22a7
+    m_Address: Vehicle_Sedan_01_Yellow
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Vehicle_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 49672caeb57b8ce49b80e665ff486959
+    m_Address: Vehicle_Sedan_DecalFloorEmission
     m_ReadOnly: 0
     m_SerializedLabels:
     - Vehicle_Assets

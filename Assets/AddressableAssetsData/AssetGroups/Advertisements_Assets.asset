@@ -17,78 +17,8 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 440b5ec0004944beab8d847cfb383785
   m_SerializeEntries:
-  - m_GUID: 3e4af821acf4dde49aff79dc69a010a9
-    m_Address: Advertisement_WallAdPanel_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Advertisements_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 84ddea5386a5daa4c8998fb74923ee27
-    m_Address: Advertisement_Vertical_05
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Advertisements_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 7014c7eda709c204bb4ffa11ca681abb
-    m_Address: Advertisement_Vertical_04
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Advertisements_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ade12778ec0683a46b4a16164020029a
-    m_Address: Advertisement_Vertical_03
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Advertisements_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ff93ab9821385924090241f7270100cf
-    m_Address: Advertisement_Vertical_02
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Advertisements_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ecba0aeb12c1b6c4b93a0db9b8c73596
-    m_Address: Advertisement_Vertical_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Advertisements_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: fc6e82ca0e95e514183baeef53fbd5d7
-    m_Address: Advertisement_SidewalkSign_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Advertisements_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: dd50fe3cf6c354545a15bc86a39f681f
-    m_Address: Advertisement_RooftopAdTower_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Advertisements_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 72d217139c4e6144ab7a0a0b146eccbd
-    m_Address: Advertisement_RooftopAdBoard_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Advertisements_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: a363a675b12c86d46a6163dc54292a7c
-    m_Address: Advertisement_DigitalSignage_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Advertisements_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 38e909acc4d1f434da42c08d4fdc9127
-    m_Address: Advertisement_AFrameSign_01
+  - m_GUID: bd6b92049f27edc478a7ce50f27d6aad
+    m_Address: Advertisement_AdBoard_01
     m_ReadOnly: 0
     m_SerializedLabels:
     - Advertisements_Assets
@@ -101,8 +31,78 @@ MonoBehaviour:
     - Advertisements_Assets
     - Plateau_Assets
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: bd6b92049f27edc478a7ce50f27d6aad
-    m_Address: Advertisement_AdBoard_01
+  - m_GUID: 38e909acc4d1f434da42c08d4fdc9127
+    m_Address: Advertisement_AFrameSign_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Advertisements_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a363a675b12c86d46a6163dc54292a7c
+    m_Address: Advertisement_DigitalSignage_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Advertisements_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 72d217139c4e6144ab7a0a0b146eccbd
+    m_Address: Advertisement_RooftopAdBoard_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Advertisements_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dd50fe3cf6c354545a15bc86a39f681f
+    m_Address: Advertisement_RooftopAdTower_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Advertisements_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fc6e82ca0e95e514183baeef53fbd5d7
+    m_Address: Advertisement_SidewalkSign_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Advertisements_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ecba0aeb12c1b6c4b93a0db9b8c73596
+    m_Address: Advertisement_Vertical_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Advertisements_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ff93ab9821385924090241f7270100cf
+    m_Address: Advertisement_Vertical_02
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Advertisements_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ade12778ec0683a46b4a16164020029a
+    m_Address: Advertisement_Vertical_03
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Advertisements_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7014c7eda709c204bb4ffa11ca681abb
+    m_Address: Advertisement_Vertical_04
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Advertisements_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 84ddea5386a5daa4c8998fb74923ee27
+    m_Address: Advertisement_Vertical_05
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Advertisements_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3e4af821acf4dde49aff79dc69a010a9
+    m_Address: Advertisement_WallAdPanel_01
     m_ReadOnly: 0
     m_SerializedLabels:
     - Advertisements_Assets

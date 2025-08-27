@@ -17,105 +17,105 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 8271a3213e81b43bb8378dddfe35c140
   m_SerializeEntries:
-  - m_GUID: 9d44ce59481df9c4787a2af5fd8c8275
-    m_Address: Factory_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Buildings_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 95f4a623741ef8a43bacf477a68774c6
-    m_Address: ConvenienceStore_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Buildings_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 41cc688ba06318745a50f445efb895da
-    m_Address: ComplexBuilding_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Buildings_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 87998310a6303624392a385b69cb9142
-    m_Address: CommercialBuilding_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Buildings_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 1de3907fcef393e48b18bb95d92769aa
+  - m_GUID: 83800cdcdefccaf4a996bed4578a0c3c
     m_Address: Apartment_01
     m_ReadOnly: 0
     m_SerializedLabels:
     - Buildings_Assets
     - Plateau_Assets
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 52856c35dfea51947a90c34b5c84e13f
+  - m_GUID: 8e31b020cb9ffd342ad1537b86d60d63
+    m_Address: CommercialBuilding_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Buildings_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3057a336e02ed1340a7d0ecd1c764b91
+    m_Address: ComplexBuilding_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Buildings_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 75ccab00ee26b0c46bb3397332974d49
+    m_Address: ConvenienceStore_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Buildings_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8d439eeabac04a441aa90e8c14b42e12
+    m_Address: Factory_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Buildings_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e26881625817ec04086152f8fe16e13b
     m_Address: Hotel_01
     m_ReadOnly: 0
     m_SerializedLabels:
     - Buildings_Assets
     - Plateau_Assets
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 5478e8c9796e7094ab657a5afcd25832
+  - m_GUID: 242168b082b2dda49bfa1b3f3b13a678
     m_Address: House_01
     m_ReadOnly: 0
     m_SerializedLabels:
     - Buildings_Assets
     - Plateau_Assets
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 1e3f06fc91f7d4749a2ce9c6b5cffbf9
-    m_Address: KotoHouse_07
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Buildings_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 9e2207f3c40f7497e8c46fd55c07542e
-    m_Address: KotoHouse_06
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Buildings_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 2bef52c309d8047cb93ca32668b41376
-    m_Address: KotoHouse_05
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Buildings_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e0ff7f3a7b35740268a4a1eda361aeb0
-    m_Address: KotoHouse_04
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Buildings_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ec1d4ba11448d476f9e782214b92e90d
-    m_Address: KotoHouse_03
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Buildings_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: f2b923403d1ab4e919119e115a133ce4
-    m_Address: KotoHouse_02
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Buildings_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: cfe79675a48124875b10f373abec81cf
+  - m_GUID: 5a5dd080b44b7fb48a27aa693d76fda2
     m_Address: KotoHouse_01
     m_ReadOnly: 0
     m_SerializedLabels:
     - Buildings_Assets
     - Plateau_Assets
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c6b4895a57b139f4ba75ea17b6a6fd2e
+  - m_GUID: c5eff05456b7e9646b0d53f3e767a492
+    m_Address: KotoHouse_02
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Buildings_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 19ba86413f62aa84999cfd72f8ab21dd
+    m_Address: KotoHouse_03
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Buildings_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d9acd842badf8274f879d4b687f6697e
+    m_Address: KotoHouse_04
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Buildings_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 06a7342dd42c2fc4f9fa6b817ef7ec7e
+    m_Address: KotoHouse_05
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Buildings_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 973805f6abfaa704fbd982171534fafc
+    m_Address: KotoHouse_06
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Buildings_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aa176e71aea8a7f48bbd510a5b7befa0
+    m_Address: KotoHouse_07
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Buildings_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 47c0e4605aef70a469f924070d841c29
     m_Address: OfficeBuilding_01
     m_ReadOnly: 0
     m_SerializedLabels:

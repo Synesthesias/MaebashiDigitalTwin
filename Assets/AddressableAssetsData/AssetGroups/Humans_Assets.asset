@@ -17,50 +17,8 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: b7dbadf0f5c4bf14a96e1ee20775c243
   m_SerializeEntries:
-  - m_GUID: d7b95b8c5e083ae47904d0801e4c9435
-    m_Address: Human_Senior_Male_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Humans_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: a62e75576800fcc40846e2dedf6a7f83
-    m_Address: Human_Senior_Female_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Humans_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 15e2211e9d56ca54587ca67363127a88
-    m_Address: Human_Male_03
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Humans_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: bf8d6fe4bfcb8914287079f3dd05fe0d
-    m_Address: Human_Male_02
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Humans_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 1460851f9b987744aa70d5ab2859f807
-    m_Address: Human_Male_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Humans_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 122e6306fccdad64e87b51a5dc0ce227
-    m_Address: Human_Female_02
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Humans_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 283cb2746c218244bb1a0b71a00e9ad3
-    m_Address: Human_Female_01
+  - m_GUID: 8177f66844e4ef94d9ad4f20cf522c5e
+    m_Address: Human_Child_Female_01
     m_ReadOnly: 0
     m_SerializedLabels:
     - Humans_Assets
@@ -73,8 +31,50 @@ MonoBehaviour:
     - Humans_Assets
     - Plateau_Assets
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 8177f66844e4ef94d9ad4f20cf522c5e
-    m_Address: Human_Child_Female_01
+  - m_GUID: 283cb2746c218244bb1a0b71a00e9ad3
+    m_Address: Human_Female_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Humans_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 122e6306fccdad64e87b51a5dc0ce227
+    m_Address: Human_Female_02
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Humans_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1460851f9b987744aa70d5ab2859f807
+    m_Address: Human_Male_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Humans_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bf8d6fe4bfcb8914287079f3dd05fe0d
+    m_Address: Human_Male_02
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Humans_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 15e2211e9d56ca54587ca67363127a88
+    m_Address: Human_Male_03
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Humans_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a62e75576800fcc40846e2dedf6a7f83
+    m_Address: Human_Senior_Female_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Humans_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d7b95b8c5e083ae47904d0801e4c9435
+    m_Address: Human_Senior_Male_01
     m_ReadOnly: 0
     m_SerializedLabels:
     - Humans_Assets

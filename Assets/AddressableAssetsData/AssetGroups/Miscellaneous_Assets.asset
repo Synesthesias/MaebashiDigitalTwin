@@ -17,78 +17,8 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 0f07ebf989f1f45fb8147b93292f7f2e
   m_SerializeEntries:
-  - m_GUID: 03ed44f7fc4d4c0488b0feb3794b4e2b
-    m_Address: Miscellaneous_START_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Miscellaneous_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 691111f823ab4af44a345fdc24348ab8
-    m_Address: Miscellaneous_SpotExclamation_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Miscellaneous_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 198a14678e87fac4bacdfe1b428925b3
-    m_Address: Miscellaneous_Spot_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Miscellaneous_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 3b7b9d76512f58c448939ddd976e4fd6
-    m_Address: Miscellaneous_Question_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Miscellaneous_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 36224333e5342a44482b0859f15517bf
-    m_Address: Miscellaneous_Like_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Miscellaneous_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 47740bfeff24f2f40b78bc7a4d4b4d4e
-    m_Address: Miscellaneous_Heart_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Miscellaneous_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 14c801431e3a3c54c8cb03678c14f1f2
-    m_Address: Miscellaneous_GOAL_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Miscellaneous_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 58d698af1f6a15043ad49a85fb211847
-    m_Address: Miscellaneous_Exclamation_02
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Miscellaneous_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 8bb9055a41201194fa8c1d3be99821a5
-    m_Address: Miscellaneous_Coin_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Miscellaneous_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 837c1f63167968947998f4903bf8f994
-    m_Address: Miscellaneous_ArrowRight_01
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Miscellaneous_Assets
-    - Plateau_Assets
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 8340f462c45faf84dacf1fd437952647
-    m_Address: Miscellaneous_ArrowLeft_01
+  - m_GUID: fdbfff479457ea64eba53dcba4ffb89a
+    m_Address: Miscellaneous_ArrowBack_01
     m_ReadOnly: 0
     m_SerializedLabels:
     - Miscellaneous_Assets
@@ -101,8 +31,78 @@ MonoBehaviour:
     - Miscellaneous_Assets
     - Plateau_Assets
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: fdbfff479457ea64eba53dcba4ffb89a
-    m_Address: Miscellaneous_ArrowBack_01
+  - m_GUID: 8340f462c45faf84dacf1fd437952647
+    m_Address: Miscellaneous_ArrowLeft_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Miscellaneous_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 837c1f63167968947998f4903bf8f994
+    m_Address: Miscellaneous_ArrowRight_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Miscellaneous_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8bb9055a41201194fa8c1d3be99821a5
+    m_Address: Miscellaneous_Coin_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Miscellaneous_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 58d698af1f6a15043ad49a85fb211847
+    m_Address: Miscellaneous_Exclamation_02
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Miscellaneous_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 14c801431e3a3c54c8cb03678c14f1f2
+    m_Address: Miscellaneous_GOAL_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Miscellaneous_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 47740bfeff24f2f40b78bc7a4d4b4d4e
+    m_Address: Miscellaneous_Heart_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Miscellaneous_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 36224333e5342a44482b0859f15517bf
+    m_Address: Miscellaneous_Like_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Miscellaneous_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3b7b9d76512f58c448939ddd976e4fd6
+    m_Address: Miscellaneous_Question_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Miscellaneous_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 198a14678e87fac4bacdfe1b428925b3
+    m_Address: Miscellaneous_Spot_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Miscellaneous_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 691111f823ab4af44a345fdc24348ab8
+    m_Address: Miscellaneous_SpotExclamation_01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Miscellaneous_Assets
+    - Plateau_Assets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 03ed44f7fc4d4c0488b0feb3794b4e2b
+    m_Address: Miscellaneous_START_01
     m_ReadOnly: 0
     m_SerializedLabels:
     - Miscellaneous_Assets

@@ -1,6 +1,3 @@
-[submodule "Packages/Landscape-Design-Tool-2"]
-	path = Packages/Landscape-Design-Tool-2
-	url = git@github.com:Synesthesias/Landscape-Design-Tool-2.git
 [submodule "Packages/PLATEAU-SDK-for-Unity"]
 	path = Packages/PLATEAU-SDK-for-Unity
 	url = git@github.com:Synesthesias/PLATEAU-SDK-for-Unity.git
@@ -13,3 +10,6 @@
 [submodule "Packages/Data-Preparation-Tool-for-TrafficSim"]
 	path = Packages/Data-Preparation-Tool-for-TrafficSim
 	url = git@github.com:Synesthesias/Data-Preparation-Tool-for-TrafficSim.git
+[submodule "Packages/landscape-design-tool"]
+	path = Packages/landscape-design-tool
+	url = git@github.com:Synesthesias/landscape-design-tool.git
