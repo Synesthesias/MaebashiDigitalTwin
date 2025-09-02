@@ -1763,6 +1763,24 @@ MonoBehaviour:
     m_SerializedLabels:
     - AssetsPicture
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b1463c246726d3a40b08f0723a2b61bb
+    m_Address: Vehicle_Motorcycle_Robot_01_Black
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8054e1c50e93ed34599d499ce0cbb7d3
+    m_Address: Vehicle_Motorcycle_Robot_01_Red
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d5608b5bef67e924e91d83cd0b82c544
+    m_Address: Vehicle_Motorcycle_Robot_01_White
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AssetsPicture
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 917cb777ddfc5524ab90ba4e46938c20, type: 2}
   m_SchemaSet:
