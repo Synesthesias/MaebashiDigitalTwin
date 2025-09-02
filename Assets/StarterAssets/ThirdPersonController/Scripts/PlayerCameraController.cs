@@ -1,5 +1,6 @@
 using UnityEngine;
 using Cinemachine;
+using Landscape2.Runtime;
 using System;
 using UnityEngine.InputSystem;
 
@@ -35,6 +36,9 @@ namespace StarterAssets
         private float currentFOV;
         
         private const float cameraHeightOffset = 0.5f; // カメラの高さオフセット（胸の高さ）
+        
+        private InputActionFocusHandler focusHandler;
+        private bool isInFocus = true;
 
         public void Initialize()
         {
@@ -69,22 +73,43 @@ namespace StarterAssets
                 {
                     virtualCamera.m_Lens.FieldOfView = currentFOV;
                 }
+                
+                // フォーカス制御の登録
+                focusHandler = new InputActionFocusHandler(
+                    enable: () => isInFocus = true,
+                    disable: () => isInFocus = false
+                );
+                InputFocusManager.RegisterHandler(focusHandler);
+            }
+        }
+        
+        public void OnDisable()
+        {
+            if (focusHandler != null)
+            {
+                // フォーカス制御の登録解除
+                InputFocusManager.UnregisterHandler(focusHandler);
             }
         }
 
         private void Update()
         {
-            if (thirdPersonController.CurrentViewMode == ThirdPersonController.ViewMode.Overhead)
+            if (thirdPersonController == null ||
+                thirdPersonController.CurrentViewMode == ThirdPersonController.ViewMode.Overhead)
             {
                 return;
             }
-            
-            if (thirdPersonController != null)
+
+            if (!isInFocus)
             {
+                // マウスフォーカスから外れた時に、走るモーションから解除されるようにMoveだけ一度呼ぶ
                 thirdPersonController.Move();
-                HandleCameraRotationInput();
-                HandleCameraZoomInput();
+                return;
             }
+
+            thirdPersonController.Move();
+            HandleCameraRotationInput();
+            HandleCameraZoomInput();
         }
 
         private void HandleCameraRotationInput()
