@@ -17,18 +17,18 @@
     justify-content: center;
 }
 
-/* Logo Styles */
 .HeaderLogo {
-    width: 77px;
+    width: 120px;
     height: 77px;
     align-items: center;
     justify-content: center;
+    background-color: rgb(255, 255, 255);
 }
 
 .LogoIcon {
-    width: 100%;
+    width: 100px;
     height: 100%;
-    background-image: url('./Resources/Images/KeikanToolLogo_blue.png');
+    background-image: url('./Resources/Images/MaebashiLogo01.png');
     -unity-background-scale-mode: scale-and-crop;
 }
 
@@ -39,7 +39,6 @@
     margin-right: 20px;
 }
 
-/* Menu */
 #Menu {
     margin: 0;
     padding: 0;
@@ -78,7 +77,7 @@
 }
 
 .MenuRadioButton#MenuCamera {
-   height: 50px; 
+    height: 50px;
 }
 
 .MenuRadioButton#MenuLandscapeArea {
@@ -92,10 +91,9 @@
 }
 
 .MenuRadioButton#MenuLineOfSight .unity-radio-button__checkmark-background {
-    width: 29px; /* Adjusted width for Line of Sight icon */
+    width: 29px;
 }
 
-/* SubMenuContainer */
 #GlobalNavi_SubMenuContainer {
     position: absolute;
     top: 84px;
@@ -175,7 +173,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    visibility: visible; 
+    visibility: visible;
 }
 
 #SettingContainer .ActionButton > Label {
