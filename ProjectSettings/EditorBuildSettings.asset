@@ -6,13 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Maebashi.unity
+    path: Assets/Maebashi/Scenes/Maebashi.unity
     guid: 4916a3bd07f787f4dae7b81e978cfc1f
   - enabled: 1
-    path: Assets/Scenes/Maebashi_City_Buildings.unity
+    path: Assets/Maebashi/Scenes/Maebashi_City_Buildings.unity
     guid: cc5c2cd4c86cf134e99d886e1332586b
   - enabled: 1
-    path: Assets/Scenes/Maebashi_City_Road.unity
-    guid: cc5e5930cc4cef84481108f280cd8aaa
+    path: Assets/Maebashi/Scenes/Maebashi_City_Road.unity
+    guid: 1fa1e52b80d06e541af7c3add9217d4a
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 7e0538278070a484994f5518e56e3480, type: 2}
