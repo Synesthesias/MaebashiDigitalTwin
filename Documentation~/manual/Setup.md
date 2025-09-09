@@ -16,14 +16,6 @@
 
 ## プロジェクトのセットアップ
 - 本プロジェクトをgithubよりクローンしてください。
-- 本プロジェクトでは `git lfs` と `git submodule` を使用しています。本プロジェクトをクローンできたら、以下のコマンドを実行してください。
-
-```bash
-git lfs install
-git lfs pull
-
-git submodule update --init --recursive
-```
 
 ### 前橋データのダウンロード
 - 本プロジェクトでは、前橋市の都市データを使用しています。
@@ -50,10 +42,14 @@ git submodule update --init --recursive
 - Unityが起動します。
 
 ## 必要パッケージの追加
-- 本プロジェクトでは、PLATEAUのUnity向けプラグインである `Maps-Toolkit-for-Unity` と `Cesium-for-Unity` を使用しています。
-- これらのパッケージは、前橋データと同じ[ダウンロードリンク](https://drive.google.com/drive/folders/1PozuAs8KcntlAoV_zBBQGcofI9qGAxei?usp=drive_link)から `com.cesium.unity-1.7.1.tgz` と `com.unity.plateautoolkit.maps-1.0.2.tgz` をダウンロードしてください。
-
-[プラグインダウンロード](https://drive.google.com/drive/folders/1PozuAs8KcntlAoV_zBBQGcofI9qGAxei?usp=drive_link)
+- 本プロジェクトでは、以下のプラグインのインストールが必要になります。
+  - `Cesium-for-Unity`
+  - `PLATEAU SDK-Maps-Toolkit-for-Unity`
+  - `Landscape-Design-Toolkit`
+  - `PLATEAU SDK for Unity`
+  - `PLATEAU SDK-Toolkits for Unity`
+  - `PLATEAU-Traffic-SimulatorTool`
+- これらのパッケージは、前橋データと同じ[ダウンロードリンク](https://drive.google.com/drive/folders/1PozuAs8KcntlAoV_zBBQGcofI9qGAxei?usp=drive_link)からダウンロードしてください。
 
 ![プラグインダウンロード](../resources/Install/packageInstall.png)
 
@@ -62,12 +58,14 @@ git submodule update --init --recursive
 
 ![パッケージの追加](../resources/Install/addPacakge.png)
 
-- 先ほどDLした`com.cesium.unity-1.7.1.tgz`と`com.unity.plateautoolkit.maps-1.0.2.tgz` を指定します。
-- エラーが出なければ成功です。
+- 先ほどDLした各パッケージを指定します。
+- 以下のように表示され、エラーが出ていなければ成功です。
+
+![パッケージの追加](../resources/Install/packageInstall_unity.png)
 
 ## 前橋シーンを起動
 
-- Unityが起動したら、`Assets/Scenes/MainScene.unity`を開いてください。
+- パッケージのインストールが完了したら`Assets/Maebashi/Scenes/MainScene.unity`を開いてください。
 - プレイボタンを押して、起動が確認できたらセットアップ完了です。
 
 ![Unityプロジェクトを起動](../resources/Install/unityPlay.png)
