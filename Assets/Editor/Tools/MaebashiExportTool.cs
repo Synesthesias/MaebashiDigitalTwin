@@ -1,9 +1,7 @@
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using UnityEditor;
@@ -14,7 +12,6 @@ using Debug = UnityEngine.Debug;
 
 /// <summary>
 /// MaebashiフォルダとPackagesをエクスポートするツール
-/// 大容量データ(20GB)対応の高速化実装
 /// </summary>
 public class MaebashiExportTool : EditorWindow
 {
@@ -31,16 +28,11 @@ public class MaebashiExportTool : EditorWindow
     private string tgzProgressMessage = "";
     
     // 時間計測用
-    private DateTime zipStartTime;
-    private DateTime tgzStartTime;
-    private DateTime overallStartTime;
     private Stopwatch overallStopwatch;
     
     private CancellationTokenSource cancellationTokenSource;
     private Task currentTask;
     
-    // バッファサイズ (128MB)
-    private const int BufferSize = 128 * 1024 * 1024;
     
     // パッケージリスト
     private readonly string[] packageNames = new[]
@@ -165,10 +157,6 @@ public class MaebashiExportTool : EditorWindow
         tgzProgress = 0f;
         tgzProgressMessage = "準備中...";
         
-        // 開始時刻を記録
-        overallStartTime = DateTime.Now;
-        zipStartTime = default;
-        tgzStartTime = default;
         
         // 全体のStopwatchを開始
         overallStopwatch = new Stopwatch();
@@ -190,7 +178,7 @@ public class MaebashiExportTool : EditorWindow
                 isCompleted = true;
                 overallStopwatch?.Stop(); // 経過時間を停止
                 EditorUtility.DisplayDialog("完了", "エクスポートが完了しました。", "OK");
-                Process.Start("explorer.exe", outputPath.Replace('/', '\\'));
+                EditorUtility.RevealInFinder(outputPath);
             }
         }
         catch (OperationCanceledException)
@@ -234,13 +222,11 @@ public class MaebashiExportTool : EditorWindow
         Task zipTask = null;
         if (Directory.Exists(maebashiPath))
         {
-            zipStartTime = DateTime.Now; // ZIP作成開始時刻を記録
             string zipPath = Path.Combine(outputPath, "Maebashi.zip");
             zipTask = CreateZipAsync(maebashiPath, zipPath, cancellationToken);
         }
         
         // 2. PackagesのTGZ化（メインスレッドで順次実行）
-        tgzStartTime = DateTime.Now; // TGZ作成開始時刻を記録
         
         // 全体の経過時間の定期更新タスク
         var progressUpdateTask = Task.Run(async () =>
@@ -402,35 +388,6 @@ public class MaebashiExportTool : EditorWindow
         
         // メインスレッドで実行
         EditorApplication.delayCall += () => Repaint();
-    }
-    
-    private string CalculateRemainingTime(DateTime startTime, float progress)
-    {
-        if (progress <= 0.01f) // 1%未満では表示しない
-        {
-            return "";
-        }
-        
-        var elapsed = DateTime.Now - startTime;
-        var totalEstimated = TimeSpan.FromTicks((long)(elapsed.Ticks / progress));
-        var remaining = totalEstimated - elapsed;
-        
-        if (remaining.TotalSeconds < 1)
-        {
-            return " - 残り数秒";
-        }
-        else if (remaining.TotalMinutes < 1)
-        {
-            return $" - 残り約{remaining.Seconds}秒";
-        }
-        else if (remaining.TotalHours < 1)
-        {
-            return $" - 残り約{remaining.Minutes}分{remaining.Seconds}秒";
-        }
-        else
-        {
-            return $" - 残り約{remaining.Hours}時間{remaining.Minutes}分";
-        }
     }
     
     private string FormatElapsedTime(TimeSpan elapsed)
