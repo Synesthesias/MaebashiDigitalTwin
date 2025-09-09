@@ -178,11 +178,15 @@ public class MaebashiExportTool : EditorWindow
         
         try
         {
+            Debug.Log("[MaebashiExportTool] エクスポート開始");
             currentTask = ExportAllAsync(cancellationTokenSource.Token);
             await currentTask;
+            Debug.Log("[MaebashiExportTool] ExportAllAsync完了");
             
+            Debug.Log($"[MaebashiExportTool] キャンセレーション状態チェック: {cancellationTokenSource.Token.IsCancellationRequested}");
             if (!cancellationTokenSource.Token.IsCancellationRequested)
             {
+                Debug.Log("[MaebashiExportTool] 正常完了 - ダイアログ表示します");
                 isCompleted = true;
                 overallStopwatch?.Stop(); // 経過時間を停止
                 EditorUtility.DisplayDialog("完了", "エクスポートが完了しました。", "OK");
@@ -224,6 +228,7 @@ public class MaebashiExportTool : EditorWindow
 
     private async Task ExportAllAsync(CancellationToken cancellationToken)
     {
+        Debug.Log("[MaebashiExportTool] ExportAllAsync開始");
         // 1. MaebashiフォルダのZIP化（別スレッドで実行可能）
         string maebashiPath = Path.Combine(Application.dataPath, "Maebashi");
         Task zipTask = null;
@@ -267,14 +272,14 @@ public class MaebashiExportTool : EditorWindow
             }
         }
         
-        // 進捗更新タスクも終了
-        try { await progressUpdateTask; } catch (OperationCanceledException) { }
-        
         // ZIP化の完了を待つ
         if (zipTask != null)
         {
+            Debug.Log("[MaebashiExportTool] ZIP完了待機中");
             await zipTask;
+            Debug.Log("[MaebashiExportTool] ZIP完了");
         }
+        Debug.Log("[MaebashiExportTool] ExportAllAsync全て完了");
     }
 
     private async Task CreateZipAsync(string sourcePath, string destinationPath, CancellationToken cancellationToken)
@@ -294,6 +299,7 @@ public class MaebashiExportTool : EditorWindow
                 );
                 
                 UpdateZipProgress(1.0f, "ZIP完了");
+                Debug.Log("[MaebashiExportTool] ZIP作成成功");
             }
             catch (Exception ex)
             {
@@ -325,6 +331,7 @@ public class MaebashiExportTool : EditorWindow
             {
                 float completedProgress = (float)(packageIndex + 1) / totalPackages;
                 UpdateTgzProgress(completedProgress, $"{packageName} TGZ完了 ({packageIndex + 1}/{totalPackages})");
+                Debug.Log($"[MaebashiExportTool] {packageName} TGZ作成成功");
             }
             else
             {
