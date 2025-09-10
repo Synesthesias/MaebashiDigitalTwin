@@ -4,9 +4,6 @@
 [submodule "Packages/PLATEAU-SDK-Toolkits-for-Unity"]
 	path = Packages/PLATEAU-SDK-Toolkits-for-Unity
 	url = git@github.com:Synesthesias/PLATEAU-SDK-Toolkits-for-Unity.git
-[submodule "Packages/Maps-Toolkit-for-Unity-Landscape"]
-	path = Packages/Maps-Toolkit-for-Unity-Landscape
-	url = git@github.com:Synesthesias/Maps-Toolkit-for-Unity-Landscape.git
 [submodule "Packages/landscape-design-tool"]
 	path = Packages/landscape-design-tool
 	url = git@github.com:Synesthesias/landscape-design-tool.git
