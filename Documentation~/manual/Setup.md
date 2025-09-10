@@ -48,21 +48,7 @@
 
 ## 必要パッケージの追加
 
-- 本プロジェクトでは、以下のプラグインのインストールが必要になります。
-  - `Cesium-for-Unity`
-  - `PLATEAU SDK-Maps-Toolkit-for-Unity`
-
-- これらのパッケージは、前橋データと同じ[ダウンロードリンク](https://drive.google.com/drive/folders/1PozuAs8KcntlAoV_zBBQGcofI9qGAxei?usp=drive_link)からtgzをダウンロードしてください。
-
-![プラグインダウンロード](../resources/Install/packageInstall_01.png)
-
-
-- ダウンロードできたら、Unityを起動して上部メニューの `Window` → `Package Manager` をクリックします。
-- Package Managerの左上の `+` ボタンを押し、`Add package from tarball...` をクリックします。
-
-![パッケージの追加](../resources/Install/addPacakge.png)
-
-- また、以下のプラグインのインストールをgit経由でインストールします。
+- 以下のプラグインのインストールをgit経由でインストールします。
   - `Landscape-Design-Toolkit`
   - `PLATEAU SDK for Unity`
   - `PLATEAU SDK-Toolkits for Unity`
@@ -76,9 +62,22 @@ git submodule update --init --recursive
 ```
 
 >  [!NOTE]
-> git submoduleを使用せずに、手動でインストールする場合は、各パッケージをダウンロードして、上記の記述の手順でインストールしてください。
+> git submoduleを使用せずに、手動でインストールする場合は、各パッケージをダウンロードして、後述の手順でインストールしてください。
 >
 > ![Unityプロジェクトを作成](../resources/Install/packageInstall_02.png)
+
+- また、以下のプラグインのインストールも必要になります。
+  - `Cesium-for-Unity`
+  - `PLATEAU SDK-Maps-Toolkit-for-Unity`
+
+- これらのパッケージは、前橋データと同じ[ダウンロードリンク](https://drive.google.com/drive/folders/1PozuAs8KcntlAoV_zBBQGcofI9qGAxei?usp=drive_link)からtgzをダウンロードしてください。
+
+![プラグインダウンロード](../resources/Install/packageInstall_01.png)
+
+- ダウンロードできたら、Unityを起動して上部メニューの `Window` → `Package Manager` をクリックします。
+- Package Managerの左上の `+` ボタンを押し、`Add package from tarball...` をクリックします。
+
+![パッケージの追加](../resources/Install/addPacakge.png)
 
 - 以下のように表示され、エラーが出ていなければ成功です。
 
