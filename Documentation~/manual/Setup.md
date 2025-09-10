@@ -68,7 +68,8 @@
   - `PLATEAU SDK-Toolkits for Unity`
   - `PLATEAU-Traffic-SimulatorTool`
 
-- 以下のコマンドを実行することで、最新のパッケージをダウンロードできます。
+- 各プラグインは `Submodule`として管理しています。以下のコマンドを実行することで、最新のパッケージをダウンロードできます。
+- ※事前に `git lfs` のインストールが必要です。インストールされていない場合は、[こちら](https://git-lfs.com/)からインストールしてください。
 
 ```bash
 git submodule update --init --recursive
