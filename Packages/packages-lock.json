@@ -7,17 +7,6 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
-    "com.cesium.unity": {
-      "version": "file:com.cesium.unity-1.7.1.tgz",
-      "depth": 0,
-      "source": "local-tarball",
-      "dependencies": {
-        "com.unity.mathematics": "1.2.0",
-        "com.unity.test-framework": "1.1.31",
-        "com.unity.shadergraph": "12.1.6",
-        "com.unity.inputsystem": "1.4.2"
-      }
-    },
     "com.synesthesias.landscape-design-tool": {
       "version": "file:landscape-design-tool",
       "depth": 0,
