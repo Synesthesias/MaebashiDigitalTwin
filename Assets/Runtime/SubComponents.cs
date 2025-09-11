@@ -12,6 +12,7 @@ using PLATEAU.CityInfo;
 using System.Collections.Generic;
 using System.Linq;
 using TrafficSimulationTool.Runtime;
+using TrafficSimulationTool.Runtime.FX;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using ISubComponent = Landscape2.Runtime.ISubComponent;
@@ -128,6 +129,9 @@ namespace Landscape2.Maebashi.Runtime
             var speedAdjuster = new SpeedControlUI(
                 cameraManager.LandscapeCamera,
                 cameraManager.ThirdPersonController);
+            
+            // ヒートマップ用のFX生成
+            new HighlightFX();
             
             // モジュールをサブコンポーネントに追加
             subComponents = new List<ISubComponent>()
