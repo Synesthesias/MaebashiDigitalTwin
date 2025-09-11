@@ -39,6 +39,8 @@ namespace Landscape2.Maebashi.Runtime
             DashBoard,
         }
 
+        private const string CameraMoveSpeedDataPath = "CameraMoveSpeedData_Slow";
+
         private List<ISubComponent> subComponents = new();
         private SimRoadNetworkManager roadNetworkManager;
         private PLATEAUInstancedCityModel cityModel;
@@ -154,7 +156,8 @@ namespace Landscape2.Maebashi.Runtime
                     cameraManager.WalkerMoveByUserInput,
                     saveSystem,
                     globalNaviUI.UiRoot,
-                    footerNaviUI.UiRoot),
+                    footerNaviUI.UiRoot,
+                    CameraMoveSpeedDataPath),
                 cameraManager.CameraMoveByUserInput,
                 cameraManager.WalkerMoveByUserInput,
                 
