@@ -85,7 +85,7 @@ git submodule update --init --recursive
 
 ## 前橋シーンを起動
 
-- パッケージのインストールが完了したら`Assets/Maebashi/Scenes/MainScene.unity`を開いてください。
+- パッケージのインストールが完了したら`Assets/Maebashi/Scenes/Maebashi.unity`を開いてください。
 - プレイボタンを押して、起動が確認できたらセットアップ完了です。
 
 ![Unityプロジェクトを起動](../resources/Install/unityPlay.png)
